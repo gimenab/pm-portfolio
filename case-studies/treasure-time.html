@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Time | Project Manager Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:ital,wght@0,400;0,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans', 'sans-serif'],
+                        serif: ['EB Garamond', 'Georgia', 'serif'],
+                        mono: ['Noto Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        lilac: '#e0bce2',
+                        teal: {
+                            200: '#0b4a63',
+                            300: '#127a9e',
+                            400: '#0ea5d4',
+                            500: '#51d1f6',
+                            700: '#22b8e8',
+                            800: '#1583a8',
+                            950: '#eaf8fd',
+                        },
+                        slate: {
+                            100: '#111111',
+                            200: '#1a1a1a',
+                            300: '#333333',
+                            400: '#666666',
+                            500: '#767676',
+                            600: '#8a8a8a',
+                            700: '#a3a3a3',
+                            800: '#b98fc4',
+                            900: '#fbf7fc',
+                        },
+                        rose: {
+                            400: '#b91c3c',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .icon-chevron {
+            display: inline-block; flex-shrink: 0; width: 0.75em; height: 0.75em;
+            background-color: currentColor; transition: transform 0.2s;
+            -webkit-mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+            mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+        }
+        .group:hover .icon-chevron { transform: translateX(3px); }
+        .status-tag { display: inline-flex; align-items: center; padding: 4px 0; }
+        .sow-doc { font-size: 0.8125rem; line-height: 1.6; color: #333; }
+        .sow-doc h2 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 1.25rem 0 0.4rem; padding-top: 0.9rem; border-top: 1px solid rgba(0,0,0,.1); }
+        .sow-doc h2:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+        .sow-doc p { margin: 0.5rem 0; }
+        .sow-doc ul { list-style: disc; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc ul ul { list-style: circle; }
+        .sow-doc ol { list-style: decimal; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc li { margin: 0.2rem 0; }
+        .sow-doc table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.75rem; }
+        .sow-doc th, .sow-doc td { border: 1px solid rgba(0,0,0,.12); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        .sow-doc th { background: #f7f7f7; font-weight: 600; }
+        .sow-doc strong { font-weight: 600; color: #1a1a1a; }
+        .sow-doc .gap-card { border: 1px solid rgba(0,0,0,.12); border-radius: 0.75rem; background: #f7f7f7; padding: 0.75rem 1rem; margin: 0.6rem 0; }
+        .sow-doc .gap-card p { margin: 0.4rem 0; }
+        .sow-doc details.all-gaps { margin: 1rem 0; }
+        .sow-doc details.all-gaps summary { cursor: pointer; font-weight: 600; color: #1583a8; font-size: 0.8125rem; }
+    </style>
+</head>
+<body class="bg-[#F0FAFF] text-[#1a1a1a] antialiased font-sans selection:bg-teal-500 selection:text-slate-950">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-black/10">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 min-w-0">
+                <span class="truncate font-medium text-slate-200 text-sm font-mono">Case Study &bull; Project Management</span>
+            </div>
+            <a href="../index.html" class="shrink-0 whitespace-nowrap text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono">
+                &larr; Back to portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- Hero Section -->
+        <section class="space-y-6 pt-6 border-b border-black/10 pb-12">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-300 text-xs font-mono">
+                <span data-en="Wellness Tech &bull; Project case study" data-es="Wellness Tech &bull; Caso de estudio de proyecto">Wellness Tech &bull; Project case study</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif">
+                Treasure Time: Reinventing Personal Productivity
+            </h1>
+            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed text-pretty" data-en="A gamified app that turns small everyday actions (health, home, work) into protected time for well-being. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app." data-es="Una app gamificada que convierte peque&ntilde;as acciones cotidianas (salud, hogar, trabajo) en tiempo protegido para el bienestar. Este caso la sigue a lo largo de todo el ciclo del proyecto, paso a paso, desde el brief de la founder y la SOW hasta construir la app real.">
+                A gamified app that turns small everyday actions (health, home, work) into protected time for well-being. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-xs font-mono">
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Role</span>
+                    <span class="text-slate-200 font-medium">Project Manager</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Target</span>
+                    <span class="text-slate-200 font-medium" data-en="People seeking a better balance between responsibilities and free time" data-es="Personas que buscan un mejor equilibrio entre responsabilidades y tiempo libre">People seeking a better balance between responsibilities and free time</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Approach</span>
+                    <span class="text-slate-200 font-medium">Anti-Tox Productive</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Status</span>
+                    <span class="text-teal-400 font-medium" data-en="In progress &mdash; Step 1: Discovery" data-es="En curso &mdash; Paso 1: Discovery">In progress &mdash; Step 1: Discovery</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Plant the seeds — Discovery -->
+        <section id="step-1" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">01 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Plant the seeds" data-es="Plantar las semillas">Plant the seeds</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Discovery" data-es="Descubrimiento">Discovery</span>
+                </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span></span>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 1.1 Brief & SOW -->
+                <div class="p-6 space-y-3 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.1</span><span data-en="Brief &amp; SOW" data-es="Brief y SOW">Brief &amp; SOW</span>
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80" data-en="Built with" data-es="Hecho con">Built with</span> <code class="font-semibold">sow-drafting</code> <span class="text-white/80 font-normal">v1.2.2</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-en="The founder brief for Treasure Time was turned into a formal Statement of Work, without inventing data the brief did not contain." data-es="El brief original del fundador de Treasure Time se convirti&oacute; en un Statement of Work formal, sin inventar datos que el brief no ten&iacute;a.">
+                        The founder brief for Treasure Time was turned into a formal Statement of Work, without inventing data the brief did not contain.
+                    </p>
+                    <button type="button" onclick="openExampleModal('sow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View example output<span class="icon-chevron" aria-hidden="true"></span></button>
+                </div>
+                <!-- 1.2 SOW Intake & initial risks -->
+                <div class="p-6 space-y-3 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.2</span><span data-en="SOW Intake &amp; initial risks" data-es="SOW Intake y riesgos iniciales">SOW Intake &amp; initial risks</span>
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80" data-en="Built with" data-es="Hecho con">Built with</span> <code class="font-semibold">sow-intake-analysis</code> <span class="text-white/80 font-normal">v2.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-en="Reading the SOW critically surfaced 31 concrete gaps. The three strongest become the initial risks:" data-es="La lectura cr&iacute;tica del SOW encontr&oacute; 31 gaps concretos. Los tres m&aacute;s fuertes pasan a ser los riesgos iniciales:">
+                        Reading the SOW critically surfaced 31 concrete gaps. The three strongest become the initial risks:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li data-en="No named decision-maker" data-es="Sin decisor nombrado">No named decision-maker</li>
+                        <li data-en="No timeline or budget" data-es="Sin timeline ni presupuesto">No timeline or budget</li>
+                        <li data-en="Unaddressed platform risk in &quot;Protected Mode&quot;" data-es="Riesgo de plataforma sin resolver en &laquo;Modo Protegido&raquo;">Unaddressed platform risk in "Protected Mode"</li>
+                    </ul>
+                    <button type="button" onclick="openExampleModal('intake-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View example output<span class="icon-chevron" aria-hidden="true"></span></button>
+                </div>
+                <!-- 1.3 Stakeholder alignment -->
+                <div class="p-6 space-y-3 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.3</span><span data-en="Stakeholder alignment" data-es="Alineaci&oacute;n con stakeholders">Stakeholder alignment</span>
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nine of the 31 intake gaps were picked for the kickoff, ranked by scope-creep risk. There are no outside stakeholders: I am founder, product owner and PM, so every question got a written decision, and the SOW became v2. The decisions that changed the project:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li>Platform: a web app, not a native mobile app.</li>
+                        <li>Phase 1 covers the whole core loop except enjoying the time, split in two deliveries. 1a (October 4): do tasks, earn minutes, see them accumulate. 1b (October 11): take time and register the moment, which closes the loop.</li>
+                        <li>Minutes are the currency, and accumulated time never expires.</li>
+                        <li>The points model is evaluated during Phase 1, starting with 1a. Phase 1 signal: used on 5 of 7 days for 2 weeks.</li>
+                        <li>Anything outside Phase 1 needs a written decision in the SOW&rsquo;s Revision History.</li>
+                    </ul>
+                    <button type="button" onclick="openExampleModal('sow-v2-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View example output<span class="icon-chevron" aria-hidden="true"></span></button>
+                </div>
+                <!-- 1.4 Discovery & research -->
+                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.4</span><span data-en="Discovery &amp; research" data-es="Discovery e investigaci&oacute;n">Discovery &amp; research</span>
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-en="The research and problem exploration behind the MVP." data-es="La investigaci&oacute;n y exploraci&oacute;n del problema detr&aacute;s del MVP.">
+                        The research and problem exploration behind the MVP.
+                    </p>
+                </div>
+                <!-- 1.5 Problem framing & hypothesis -->
+                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.5</span><span data-en="Problem framing &amp; hypothesis" data-es="Problem framing e hip&oacute;tesis">Problem framing &amp; hypothesis</span>
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-en="The problem statement and value proposition, framed from what Discovery finds." data-es="El planteo del problema y la propuesta de valor, definidos a partir de lo que encuentre Discovery.">
+                        The problem statement and value proposition, framed from what Discovery finds.
+                    </p>
+                </div>
+        
+            </div>
+        </section>
+
+        <!-- 2. Prepare the soil — Risk prep -->
+        <section id="step-2" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">02 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Prepare the soil" data-es="Preparar la tierra">Prepare the soil</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Risk prep" data-es="Preparaci&oacute;n de riesgos">Risk prep</span>
+                </h2>
+            </div>
+
+            <!-- 2.1 Backlog, Roadmap, RACI, Risk Register -->
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Backlog, Roadmap, RACI &amp; Risk Register" data-es="Backlog, Roadmap, RACI y Risk Register">Backlog, Roadmap, RACI &amp; Risk Register</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="Backlog and Epics come out of Discovery, so they are defined once step 1 closes. The formal Risk Register starts from the initial risks found in 1.2." data-es="El backlog y las Epics salen de Discovery, as&iacute; que se definen cuando el paso 1 cierra. El Risk Register formal parte de los riesgos iniciales de 1.2.">
+                    Backlog and Epics come out of Discovery, so they are defined once step 1 closes. The formal Risk Register starts from the initial risks found in 1.2.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Watch it sprout — Kickoff -->
+        <section id="step-3" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">03 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Watch it sprout" data-es="Ver el brote">Watch it sprout</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Kickoff" data-es="Arranque">Kickoff</span>
+                </h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Kickoff &amp; Sprint 0" data-es="Kickoff y Sprint 0">Kickoff &amp; Sprint 0</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="The delivery kickoff and Sprint 0: the first real push, when the work actually begins." data-es="El kickoff de delivery y el Sprint 0: el primer empuj&oacute;n real, cuando el trabajo arranca de verdad.">
+                    The delivery kickoff and Sprint 0: the first real push, when the work actually begins.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Tend the crop — Execution -->
+        <section id="step-4" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">04 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Tend the crop" data-es="Cuidar el cultivo">Tend the crop</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Execution" data-es="Ejecuci&oacute;n">Execution</span>
+                </h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Web app, Phase 1" data-es="Web app, Fase 1">Web app, Phase 1</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="The Treasure Time web app will live here, built from scratch. Phase 1 covers the core loop: categories to time bank." data-es="La web app de Treasure Time va a vivir ac&aacute;, construida desde cero. La Fase 1 cubre el loop central: categor&iacute;as y banco de tiempo.">
+                    The Treasure Time web app will live here, built from scratch. Phase 1 covers the core loop: categories to time bank.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Weather the storm — Risk management -->
+        <section id="step-5" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">05 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Weather the storm" data-es="Resistir la tormenta">Weather the storm</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Risk mgmt" data-es="Gesti&oacute;n de riesgo">Risk mgmt</span>
+                </h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Risk Register &amp; Decision Case" data-es="Risk Register y Decision Case">Risk Register &amp; Decision Case</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="Risk Register and Decision Case for a fixed campaign launch date, a wearable-partner integration and a mid-project budget cut." data-es="Risk Register y Decision Case para una fecha de lanzamiento fija, una integraci&oacute;n con un partner de wearables y un recorte de presupuesto a mitad de proyecto.">
+                    Risk Register and Decision Case for a fixed campaign launch date, a wearable-partner integration and a mid-project budget cut.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. Reap the harvest — Launch -->
+        <section id="step-6" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">06 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Reap the harvest" data-es="Cosechar los frutos">Reap the harvest</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Launch" data-es="Lanzamiento">Launch</span>
+                </h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Release to users" data-es="Salida a usuarios">Release to users</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="What was built finally reaches the people who will use it." data-es="Lo que se construy&oacute; por fin llega a quienes lo van a usar.">
+                    What was built finally reaches the people who will use it.
+                </p>
+            </div>
+        </section>
+
+        <!-- 7. Share the harvest — Value (KPIs moved from old 05) -->
+        <section id="step-7" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">07 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Share the harvest" data-es="Compartir la cosecha">Share the harvest</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Value" data-es="Valor">Value</span>
+                </h2>
+            </div>
+
+            <!-- 7.1 Metrics & measured results -->
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Metrics &amp; measured results" data-es="M&eacute;tricas y resultados medidos">Metrics &amp; measured results</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="It is not done when it ships, it is done when someone uses it. The KPIs are set once the product is defined, and this is where the real numbers against them will show." data-es="No termina cuando se entrega, termina cuando alguien lo usa. Los KPIs se definen cuando el producto est&aacute; definido, y ac&aacute; van a verse los n&uacute;meros reales contra ellos.">
+                    It is not done when it ships, it is done when someone uses it. The KPIs are set once the product is defined, and this is where the real numbers against them will show.
+                </p>
+            </div>
+        </section>
+
+        <!-- 8. Make compost — Retro -->
+        <section id="step-8" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">08 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
+                    <span data-en="Make compost" data-es="Hacer compost">Make compost</span>
+                    <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
+                    <span class="text-teal-300" data-en="Retro" data-es="Retro">Retro</span>
+                </h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-base font-semibold text-slate-200">
+                        <span data-en="Retro &amp; lessons learned" data-es="Retro y aprendizajes">Retro &amp; lessons learned</span>
+                    </h3>
+                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed" data-en="What worked, what did not and what we learned feed the roadmap for the next release." data-es="Lo que funcion&oacute;, lo que no y lo aprendido alimentan el roadmap de la pr&oacute;xima versi&oacute;n.">
+                    What worked, what did not and what we learned feed the roadmap for the next release.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-black/10 py-8 text-center text-xs text-[#1a1a1a]">
+        <p data-en="Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages" data-es="Portfolio de Project Manager &bull; Sitio est&aacute;tico, alojado en GitHub Pages">Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages</p>
+    </footer>
+
+
+    <!-- sow-modal -->
+    <div id="sow-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="sow-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; sow-drafting</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="sow-modal-title">Founder brief &rarr; SOW draft</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Input: the founder&rsquo;s original brief (PDF, not structured as a SOW). Output: the draft the skill produced, shown as generated, without inventing what the brief doesn&rsquo;t say &mdash; anything missing is marked &ldquo;Not specified in the source&rdquo;.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><strong>Project Lead:</strong> Not specified in the source<br />
+<strong>Project Sponsor:</strong> Not specified in the source</p>
+<p><em>(The brief calls the product "Tiempo Valioso". "Treasure Time" is the project name provided by the user. The brief also lists other exploratory names, such as "Banco de Tiempo", "Tiempo Vital" and "Minutos para Vos", and doesn't settle on one.)</em></p>
+<h2>Stakeholders</h2>
+<p>Not specified in the source. The brief names no founder, decision-maker, approver or other involved party.</p>
+<h2>Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Revision date</th>
+<th>Revised by</th>
+<th>Approved by</th>
+<th>Description of change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Purpose</h2>
+<p><em>(Literal from the source, translated.)</em></p>
+<p>Treasure Time is a gamified mobile app focused on human well-being and on balancing daily obligations with meaningful personal time. It helps people recover quality time for activities that give them real well-being. It does this by turning small everyday actions (health, home, work and functional responsibilities) into protected time for activities the user chooses.</p>
+<p>Unlike traditional habit or productivity apps, it does not aim to maximize performance or extreme productivity. It aims to help users sustain their functional life while recovering space to exist as human beings. Its core proposition is: <em>"Transform small daily actions into valuable time to live better."</em></p>
+<p><strong>Problem (from the source).</strong> Many adults feel absorbed by work, responsibilities, home upkeep, daily obligations, mental fatigue and passive social media use. They often feel "I have no time for myself", even when they genuinely want to make time for meaningful activities such as reading, walking, painting, knitting, cinema, nature or hobbies. Existing apps focus on habit tracking, productivity, streaks, performance metrics and reducing screen time. Few turn everyday task completion into protected, meaningful time.</p>
+<p><strong>Product hypothesis (from the source).</strong> If a user transforms daily functional actions into visible, accumulable recovered time, they will be more likely to spend real time on activities that give them well-being. As a result, they will do more meaningful activities and feel better.</p>
+<p><strong>MVP objective (from the source).</strong> Validate whether users actually recover and use meaningful time in their daily lives.</p>
+<p><strong>Possible success metrics (from the source, described as "possible").</strong><br />
+- North Star: hours of valuable time recovered per user per week.<br />
+- Secondary: frequency of use, protected time used, number of meaningful activities done, reduction in passive consumption, perceived well-being, and weekly retention.</p>
+<p><strong>Product philosophy and tone (from the source).</strong> This is design intent, not a testable requirement.<br />
+- The product should not feel like an endless task list, toxic productivity, "earning the right to rest", or guilt for not complying.<br />
+- It should feel like human accompaniment, gentle progress, recovery of vital time, and building personal space.<br />
+- The expected emotional tone is warm, human, hopeful, calm, contemplative and non-judgmental.<br />
+- The app does not seek to demand more productivity, punish non-compliance or impose extreme discipline.</p>
+<h2>Target Audience</h2>
+<p><em>(Literal from the source.)</em> The initial target audience is functional adults, approximately 25–45 years old, who:<br />
+- feel exhausted<br />
+- have little personal time<br />
+- feel disconnected from hobbies or well-being<br />
+- want to balance obligations and personal life<br />
+- spend time passively (scrolling, digital distraction)<br />
+- want to reconnect with meaningful activities</p>
+<h2>Scope / Major Project Activities</h2>
+<p><em>(From the source's "MVP Inicial" and the sections that detail it. Wording is condensed and translated.)</em></p>
+<ul>
+<li><strong>Simple categories.</strong> Tasks are grouped into three initial categories to avoid cognitive overload:</li>
+<li><em>Health – "Looking after myself"</em>. Examples: drink water, walk 10 minutes, sleep well, medication, mindful pause, therapy.</li>
+<li><em>Home – "Sustaining my space"</em>. Examples: make the bed, wash dishes, tidy up, cook something simple, take out the trash, pay bills and taxes on time.</li>
+<li><em>Work / Purpose</em>. Examples: focus block, advance an important task, answer pending items, study, concentrated work.</li>
+<li><strong>Few configurable tasks.</strong> Onboarding is minimal, and the user picks only a few actions to start, with a conceptual maximum of 2–3 tasks per category.</li>
+<li><strong>Recovered-time system.</strong> Completing actions generates "recovered time / valuable time" as the reward, instead of abstract coins. Conceptual examples in the source are make the bed +2 min, walk 15 min +10 min, and focus block +15 min. A daily summary example is "Today you recovered 34 minutes for yourself."</li>
+<li><strong>Personal activities.</strong> The user can invest recovered time in meaningful activities such as reading, painting, walking, knitting, photography, music, journaling, watching a movie, a quiet coffee, nature, and custom hobbies. The app can suggest activities and lets users add their own.</li>
+<li><strong>Time bank.</strong> Listed in the MVP, but the brief does not describe it beyond its name and the "visible, accumulable" recovered time in the hypothesis.</li>
+<li><strong>Protected mode.</strong> When the user decides to use their recovered time, they can activate a protected mode, inspired by focus and app-blocker apps. It may include distracting-app blocking, focus mode, notification silencing, a timer and gentle accompaniment. The example message is "This time you recovered for yourself."</li>
+<li><strong>Simple emotional reflection.</strong> At the end of valuable time, the app asks "How did you feel?" with three options: <em>Good</em>, <em>So-so</em>, <em>Didn't connect today</em>. This supports personalized learning, better suggestions and well-being tracking.</li>
+</ul>
+<p><strong>Described in the source, but unclear whether it is in the MVP:</strong> the suggestion system. The brief says the app "could" propose activities based on usage history, user preferences, reported well-being and activity frequency (example: "You haven't walked in several days. Want to recover 20 minutes outdoors?"). The MVP list includes "personal activities" but not suggestions explicitly.</p>
+<h2>Out-of-scope Activities</h2>
+<p>Not specified in the source. The brief's "does not seek to…" statements describe product philosophy and are recorded under Purpose, not here.</p>
+<h2>Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Format</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category and task configuration (Health, Home, Work/Purpose; minimal onboarding)</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+<tr>
+<td>Recovered-time system (actions → recovered time, daily summary)</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+<tr>
+<td>Personal / meaningful activities (suggested + user-created)</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+<tr>
+<td>Time bank</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+<tr>
+<td>Protected mode</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+<tr>
+<td>Simple emotional reflection</td>
+<td>Mobile app feature</td>
+<td>Not specified in the source</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Inferred from the "MVP Inicial" list. The brief does not express its scope as a deliverables table. It says "mobile application" but names no platform, such as iOS or Android, and no other format or owner.)</em></p>
+<h2>Schedule Overview / Major Milestones</h2>
+<p>Not specified in the source.</p>
+<h2>Estimated Hours for Completion</h2>
+<p>Not specified in the source.</p>
+<h2>Estimated Date for Completion</h2>
+<p>Not specified in the source.</p>
+<h2>Payment Terms</h2>
+<p>Not specified in the source.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- intake-modal -->
+    <div id="intake-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="intake-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; sow-intake-analysis</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="intake-modal-title">SOW &rarr; critical reading, 31 gaps flagged</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Input: the SOW drafted in step 1.1. Output: a fixed 10-section critical reading with 31 flagged gaps, each with why it matters and a clarifying question. The three strongest are shown first; expand the list to read all 31.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><strong>Guardrail check.</strong> Exclusions and Acceptance Criteria (sections 8 and 9) come back as &ldquo;Not specified in the source&rdquo;: the brief&rsquo;s tone and philosophy language is not promoted into either.</p><h2>The three strongest gaps</h2><div class="gap-card"><p><strong>No sponsor, lead or decision authority.</strong></p>
+<p><strong>Why it matters:</strong> nobody can approve scope, resolve the open questions below or sign off on the MVP.</p>
+<p><strong>Clarifying question:</strong> "Who decides on scope changes and approves the MVP?"</p></div><div class="gap-card"><p><strong>Timeline, budget and resourcing are all absent.</strong> No dates, effort, team, budget or payment terms.</p>
+<p><strong>Why it matters:</strong> feasibility can't be assessed and no commitment can be made.</p>
+<p><strong>Clarifying question:</strong> "What are the deadline, budget and available team?"</p></div><div class="gap-card"><p><strong>Platform.</strong> The source says only "mobile application".</p>
+<p><strong>Why it matters:</strong> iOS, Android, or both changes effort. It also determines whether protected mode can work, since OS restrictions on app blocking differ.</p>
+<p><strong>Clarifying question:</strong> "Which platform(s) must the MVP support?"</p></div><details class="all-gaps"><summary>Show all 31 gaps in full</summary><div class="gap-card"><p><strong>Document type.</strong> This is a SOW-shaped document derived from a founder brief, not a contractual SOW. Roughly half its sections say "Not specified in the source", and the Revision History is empty.</p>
+<p><strong>Why it matters:</strong> it can't yet serve as a scope baseline or change-control reference.</p>
+<p><strong>Clarifying question:</strong> "Is this meant to become the formal SOW, or is it a working summary of the brief?"</p></div><div class="gap-card"><p><strong>Provenance.</strong> The original brief isn't attached, and the SOW says it is a condensed translation of it.</p>
+<p><strong>Why it matters:</strong> translation and condensing can distort intent, and the brief's author and date are unknown.</p>
+<p><strong>Clarifying question:</strong> "Who wrote the brief, when, and can we work from the original?"</p></div><div class="gap-card"><p><strong>Product name.</strong> "Treasure Time" is the user-provided name. The brief uses "Tiempo Valioso" and lists other candidates (Banco de Tiempo, Tiempo Vital, Minutos para Vos) without choosing one.</p>
+<p><strong>Why it matters:</strong> branding, store listing and copy depend on it.</p>
+<p><strong>Clarifying question:</strong> "Which name is final for the MVP, or is it provisional?"</p></div><div class="gap-card"><p><strong>No sponsor, lead or decision authority.</strong></p>
+<p><strong>Why it matters:</strong> nobody can approve scope, resolve the open questions below or sign off on the MVP.</p>
+<p><strong>Clarifying question:</strong> "Who decides on scope changes and approves the MVP?"</p></div><div class="gap-card"><p><strong>Engagement model.</strong> The document doesn't say who the client is, who is building, or what the PM's role is.</p>
+<p><strong>Why it matters:</strong> it determines ownership, accountability and how the SOW is used.</p>
+<p><strong>Clarifying question:</strong> "Who is the requester, who delivers, and what role does the PM have?"</p></div><div class="gap-card"><p><strong>Platform.</strong> The source says only "mobile application".</p>
+<p><strong>Why it matters:</strong> iOS, Android, or both changes effort. It also determines whether protected mode can work, since OS restrictions on app blocking differ.</p>
+<p><strong>Clarifying question:</strong> "Which platform(s) must the MVP support?"</p></div><div class="gap-card"><p><strong>Protected mode is not defined.</strong> The source says it "may include" blocking, focus mode, notification silencing, a timer and accompaniment, and it's unclear which are required.</p>
+<p><strong>Why it matters:</strong> the scope could range from a simple timer to system-level blocking.</p>
+<p><strong>Clarifying question:</strong> "Which protected-mode behaviors are must-have for the MVP, and which are optional?"</p></div><div class="gap-card"><p><strong>Time bank is undefined.</strong> It appears in the MVP list without a description.</p>
+<p><strong>Why it matters:</strong> it isn't clear whether it is a balance display, a ledger with history, or something with expiry or limits.</p>
+<p><strong>Clarifying question:</strong> "What must the time bank do, and how does it differ from the recovered-time system?"</p></div><div class="gap-card"><p><strong>Recovered-time rules are missing.</strong> The minute values are only "conceptual" examples, and the ratios differ (make the bed +2 min, walk 15 min +10 min, focus 15 min +15 min). Nothing says who sets values, whether users can edit them, or whether there are caps.</p>
+<p><strong>Why it matters:</strong> the reward logic is the core mechanic and the basis of the North Star metric.</p>
+<p><strong>Clarifying question:</strong> "How are minute values determined, and can users change or exceed them?"</p></div><div class="gap-card"><p><strong>Task verification.</strong> Nothing states how completion is confirmed (self-report, integrations or something else).</p>
+<p><strong>Why it matters:</strong> without verification, the recovered-time metric reflects taps, not real behavior.</p>
+<p><strong>Clarifying question:</strong> "Is self-reporting acceptable for the MVP?"</p></div><div class="gap-card"><p><strong>Recovered time vs. real time.</strong> It is unclear whether recovered minutes must be spent within a window, expire, or accumulate indefinitely, and what happens if the user never spends them.</p>
+<p><strong>Why it matters:</strong> it shapes the North Star metric and what "using" time means.</p>
+<p><strong>Clarifying question:</strong> "Does recovered time expire, and does spending it require a scheduled block?"</p></div><div class="gap-card"><p><strong>Tension with the stated philosophy.</strong> The product rejects "earning the right to rest" and guilt, yet its mechanic is earning time by completing tasks. The source doesn't say whether a user with zero recovered time can still use protected mode, or what happens when tasks are missed. The Work/Purpose category ("advance an important task") also sits awkwardly beside the stated aim of not maximizing productivity.</p>
+<p><strong>Why it matters:</strong> the answers define the core behavior of the app.</p>
+<p><strong>Clarifying question:</strong> "Can users access protected mode without earning time, and what does the app do on missed tasks?"</p></div><div class="gap-card"><p><strong>"Gamified" is not specified.</strong> The Purpose calls the app gamified, but the only mechanic described is time as reward, and the source contrasts the product with streaks and performance metrics.</p>
+<p><strong>Why it matters:</strong> it's unclear whether badges, levels or streaks are in or explicitly out.</p>
+<p><strong>Clarifying question:</strong> "Which game mechanics, if any, are in scope?"</p></div><div class="gap-card"><p><strong>Task setup is unclear.</strong> The source doesn't say whether users pick from a predefined list, create custom tasks, or both. The "2–3 per category" limit is "conceptual". It also doesn't say whether tasks repeat daily, weekly or once, or whether reminders exist.</p>
+<p><strong>Why it matters:</strong> this drives onboarding, the data model and the metrics.</p>
+<p><strong>Clarifying question:</strong> "Is the limit hard or a guideline, and are tasks predefined, custom, or both?"</p></div><div class="gap-card"><p><strong>Suggestion system.</strong> The source is inconsistent about whether it is in the MVP, and the MVP list only says "personal activities".</p>
+<p><strong>Why it matters:</strong> it changes the scope, and the data needed differs from a manual list.</p>
+<p><strong>Clarifying question:</strong> "Are activity suggestions in the MVP, and if so, are they static or personalized?"</p></div><div class="gap-card"><p><strong>Emotional reflection.</strong> The source says it "supports personalized learning, better suggestions and well-being tracking", but it doesn't say what is done with the answers, or whether any personalization exists in the MVP.</p>
+<p><strong>Why it matters:</strong> the reflection could be a collect-only feature or feed other logic.</p>
+<p><strong>Clarifying question:</strong> "Is the reflection only collected for analysis, or does it drive in-app behavior?"</p></div><div class="gap-card"><p><strong>Hypothesis vs. North Star mismatch.</strong> The MVP objective is to validate that users recover <em>and use</em> meaningful time, but the North Star measures only recovered time.</p>
+<p><strong>Why it matters:</strong> recovered time is generated by the app itself, so the metric could pass without any real-life change.</p>
+<p><strong>Clarifying question:</strong> "Which metric decides whether the hypothesis is validated?"</p></div><div class="gap-card"><p><strong>No validation criteria.</strong> There are no targets, baselines, thresholds, sample size, test duration or definition of "validated".</p>
+<p><strong>Why it matters:</strong> without them the MVP can't produce a clear go/no-go result.</p>
+<p><strong>Clarifying question:</strong> "What results would count as validated, partially validated or disproven?"</p></div><div class="gap-card"><p><strong>Secondary metrics need data sources.</strong> "Reduction in passive consumption" and "perceived well-being" imply screen-time data and surveys, but no such deliverables or instrumentation are in scope.</p>
+<p><strong>Why it matters:</strong> the metrics can't be collected unless measurement is planned.</p>
+<p><strong>Clarifying question:</strong> "How will these metrics be measured, and is analytics/survey work part of the MVP?"</p></div><div class="gap-card"><p><strong>Distribution and test cohort.</strong> The source doesn't say who the MVP users are, how they are recruited, or how the app reaches them (public store release or closed beta).</p>
+<p><strong>Why it matters:</strong> it affects release effort, compliance and the quality of validation data.</p>
+<p><strong>Clarifying question:</strong> "Is the MVP for a closed test group or a public release?"</p></div><div class="gap-card"><p><strong>Target audience evidence and detail.</strong> The audience is "approximately 25–45" functional adults, with no geography, language or market. The problem statement is asserted without cited research or data.</p>
+<p><strong>Why it matters:</strong> assumptions about the user go untested, and localization is undefined.</p>
+<p><strong>Clarifying question:</strong> "What evidence supports the problem, and which market and language is the MVP for?"</p></div><div class="gap-card"><p><strong>No commercial or business model.</strong> Only product validation is stated.</p>
+<p><strong>Why it matters:</strong> it's unclear whether monetization is intentionally deferred, and it affects what the MVP must prove.</p>
+<p><strong>Clarifying question:</strong> "Is monetization deliberately out of scope for this phase?"</p></div><div class="gap-card"><p><strong>Sensitive data.</strong> The Health category includes medication and therapy, and the app collects emotional reflections. The source is silent on privacy, consent, storage, accounts or regulation.</p>
+<p><strong>Why it matters:</strong> this is potentially sensitive personal data with legal and trust implications.</p>
+<p><strong>Clarifying question:</strong> "What are the privacy and data-handling requirements, and are user accounts required?"</p></div><div class="gap-card"><p><strong>Non-functional requirements are absent.</strong> The source says nothing on offline use, accessibility, performance, localization or notifications.</p>
+<p><strong>Why it matters:</strong> these are unpriced scope if left implicit.</p>
+<p><strong>Clarifying question:</strong> "Are there non-functional requirements the MVP must meet?"</p></div><div class="gap-card"><p><strong>Terminology.</strong> The source uses "recovered time", "valuable time", "protected time", "meaningful time" and "time bank" interchangeably.</p>
+<p><strong>Why it matters:</strong> developers, designers and testers may read different concepts into the same words.</p>
+<p><strong>Clarifying question:</strong> "Can we agree a glossary that says which terms mean the same thing?"</p></div><div class="gap-card"><p><strong>Deliverables cover features only.</strong> No design, research, QA, analytics setup, store submission or documentation deliverables are listed, and no owner is named for any of them.</p>
+<p><strong>Why it matters:</strong> the effort and responsibilities behind the features are invisible.</p>
+<p><strong>Clarifying question:</strong> "Which non-feature work is expected, and who owns each deliverable?"</p></div><div class="gap-card"><p><strong>No exclusions.</strong> The source states no out-of-scope items, so features like social sharing, wearable or calendar integrations, and multi-device sync are neither in nor out.</p>
+<p><strong>Why it matters:</strong> unstated items tend to become scope creep.</p>
+<p><strong>Clarifying question:</strong> "What is explicitly out of scope for the MVP?"</p></div><div class="gap-card"><p><strong>No acceptance criteria.</strong> There is no definition of done for any feature.</p>
+<p><strong>Why it matters:</strong> the tone and philosophy language can't be verified as written, so there's nothing to test against.</p>
+<p><strong>Clarifying question:</strong> "How will each feature be judged complete, and how, if at all, should the intended tone be evaluated?"</p></div><div class="gap-card"><p><strong>Timeline, budget and resourcing are all absent.</strong> No dates, effort, team, budget or payment terms.</p>
+<p><strong>Why it matters:</strong> feasibility can't be assessed and no commitment can be made.</p>
+<p><strong>Clarifying question:</strong> "What are the deadline, budget and available team?"</p></div><div class="gap-card"><p><strong>No risks, dependencies or constraints.</strong> Nothing is listed, though third-party dependencies (OS permissions, app stores) are likely.</p>
+<p><strong>Why it matters:</strong> unidentified risks can block delivery late.</p>
+<p><strong>Clarifying question:</strong> "Are there known constraints, dependencies or risks?"</p></div><div class="gap-card"><p><strong>Post-MVP path is missing.</strong> The source doesn't say what happens after validation: continue, pivot, stop, or hand over.</p>
+<p><strong>Why it matters:</strong> it defines what the MVP must produce as evidence.</p>
+<p><strong>Clarifying question:</strong> "What decision will the MVP results feed, and who makes it?"</p></div></details><p><em>The document read here is a SOW that was itself drafted from a brief, so a few gaps are about the document (its type, its provenance, the product name). The skill reports those too.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- sow-v2-modal -->
+    <div id="sow-v2-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="sow-v2-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; kickoff decisions</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="sow-v2-modal-title">SOW v2, after the kickoff</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The SOW from step 1.1 with the kickoff decisions folded in. The Revision History records the change from v1.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><strong>Project Lead:</strong> The founder, who is also the product owner and the PM (one person)
+<strong>Project Sponsor:</strong> The founder (self-funded, self-driven project)</p>
+<h2>Stakeholders</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Held by</th>
+<th>Decision authority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Founder, product owner, PM and first user</td>
+<td>One person</td>
+<td>Decides and approves everything. Approvals are self-approvals, recorded in the Revision History.</td>
+</tr>
+<tr>
+<td>Build and documentation support</td>
+<td>Claude</td>
+<td>None. Proposes; the founder decides.</td>
+</tr>
+</tbody>
+</table>
+<p>There are no external stakeholders. The founder holds every project role, because this is a self-driven project. The test cohort is one person: the founder, using the app in their own day-to-day.</p>
+<h2>Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Revision date</th>
+<th>Revised by</th>
+<th>Approved by</th>
+<th>Description of change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-09-21</td>
+<td>Founder, with the <code>sow-drafting</code> skill</td>
+<td>—</td>
+<td>v1: SOW drafted from the founder brief. Anything the brief did not say is marked "Not specified in the source".</td>
+</tr>
+<tr>
+<td>2026-09-24</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v2: kickoff decisions incorporated. Predefined tasks set as a catalog of 10, with up to 3 shown per day. Platform changed from "mobile application" to web app. Phase 1 scope (full core loop except ENJOY, split into 1a and 1b), exclusions, acceptance and validation criteria, timeline, hours and change control added. Stakeholders filled in.</td>
+</tr>
+</tbody>
+</table>
+<h2>Purpose</h2>
+<p><em>(Unchanged from v1.)</em></p>
+<p>Treasure Time is a gamified app focused on human well-being and on balancing daily obligations with meaningful personal time. It helps people recover quality time for activities that give them real well-being. It does this by turning small everyday actions (health, home, work and functional responsibilities) into protected time for activities the user chooses.</p>
+<p>Unlike traditional habit or productivity apps, it does not aim to maximize performance or extreme productivity. It aims to help users sustain their functional life while recovering space to exist as human beings. Its core proposition is: <em>"Transform small daily actions into valuable time to live better."</em></p>
+<p><strong>Problem (from the source).</strong> Many adults feel absorbed by work, responsibilities, home upkeep, daily obligations, mental fatigue and passive social media use. They often feel "I have no time for myself", even when they genuinely want to make time for meaningful activities such as reading, walking, painting, knitting, cinema, nature or hobbies. Existing apps focus on habit tracking, productivity, streaks, performance metrics and reducing screen time. Few turn everyday task completion into protected, meaningful time.</p>
+<p><strong>Product hypothesis (from the source).</strong> If a user transforms daily functional actions into visible, accumulable recovered time, they will be more likely to spend real time on activities that give them well-being. As a result, they will do more meaningful activities and feel better.</p>
+<p><strong>MVP objective (from the source).</strong> Validate whether users actually recover and use meaningful time in their daily lives.</p>
+<p><strong>Product philosophy and tone (from the source).</strong> This is design intent, not a testable requirement.</p>
+<ul>
+<li>The product should not feel like an endless task list, toxic productivity, "earning the right to rest", or guilt for not complying.</li>
+<li>It should feel like human accompaniment, gentle progress, recovery of vital time, and building personal space.</li>
+<li>The expected emotional tone is warm, human, hopeful, calm, contemplative and non-judgmental.</li>
+</ul>
+<h2>Core loop</h2>
+<p>DO a task → COMPLETE it → earn +X minutes → ACCUMULATE time → CHOOSE what to do with it → ENJOY it → REGISTER the moment → back to DO.</p>
+<p>Phase 1a covers DO to ACCUMULATE. Phase 1b adds CHOOSE and REGISTER, which closes the loop. ENJOY happens outside the app.</p>
+<p><strong>Minutes are the currency.</strong> Time accumulates and never expires. The app always shows the accumulated total with the message "Look at all the time you recovered". When taking time, the user chooses all of it or part of it.</p>
+<h2>Target Audience</h2>
+<p><em>(Unchanged from v1.)</em> The initial target audience is functional adults, approximately 25–45 years old, who feel exhausted, have little personal time, feel disconnected from hobbies or well-being, want to balance obligations and personal life, spend time passively (scrolling, digital distraction), and want to reconnect with meaningful activities.</p>
+<p><em>To be validated in Discovery (step 1.4). There is no research behind this audience yet.</em></p>
+<h2>Scope / Major Project Activities</h2>
+<p><strong>Platform.</strong> Web app (React + Vite + Tailwind). No native app and no PWA for now. Features that need a native app wait until the core loop is validated.</p>
+<h3>Phase 1a — in scope (target 2026-10-04)</h3>
+<p>From DO to ACCUMULATE: the user does tasks and sees the minutes pile up.</p>
+<ul>
+<li>Three categories: Health, Home, Work / Purpose.</li>
+<li>A catalog of 10 predefined tasks across the three categories (the split per category is defined in the build). Each day the app pre-loads up to 3 of them. How the 3 are chosen is defined in the build. The predefined tasks cannot be edited or deleted.</li>
+<li>One custom task per category per day, written by the user and flagged as the difficult one. The exact flow (when the user writes it) is reviewed in the build.</li>
+<li>Completing a task adds its minutes to the time bank right away. Minute values are the brief's examples (make the bed +2 min, walk 15 min = +10 min, focus block +15 min), hardcoded. The difficult custom task adds extra minutes.</li>
+<li>Bonus minutes for completing all of the day's tasks.</li>
+<li>A Time Bank view with the accumulated minutes and the motivating message.</li>
+<li>Everything saved in the browser's <code>localStorage</code>.</li>
+<li><strong>Values still to define in the build:</strong> the extra minutes for the difficult task and the bonus for completing the day.</li>
+<li><strong>If 1a slips,</strong> the difficult custom task and the day bonus are the first things to move to 1b.</li>
+</ul>
+<h3>Phase 1b — in scope (target 2026-10-11)</h3>
+<p>CHOOSE and REGISTER: closes the loop, so a full cycle works.</p>
+<ul>
+<li>Taking time: the user uses all or part of the accumulated time. When time builds up, the app shows messages that ask what they want to do with it.</li>
+<li>Registering the moment with a note: written, or a short voice note if it proves feasible in the browser. <strong>Open:</strong> is registering required to keep earning, or optional? To be decided before 1b.</li>
+</ul>
+<h3>Later phases — not in Phase 1a or 1b</h3>
+<p>Captured so they are not lost. Each enters only through the change control below.</p>
+<ul>
+<li>Protected mode while taking time. A web app cannot block other apps, so this needs a native app.</li>
+<li>Registering the moment with a photo. It needs device access and raises privacy questions.</li>
+<li>A personal feed of what the user registered, as a reminder of what they enjoy.</li>
+<li>Editing or deleting predefined tasks, and any other task-management UI.</li>
+<li>Suggestion system, simple emotional reflection and user-created activities. Described in the brief, not in Phase 1.</li>
+</ul>
+<h2>Out-of-scope Activities</h2>
+<ul>
+<li>Protected mode, photos, suggestion engine, emotional reflection.</li>
+<li>Sync, accounts, backend.</li>
+<li>Editing or deleting predefined tasks.</li>
+<li>Monetization and any commercial goal in this phase.</li>
+<li>Game mechanics and retention design: not decided yet, carried to Discovery (step 1.4).</li>
+</ul>
+<h2>Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Phase</th>
+<th>Format</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Categories, predefined tasks and one custom task per day (Health, Home, Work / Purpose)</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Minutes system (task minutes, difficult-task extra, day bonus)</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Time Bank view</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Persistence in <code>localStorage</code></td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Taking time</td>
+<td>1b</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Registering the moment (note)</td>
+<td>1b</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+</tbody>
+</table>
+<h2>Acceptance Criteria</h2>
+<p><strong>Phase 1a is done when:</strong></p>
+<ol>
+<li>The app has a catalog of 10 predefined tasks across the three categories. Each day it shows up to 3 of them, and lets the user add one custom task per day, flagged as the difficult one.</li>
+<li>Marking a task complete adds its minutes to the total right away. The difficult custom task adds extra minutes.</li>
+<li>Completing all of the day's tasks adds bonus minutes.</li>
+<li>The total is still there after reloading or closing the browser.</li>
+<li>The Time Bank view shows the accumulated minutes and the motivating message, with a visual that makes the minutes tangible (idea: minutes filling a clock; to be designed in the build).</li>
+</ol>
+<p><strong>Phase 1b is done when:</strong></p>
+<ol>
+<li>The user can take all or part of the accumulated time, and the total goes down by the amount taken. When time builds up, the app shows a message asking what they want to do with it.</li>
+<li>The user can register the moment with a note, and the note is saved.</li>
+<li>A user can complete one full cycle: do a task, earn minutes, accumulate them, take time, register the moment.</li>
+</ol>
+<p>The tone of the brief stays as design intent. It is not an acceptance criterion.</p>
+<h2>Validation Criteria</h2>
+<p>Phase 1 validates the mechanic and the points model.</p>
+<ul>
+<li><strong>Points model:</strong> the minutes per task, the day bonus and the difficult-task extra are evaluated during Phase 1, starting with 1a, where they already work. The goal is to check they feel fair and motivating. Changes are recorded in the Revision History.</li>
+<li><strong>Phase 1 signal:</strong> the app is used on 5 of 7 days for 2 weeks.</li>
+<li><strong>MVP success:</strong> the user completes at least 3 full cycles in a week.</li>
+<li><strong>Signals to observe:</strong> return next day and within the week, use after 30 days, tasks completed, tasks converted to minutes, minutes used for an activity, moments registered. With a cohort of one they are counted, not turned into percentages.</li>
+</ul>
+<h2>Schedule Overview / Major Milestones</h2>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Target date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kickoff step (1.3) closed</td>
+<td>2026-09-24</td>
+</tr>
+<tr>
+<td>Discovery (1.4), started from zero</td>
+<td>Before the Phase 1a build; no date set</td>
+</tr>
+<tr>
+<td>Phase 1a delivered</td>
+<td>2026-10-04</td>
+</tr>
+<tr>
+<td>Phase 1b delivered (full cycle works)</td>
+<td>2026-10-11</td>
+</tr>
+</tbody>
+</table>
+<h2>Estimated Hours for Completion</h2>
+<p>Builders: the founder and Claude. Up to 3 hours per day, with job applications first, so a realistic pace is 1.5–2.5 hours per day. Estimate made on 2026-09-24: about 18–29 hours for publishing the portfolio, Discovery and Phase 1 (1a and 1b). Discovery is the least certain part, at 4–8 hours. The 1b date is the first one to re-check if 1a slips.</p>
+<h2>Estimated Date for Completion</h2>
+<p>Phase 1a: 2026-10-04. Phase 1b: 2026-10-11. Later phases: not scheduled.</p>
+<h2>Budget and Payment Terms</h2>
+<p>No money budget. The only cost is time, capped at 3 hours per day.</p>
+<h2>Change Control</h2>
+<p>Anything not in Phase 1a or 1b goes to the later-phases list. It only enters through an explicit decision by the founder, written in the Revision History.</p>
+<h2>Open Items (carried forward, not resolved at kickoff)</h2>
+<ul>
+<li>Audience, evidence for the problem, market and language → Discovery (1.4).</li>
+<li>What makes people come back (game mechanics, retention) → Discovery (1.4).</li>
+<li>Is time earned or free to use? Earning time before using it can feel like "earning the right to rest", which the brief rejects → Discovery (1.4).</li>
+<li>Privacy and sensitive data (Health tasks, registered moments, photos): moot in Phase 1, because data never leaves the browser. Revisit before any photo, sync, account or backend.</li>
+<li>Non-functional requirements (accessibility, offline, localization): decided when the build starts.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExampleModal(id) {
+            var m = document.getElementById(id);
+            m.classList.remove('hidden'); m.classList.add('flex');
+            m.querySelector('.sow-doc').scrollTop = 0;
+        }
+        function closeExampleModals() {
+            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal').forEach(function (m) {
+                m.classList.add('hidden'); m.classList.remove('flex');
+            });
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeExampleModals(); });
+    </script>
+
+</body>
+</html>

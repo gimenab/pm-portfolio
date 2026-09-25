@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM-AI-Workflow | Project Manager Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:ital,wght@0,400;0,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans', 'sans-serif'],
+                        serif: ['EB Garamond', 'Georgia', 'serif'],
+                        mono: ['Noto Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        lilac: '#e0bce2',
+                        teal: {
+                            200: '#0b4a63',
+                            300: '#127a9e',
+                            400: '#0ea5d4',
+                            500: '#51d1f6',
+                            700: '#22b8e8',
+                            800: '#1583a8',
+                            950: '#eaf8fd',
+                        },
+                        slate: {
+                            100: '#111111',
+                            200: '#1a1a1a',
+                            300: '#333333',
+                            400: '#666666',
+                            500: '#767676',
+                            600: '#8a8a8a',
+                            700: '#a3a3a3',
+                            800: '#b98fc4',
+                            900: '#fbf7fc',
+                        },
+                        rose: {
+                            400: '#b91c3c',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .icon-chevron {
+            display: inline-block; flex-shrink: 0; width: 0.75em; height: 0.75em;
+            background-color: currentColor; transition: transform 0.2s;
+            -webkit-mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+            mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+        }
+        .group:hover .icon-chevron { transform: translateX(3px); }
+        .status-tag { display: inline-flex; align-items: center; padding: 4px 0; }
+        .sow-doc { font-size: 0.8125rem; line-height: 1.6; color: #333; }
+        .sow-doc h2 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 1.25rem 0 0.4rem; padding-top: 0.9rem; border-top: 1px solid rgba(0,0,0,.1); }
+        .sow-doc h2:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+        .sow-doc p { margin: 0.5rem 0; }
+        .sow-doc ul { list-style: disc; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc ul ul { list-style: circle; }
+        .sow-doc ol { list-style: decimal; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc li { margin: 0.2rem 0; }
+        .sow-doc table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.75rem; }
+        .sow-doc th, .sow-doc td { border: 1px solid rgba(0,0,0,.12); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        .sow-doc th { background: #f7f7f7; font-weight: 600; }
+        .sow-doc strong { font-weight: 600; color: #1a1a1a; }
+        .sow-doc h3 { font-size: 0.85rem; font-weight: 600; color: #1a1a1a; margin: 1rem 0 0.3rem; }
+        .sow-doc hr { border: 0; border-top: 1px solid rgba(0,0,0,.1); margin: 1.25rem 0; }
+        .sow-doc code { background: #f0f0f0; padding: 1px 4px; border-radius: 4px; font-size: 0.75rem; word-break: break-word; }
+        .sow-doc pre { background: #f7f7f7; border: 1px solid rgba(0,0,0,.12); border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.75rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+        .sow-doc pre code { background: none; padding: 0; }
+    </style>
+</head>
+<body class="bg-[#F0FAFF] text-[#1a1a1a] antialiased font-sans selection:bg-teal-500 selection:text-slate-950">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-black/10">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 min-w-0">
+                <span class="truncate font-medium text-slate-200 text-sm font-mono">Tool &bull; Project Management</span>
+            </div>
+            <a href="../index.html" class="shrink-0 whitespace-nowrap text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono">
+                &larr; Back to portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- Hero Section -->
+        <section class="space-y-6 pt-6 border-b border-black/10 pb-12">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-300 text-xs font-mono">
+                <span>Internal Tooling &bull; AI Agents</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif">
+                PM-AI-Workflow: Automating the Busywork of Project Management
+            </h1>
+            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed text-pretty">
+                A system of AI skills and subagents that handles the repeatable, structured work of project management &mdash; ticket intake, sprint reporting, stakeholder updates &mdash; so strategic time stays protected.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-xs font-mono">
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Role</span>
+                    <span class="text-slate-200 font-medium">Project Manager</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Users</span>
+                    <span class="text-slate-200 font-medium">Product &amp; Agile Team</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Approach</span>
+                    <span class="text-slate-200 font-medium">Agentic Automation</span>
+                </div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
+                    <span class="text-slate-500 block">Status</span>
+                    <span class="text-teal-400 font-medium">In progress &mdash; first skills validated</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Problem & Value Proposition -->
+        <section id="problem" class="space-y-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">01 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">The Problem &amp; Value Proposition</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-black/10 space-y-3">
+                    <h3 class="text-base font-semibold text-rose-400 flex items-center space-x-2">
+                        <span>The Operational Tax</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        PMs lose a large share of their week to repeatable admin work &mdash; formatting tickets, assembling reports, chasing updates, drafting scope documents and more &mdash; time that competes directly with strategy, discovery, and prioritization.
+                    </p>
+                </div>
+                <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-black/10 space-y-3">
+                    <h3 class="text-base font-semibold text-teal-400 flex items-center space-x-2">
+                        <span>PM-AI-Workflow's Value Proposition</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <b>Structured, repeatable PM work shouldn't compete with strategic thinking for the same hours.</b> A system of AI skills and subagents takes over the high-volume, structured parts of the role &mdash; from ticket intake to scope analysis &mdash; and frees time for the judgment calls only a PM can make. Every skill is plain Markdown that any AI agent able to read the repo can follow, and it is auditable in git. The SOW intake prompt was validated on Claude, ChatGPT and Gemini.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. How It Works -->
+        <section id="how-it-works" class="space-y-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">02 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">How It Works</h2>
+            </div>
+            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-black/10 space-y-6">
+                <p class="text-slate-300 text-sm">
+                    Every skill and subagent in the system follows the same three-step flow, turning unstructured input into standardized, ready-to-use output:
+                </p>
+                <div class="grid sm:grid-cols-3 gap-4 font-mono text-xs">
+                    <div class="p-4 rounded-xl bg-white border border-black/10 text-center space-y-2">
+                        <span class="text-slate-500 block">RAW INPUT</span>
+                        <span class="text-slate-200 font-semibold block">A problem description or live sprint data</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-teal-950/40 border border-teal-800/50 text-center space-y-2">
+                        <span class="text-teal-400 block">AI SKILL / SUBAGENT</span>
+                        <span class="text-teal-200 font-semibold block">Guided intake or autonomous analysis</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-black/10 text-center space-y-2">
+                        <span class="text-slate-500 block">STANDARDIZED OUTPUT</span>
+                        <span class="text-slate-200 font-semibold block">A complete Jira ticket or a ready-to-share report</span>
+                    </div>
+                </div>
+
+                <!-- Before / After example -->
+                <details class="rounded-2xl bg-white border border-black/10 px-4 py-3" open>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800">Example &mdash; SOW Intake &amp; Scope Analysis</summary>
+                    <div class="mt-3 space-y-3">
+                    <p class="text-slate-400 text-xs leading-relaxed">A founder brief goes through two skills: <code>sow-drafting</code> turns it into a Statement of Work, and <code>sow-intake-analysis</code> reads that SOW critically and flags what is missing.</p>
+                    <div class="grid md:grid-cols-2 gap-4 items-start">
+                        <!-- Before: raw input -->
+                        <div class="rounded-xl bg-white border border-black/10 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-black/10 bg-black/5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="pl-2 text-slate-500">founder-brief.pdf</span>
+                            </div>
+                            <div class="p-4 space-y-2 text-slate-400 leading-relaxed">
+                                <p><span class="text-slate-600">&gt;</span> &ldquo;Si un usuario transforma acciones funcionales diarias en tiempo recuperado y protegido, tendr&aacute; m&aacute;s probabilidades de dedicar tiempo real a actividades que le generan bienestar.&rdquo;</p>
+                                <p class="text-slate-500">Excerpt from the original brief, in Spanish. It has no timeline, budget, stakeholders or acceptance criteria.</p>
+                            </div>
+                        </div>
+
+                        <!-- After: flagged gaps -->
+                        <div class="rounded-xl bg-white border border-teal-800/50 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-teal-800/50 bg-teal-950/40">
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="pl-2 text-teal-400">sow-intake-analysis &mdash; 31 gaps flagged</span>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div>
+                                    <span class="text-slate-200 block">No sponsor, lead or decision authority</span>
+                                    <span class="text-slate-500">&rarr; Who decides on scope changes and approves the MVP?</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-200 block">Timeline, budget and resourcing are all absent</span>
+                                    <span class="text-slate-500">&rarr; What are the deadline, budget and available team?</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-200 block">Platform</span>
+                                    <span class="text-slate-500">&rarr; Which platform(s) must the MVP support?</span>
+                                </div>
+                                <p class="text-slate-500">+ 28 more, each with why it matters and a clarifying question.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../case-studies/treasure-time.html#step-1" class="group inline-flex items-center gap-1.5 text-xs font-mono text-teal-800">See the full example in the Treasure Time case study<span class="icon-chevron" aria-hidden="true"></span></a>
+                </div>
+                </details>
+
+                <!-- Before / After example: ticket intake -->
+                <details class="rounded-2xl bg-white border border-black/10 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800">Example &mdash; Structured Ticket Intake</summary>
+                    <div class="mt-3 space-y-3">
+                    <p class="text-slate-400 text-xs leading-relaxed">Two rough notes from the Treasure Time backlog go through the ticket skills. Each note is shown as written, next to an excerpt of the draft the skill produced. Both ran in draft mode, without a Jira connection, so nothing was created in Jira.</p>
+                    <div class="grid md:grid-cols-2 gap-4 items-start">
+                        <div class="rounded-xl bg-white border border-black/10 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-black/10 bg-black/5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="pl-2 text-slate-500">raw-note.txt</span>
+                            </div>
+                            <div class="p-4 space-y-2 text-slate-400 leading-relaxed">
+                                <p><span class="text-slate-600">&gt;</span> &ldquo;When accessing the daily tasks, I need to see the pre-loaded tasks for the day (up to a maximum of three); there may also be a fourth task that I added myself earlier, marked as &quot;difficult.&quot; When I mark a task as complete, I want the earned minutes to be added automatically, without having to press any extra buttons.&rdquo;</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl bg-white border border-teal-800/50 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-teal-800/50 bg-teal-950/40">
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="pl-2 text-teal-400">write-user-story &mdash; 2 stories, 13 criteria</span>
+                            </div>
+                            <div class="p-4 space-y-3 leading-relaxed">
+                                <div>
+                                    <span class="text-slate-500 block">US 1, title</span>
+                                    <span class="text-slate-200 block">USER STORY [DAILY TASKS] As a user I want to see today&rsquo;s pre-loaded tasks and my own difficult task so that I know what I have to do today</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">US 2, criterion 01 &middot; Complete a task, minutes credited</span>
+                                    <span class="text-slate-200 block">Given a task in my list is pending, when I mark it as complete, then its fixed minutes value is added to my bank of minutes automatically, with no extra button or confirmation.</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">US 2, criterion 05 &middot; No double credit <span class="text-teal-400">(proposed)</span></span>
+                                    <span class="text-slate-200 block">Given a task is already completed, when I trigger completion again or reload the screen, then the minutes are not added a second time.</span>
+                                </div>
+                                <p class="text-slate-500">Also drafted: assumptions, story points, labels and priority. Whatever the skill inferred, and you did not say, is marked &ldquo;(proposed)&rdquo;.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="openExampleModal('story-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View full output<span class="icon-chevron" aria-hidden="true"></span></button>
+                    <div class="grid md:grid-cols-2 gap-4 items-start">
+                        <div class="rounded-xl bg-white border border-black/10 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-black/10 bg-black/5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                                <span class="pl-2 text-slate-500">raw-note.txt</span>
+                            </div>
+                            <div class="p-4 space-y-2 text-slate-400 leading-relaxed">
+                                <p><span class="text-slate-600">&gt;</span> &ldquo;Create a task to generate 10 tasks across the categories of health, home, and work, and assign minutes to each that will be added to the time bank upon completion.&rdquo;</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl bg-white border border-teal-800/50 overflow-hidden font-mono text-xs">
+                            <div class="flex items-center space-x-1.5 px-4 py-2.5 border-b border-teal-800/50 bg-teal-950/40">
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
+                                <span class="pl-2 text-teal-400">jira-task-creation &mdash; task draft</span>
+                            </div>
+                            <div class="p-4 space-y-3 leading-relaxed">
+                                <div>
+                                    <span class="text-slate-500 block">Title</span>
+                                    <span class="text-slate-200 block">[DAILY TASKS] Create 10 tasks across health, home and work with bank minutes <span class="text-teal-400">(proposed)</span></span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Objective</span>
+                                    <span class="text-slate-200 block">Provide a ready-to-use catalog of tasks, each with a fixed time bank reward.</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Done when <span class="text-teal-400">(proposed)</span></span>
+                                    <span class="text-slate-200 block">There are exactly 10 tasks and all three categories are represented. Every task has a fixed minutes value. Minutes roughly reflect effort, so longer or harder tasks earn more.</span>
+                                </div>
+                                <p class="text-slate-500">Also drafted: context, scope with what is excluded, estimate, priority and labels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="openExampleModal('task-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View full output<span class="icon-chevron" aria-hidden="true"></span></button>
+                </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 3. Core Components -->
+        <section id="components" class="space-y-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">03 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">Core Components</h2>
+            </div>
+
+            <p class="text-[#1a1a1a] text-xs font-mono">Each component shows its status. The SOW pair is applied to a real project in the Treasure Time case study, and the version history of each skill is at the end of the page.</p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-01.png'); mask-image:url('../assets/images/icon-group-01.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif inline-block">Structured Ticket Intake</span>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Conversational skills that turn a raw task or story description into a complete Jira issue &mdash; acceptance criteria, assumptions, story points &mdash; following the team's exact format, enforcing consistency the team wouldn't otherwise have.
+                        </p>
+                        <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>write-user-story</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>jira-task-creation</code><span class="font-semibold">v1.0.0</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-02.png'); mask-image:url('../assets/images/icon-group-02.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif inline-block">Sprint Reporting</span>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Subagents that read live sprint data and generate the sprint health report, retro insights, and release notes that used to be assembled by hand.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-03.png'); mask-image:url('../assets/images/icon-group-03.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif inline-block">Strategic Planning</span>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Agents that keep OKRs, the roadmap, and a quantitatively-prioritized backlog up to date as living documents instead of static slides.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-04.png'); mask-image:url('../assets/images/icon-group-04.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif inline-block">Stakeholder Communication</span>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Turns sprint and OKR data into an executive-ready status update, without exposing stakeholders to raw Jira noise.
+                        </p>
+                    </div>
+                </div>
+                <a href="../case-studies/treasure-time.html#step-1" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-05.png'); mask-image:url('../assets/images/icon-group-05.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">SOW Intake &amp; Scope Analysis</span>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Two skills that handle a Statement of Work end to end: one drafts a formal SOW from an unstructured client brief, the other critically reads an existing SOW and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; before discovery starts. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
+                        </p>
+                        <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-drafting</code><span class="font-semibold">v1.2.2</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.0</span></span>
+                        </div>
+                        <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800">See it applied in Treasure Time<span class="icon-chevron" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 4. Impact -->
+        <section id="impact" class="space-y-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">04 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">Built for any project</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="p-5 rounded-2xl bg-teal-950/30 border border-teal-800/50 text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-mono block">Reusable</span>
+                    <span class="text-2xl font-extrabold text-teal-300 font-mono">Tools any project needs</span>
+                    <span class="text-xs text-slate-500 block">Intake, reporting and planning come up in every project, whatever the team or the tool.</span>
+                </div>
+                <div class="p-5 rounded-2xl bg-[#f7f7f7] border border-black/10 text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-mono block">Consistent</span>
+                    <span class="text-2xl font-extrabold text-slate-200 font-mono">Same format, every time</span>
+                    <span class="text-xs text-slate-500 block">Tickets, SOWs and reports follow one format and one completeness bar.</span>
+                </div>
+                <div class="p-5 rounded-2xl bg-[#f7f7f7] border border-black/10 text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-mono block">Traceable</span>
+                    <span class="text-2xl font-extrabold text-slate-200 font-mono">Plain Markdown in git</span>
+                    <span class="text-xs text-slate-500 block">Every skill is versioned and auditable, so a change to a rule is visible.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Version history. Generated from skills/*/CHANGELOG.md in the pm-ia-workflow repo. Update with the skill. -->
+        <section id="version-history" class="space-y-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-mono text-teal-400 text-sm font-semibold">05 /</span>
+                <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">Version history</h2>
+            </div>
+            <div class="space-y-3">
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-drafting</code> <span>v1.2.2</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.2.2</span> &middot; 2026-09-21</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed:</strong> translated <code>SKILL.md</code>, <code>inputs.md</code> and <code>outputs.md</code> to English, including the strings the agent says to the user.</li><li><strong>Why:</strong> repo-wide standard, development docs in English.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.2.1</span> &middot; 2026-09-21</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> a section explaining how to run the skill (the agent must run with this repo as working directory, and the skill is triggered by natural language, not a slash command). <code>inputs.md</code> now lists concrete source formats: PDF, <code>.docx</code>, pasted text.</li><li><strong>Why:</strong> skills here are agent instructions, not scripts, so nothing explained the operational mechanic.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.2.0</span> &middot; 2026-09-21</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> step 5, a file-export step. It asks whether to export as <code>.md</code> and to what path, and writes the file only after the location is confirmed.</li><li><strong>Why:</strong> the skill only showed the draft in the conversation, with no path to getting it into a project.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.1.0</span> &middot; 2026-09-21</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed:</strong> Stakeholders and Target Audience are now their own sections in the output.</li><li><strong>Why:</strong> they were folded into Purpose and Scope, which lost the signal that the source names no stakeholders or audience beyond the founder. The manual Treasure Time SOW had surfaced them as distinct gaps.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-21</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Converts an unstructured client requirement into an editable SOW draft, and marks anything the source doesn't say instead of inventing it.</li><li><strong>Why:</strong> complements <code>sow-intake-analysis</code> (that one critically reads an existing SOW, this one drafts one).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3" open>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-intake-analysis</code> <span>v2.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v2.0.0</span> &middot; 2026-09-22</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed:</strong> the prompt now forbids turning tone or philosophy language into formal Acceptance Criteria. Formalized as a skill (<code>SKILL.md</code>, <code>inputs.md</code>, <code>outputs.md</code>) at this version.</li><li><strong>Why:</strong> in the v1 portability test (same prompt and document on Claude, ChatGPT and Gemini), one model reframed "the product should feel warm and non-judgmental" as an Acceptance Criterion, which is the invention this skill exists to prevent. Re-testing v2 on all three models confirmed the fix held and broke nothing else.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-22</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version, as a prompt. It worked well overall but had the one failure described above.</li><li><strong>Why:</strong> the Treasure Time PM-process backlog needed a critical reading of the SOW before discovery. This version was never committed to the skill's repo.<code>pm-portfolio</code> spec above.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">write-user-story</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-25</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> baseline. Versioning starts here; earlier history is in git.</li><li><strong>Included in this baseline:</strong> the assignee is sent as a resolved <code>accountId</code> and omitted when unassigned, and acceptance criteria are numbered 01, 02, 03 (the user-story template matches).</li><li><strong>Why:</strong> this is the exact state of the skill that produced the user-story example published on the PM-AI-Workflow page. The run was in draft mode, and nothing was created in Jira.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">jira-task-creation</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-25</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> baseline. Versioning starts here; earlier history is in git.</li><li><strong>Included in this baseline:</strong> the draft includes Labels, Objetivo, Contexto, Alcance, Assignee, Components and Fix Version. On creation, Objetivo, Contexto and Alcance travel inside the description, labels are always sent, and Components and Fix Version go as custom fields.</li><li><strong>Why:</strong> this is the exact state of the skill that produced the task example published on the PM-AI-Workflow page. The run was in draft mode, and nothing was created in Jira.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-black/10 py-8 text-center text-xs text-[#1a1a1a]">
+        <p data-en="Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages" data-es="Portfolio de Project Manager &bull; Sitio est&aacute;tico, alojado en GitHub Pages">Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages</p>
+    </footer>
+
+    <!-- story-modal -->
+    <div id="story-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="story-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; write-user-story</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="story-modal-title">Raw note &rarr; 2 user stories</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The complete draft the skill produced, as generated. Nothing was created in Jira.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<h2>User Stories: Daily Tasks and Bank of Minutes</h2>
+<p>Status: <strong>Draft</strong>. Nothing has been created in Jira. Items marked <em>(proposed)</em> are inferred, not stated by the requester.</p>
+<hr />
+<h2>US 1: View daily tasks</h2>
+<h3>Title</h3>
+<p><code>USER STORY [DAILY TASKS] As a user I want to see today's pre-loaded tasks and my own difficult task so that I know what I have to do today</code></p>
+<h3>Description</h3>
+<p><strong>As a</strong> user,
+<strong>I want</strong> to see the day's pre-loaded tasks (up to three) together with the difficult task I chose earlier, if any,
+<strong>so that</strong> I know exactly what I have to do today.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>View pre-loaded tasks</td>
+<td>Tasks are pre-loaded for today</td>
+<td>I open the daily tasks</td>
+<td>I see the pre-loaded tasks for the day, never more than three</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Fewer than three tasks</td>
+<td>Fewer than three tasks are pre-loaded for today</td>
+<td>I open the daily tasks</td>
+<td>I see only the tasks that exist, with no empty placeholders <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>03</td>
+<td>View my difficult task</td>
+<td>I chose one task for today and marked it "difficult"</td>
+<td>I open the daily tasks</td>
+<td>I see it as an additional task after the pre-loaded ones, so up to four tasks in total</td>
+</tr>
+<tr>
+<td>04</td>
+<td>No difficult task</td>
+<td>I have not chosen a difficult task for today</td>
+<td>I open the daily tasks</td>
+<td>I see only the pre-loaded tasks</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Difficult task is distinguishable</td>
+<td>My difficult task is in the list</td>
+<td>I open the daily tasks</td>
+<td>I can tell it apart from the pre-loaded tasks <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>06</td>
+<td>Load failure</td>
+<td>The tasks cannot be loaded</td>
+<td>I open the daily tasks</td>
+<td>I see an error message and no partial or incorrect list <em>(proposed)</em></td>
+</tr>
+</tbody>
+</table>
+<h3>Assumptions</h3>
+<ul>
+<li>The system pre-loads the day's tasks (up to three) before the user opens the screen. How they are selected is out of scope.</li>
+<li>The user can choose <strong>one</strong> difficult task per day, regardless of category. This limit is enforced by the existing flow, so the screen never shows more than one.</li>
+<li>The maximum of three applies to pre-loaded tasks only. The difficult task is an additional fourth item.</li>
+<li>Creating or editing tasks and the "difficult" marking flow are out of scope.</li>
+</ul>
+<h3>Additional fields</h3>
+<ul>
+<li><strong>Story Points</strong>: 2 <em>(proposed)</em>. Estimated Points auto-populates with the same value.</li>
+<li><strong>Labels</strong>: <code>daily-tasks</code>, <code>task-list</code> <em>(proposed)</em></li>
+<li><strong>Priority</strong>: Medium <em>(proposed)</em></li>
+<li><strong>Sprint</strong>: Backlog</li>
+<li><strong>Assignee</strong>: Unassigned</li>
+</ul>
+<hr />
+<h2>US 2: Automatic minutes on task completion</h2>
+<h3>Title</h3>
+<p><code>USER STORY [DAILY TASKS] As a user I want the earned minutes to be added to or removed from my bank of minutes automatically when I mark or unmark a task as complete so that I don't need extra steps and my balance is always correct</code></p>
+<h3>Description</h3>
+<p><strong>As a</strong> user,
+<strong>I want</strong> the minutes of a task to be added to my bank of minutes automatically when I mark it as complete, and subtracted if I unmark it,
+<strong>so that</strong> I don't need extra buttons and my balance stays correct even if I mark a task by mistake.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Complete a task, minutes credited</td>
+<td>A task in my list is pending</td>
+<td>I mark it as complete</td>
+<td>Its fixed minutes value is added to my bank of minutes automatically, with no extra button or confirmation</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Complete the difficult task</td>
+<td>My difficult task is pending</td>
+<td>I mark it as complete</td>
+<td>Its fixed minutes value is added to my bank of minutes automatically, the same as any other task</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Visible feedback</td>
+<td>I just completed a task</td>
+<td>The minutes are added</td>
+<td>I see the task as completed and my updated bank of minutes <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>04</td>
+<td>Unmark by mistake, minutes subtracted</td>
+<td>A task is completed and its minutes were added</td>
+<td>I unmark it as complete</td>
+<td>The same minutes are subtracted from my bank of minutes automatically, and the task returns to pending</td>
+</tr>
+<tr>
+<td>05</td>
+<td>No double credit</td>
+<td>A task is already completed</td>
+<td>I trigger completion again or reload the screen</td>
+<td>The minutes are not added a second time <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>06</td>
+<td>Repeated toggling stays consistent</td>
+<td>I mark and unmark the same task several times</td>
+<td>I end on either state</td>
+<td>The bank of minutes equals the balance before the task, plus the task's minutes only if it ends as completed <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>07</td>
+<td>Operation failure</td>
+<td>I mark or unmark a task but the change cannot be saved</td>
+<td>The operation fails</td>
+<td>I see an error message, and the task state and bank of minutes remain consistent with each other <em>(proposed)</em></td>
+</tr>
+</tbody>
+</table>
+<h3>Assumptions</h3>
+<ul>
+<li>Each task has a fixed minutes value, and the rule that defines it already exists. This US does not change it.</li>
+<li>The difficult task earns its minutes with the same fixed-value logic as other tasks, with no extra multiplier, unless its own value says otherwise.</li>
+<li>The bank of minutes already exists as the user's balance. This US covers only crediting and debiting it on completion changes.</li>
+<li>The amount subtracted on unmarking is exactly the amount that was credited, so the balance can't go below what it was before the task.</li>
+<li>The rules for using or redeeming minutes are out of scope.</li>
+</ul>
+<h3>Additional fields</h3>
+<ul>
+<li><strong>Story Points</strong>: 3 <em>(proposed)</em>. Estimated Points auto-populates with the same value.</li>
+<li><strong>Labels</strong>: <code>daily-tasks</code>, <code>minutes-bank</code> <em>(proposed)</em></li>
+<li><strong>Priority</strong>: Medium <em>(proposed)</em></li>
+<li><strong>Sprint</strong>: Backlog</li>
+<li><strong>Assignee</strong>: Unassigned</li>
+</ul>
+<hr />
+<h3>Open point</h3>
+<ul>
+<li>The difficult task is assumed to have its own fixed value like any other task, not a bonus. If it earns more, criterion 02 in US 2 needs a specific rule.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- task-modal -->
+    <div id="task-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="task-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; jira-task-creation</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="task-modal-title">Raw note &rarr; task draft</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The complete draft the skill produced, as generated. Nothing was created in Jira.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<h2>Task: Create 10 tasks with time bank minutes</h2>
+<p>Status: <strong>Draft</strong>. Nothing has been created in Jira. Items marked <em>(proposed)</em> are inferred, not stated by the requester.</p>
+<pre><code class="language-md">Type: Task
+Platform: Jira (assumed)
+Project: none (placeholder, no real project)
+Title: [DAILY TASKS] Create 10 tasks across health, home and work with bank minutes (proposed)
+
+Description:
+Create a set of 10 tasks distributed across the categories health, home and work. Assign each task a fixed number of minutes that is added to the time bank when the task is completed.
+
+Objective: Provide a ready-to-use catalog of tasks, each with a fixed time bank reward.
+Context: The daily tasks feature needs tasks to pre-load and a minutes value per task. Without them, there is nothing to display or credit.
+Scope:
+- Includes: 10 tasks (proposed split: 4 health, 3 home, 3 work). Each has a title in `[MODULE] Verb + object` format, a short description, an estimated time, labels and a fixed minutes value.
+- Excludes: the logic that pre-loads tasks each day, the crediting or debiting of the time bank, and creating the tasks in Jira.
+
+Done when (proposed):
+- There are exactly 10 tasks and all three categories are represented.
+- Every task has a fixed minutes value.
+- Minutes roughly reflect effort, so longer or harder tasks earn more.
+
+Estimated time: 60 min (proposed)
+Priority: Medium (proposed)
+Labels: daily-tasks, task-catalog (proposed)
+Story points: not set
+Destination: Backlog
+Assignee: Unassigned
+Components / Fix Version / Sprint: not set
+Custom fields: none
+</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExampleModal(id) {
+            var m = document.getElementById(id);
+            m.classList.remove('hidden'); m.classList.add('flex');
+            m.querySelector('.sow-doc').scrollTop = 0;
+        }
+        function closeExampleModals() {
+            document.querySelectorAll('#story-modal, #task-modal').forEach(function (m) {
+                m.classList.add('hidden'); m.classList.remove('flex');
+            });
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeExampleModals(); });
+    </script>
+
+</body>
+</html>

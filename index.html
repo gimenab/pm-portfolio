@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimena Fernández | Project Manager Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:ital,wght@0,400;0,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans', 'sans-serif'],
+                        serif: ['EB Garamond', 'Georgia', 'serif'],
+                        mono: ['Noto Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        lilac: '#e0bce2',
+                        teal: {
+                            200: '#0b4a63',
+                            300: '#127a9e',
+                            400: '#0ea5d4',
+                            500: '#51d1f6',
+                            700: '#22b8e8',
+                            800: '#1583a8',
+                            950: '#eaf8fd',
+                        },
+                        slate: {
+                            100: '#111111',
+                            200: '#1a1a1a',
+                            300: '#333333',
+                            400: '#666666',
+                            500: '#767676',
+                            600: '#8a8a8a',
+                            700: '#a3a3a3',
+                            800: '#b98fc4',
+                            900: '#fbf7fc',
+                        },
+                        rose: {
+                            400: '#b91c3c',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .icon-chevron {
+            display: inline-block; flex-shrink: 0; width: 0.75em; height: 0.75em;
+            background-color: currentColor; transition: transform 0.2s;
+            -webkit-mask: url('assets/images/icon-chevron-right.svg') center / contain no-repeat;
+            mask: url('assets/images/icon-chevron-right.svg') center / contain no-repeat;
+        }
+        .group:hover .icon-chevron { transform: translateX(3px); }
+        .status-tag { display: inline-flex; align-items: center; padding: 4px 0; }
+    </style>
+</head>
+<body class="bg-[#F0FAFF] text-[#1a1a1a] antialiased font-sans selection:bg-teal-500 selection:text-slate-950">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-black/10">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 shrink-0">
+                <span class="font-medium text-slate-200 text-sm font-mono">Gimena Fernández &bull; PM</span>
+            </div>
+            <nav class="hidden sm:flex items-center gap-6">
+                <a href="#about" class="text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono" data-en="About" data-es="Sobre mí">About</a>
+                <a href="#how-i-work" class="text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono" data-en="How I Work" data-es="Cómo trabajo">How I Work</a>
+                <a href="#product-work" class="text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono" data-en="Selected Work" data-es="Trabajos seleccionados">Selected Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 space-y-16">
+
+        <section id="about" class="space-y-4 pb-12 border-b border-black/10 scroll-mt-24">
+            <div class="flex flex-col sm:flex-row gap-8">
+                <div class="flex flex-col items-start gap-4 sm:w-64 shrink-0">
+                    <img src="assets/images/gimena-avatar.jpg" alt="Gimena Fernández" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-teal-800/50">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif" data-en="Hi, I'm Gimena!" data-es="¡Hola, soy Gimena!">Hi, I'm Gimena!</h2>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <div class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed space-y-3">
+                        <p data-en="I work as a Project Manager. I have a technical background in Frontend Development, 5 years of experience in the industry and over two years as a PM, helping teams bridge the gap between technical complexity and seamless execution." data-es="Trabajo como Project Manager. Cuento con formación técnica en desarrollo Frontend, 5 años de experiencia en la industria y más de dos años como PM, ayudando a los equipos a cerrar la brecha entre la complejidad técnica y una ejecución fluida.">I work as a Project Manager. I have a technical background in Frontend Development, 5 years of experience in the industry and over two years as a PM, helping teams bridge the gap between technical complexity and seamless execution.</p>
+                        <p data-en="My main strength is combining rigorous attention to detail with empathetic leadership. I specialize in guiding multidisciplinary teams through complex transitions, bringing organization, patience, and clarity to every stage." data-es="Mi principal fortaleza es combinar una atención rigurosa al detalle con un liderazgo empático. Me especializo en guiar a equipos multidisciplinarios a través de transiciones complejas, aportando organización, paciencia y claridad en cada etapa.">My main strength is combining rigorous attention to detail with empathetic leadership. I specialize in guiding multidisciplinary teams through complex transitions, bringing organization, patience, and clarity to every stage.</p>
+                        <p data-en="I am passionate about analyzing needs and optimizing resources to design structured, end-to-end action plans, always aimed at solving real problems." data-es="Me apasiona analizar necesidades y optimizar recursos para diseñar planes de acción estructurados de principio a fin, siempre orientados a resolver problemas reales.">I am passionate about analyzing needs and optimizing resources to design structured, end-to-end action plans, always aimed at solving real problems.</p>
+                        <p data-en="Fundamentally, I value clarity, honesty, and continuous improvement. My goal is to foster a transparent and collaborative work environment that drives the team forward and ensures results are delivered." data-es="Fundamentalmente, valoro la claridad, la honestidad y la mejora continua. Mi objetivo es fomentar un entorno de trabajo transparente y colaborativo que impulse al equipo y garantice la entrega de resultados.">Fundamentally, I value clarity, honesty, and continuous improvement. My goal is to foster a transparent and collaborative work environment that drives the team forward and ensures results are delivered.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="https://www.linkedin.com/in/gimenabfernandez/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/20 hover:border-teal-800/60 text-teal-800/55 hover:text-teal-800 transition-colors">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>
+                        </a>
+                        <a href="https://gimenab.github.io/cv/" target="_blank" rel="noopener" aria-label="CV" title="CV" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/20 hover:border-teal-800/60 text-teal-800/55 hover:text-teal-800 transition-colors">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg>
+                        </a>
+                        <a href="mailto:gimenafernandez.a@gmail.com" aria-label="Email" title="Email" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/20 hover:border-teal-800/60 text-teal-800/55 hover:text-teal-800 transition-colors">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                        </a>
+                        <a href="https://github.com/gimenab" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/20 hover:border-teal-800/60 text-teal-800/55 hover:text-teal-800 transition-colors">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-i-work" class="space-y-6 pb-12 border-b border-black/10 scroll-mt-24">
+            <div class="space-y-3">
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif" data-en="How I Work" data-es="Cómo trabajo">
+                    How I Work
+                </h1>
+                <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed" data-en="The growth process as a metaphor for how a project evolves in practice: from the first seed to sharing what was built." data-es="El proceso de crecimiento como metáfora de cómo evoluciona un proyecto en la práctica: desde la primera semilla hasta compartir lo que se construyó.">
+                    The growth process as a metaphor for how a project evolves in practice: from the first seed to sharing what was built.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 pb-8">
+
+                <a href="case-studies/treasure-time.html#step-1" class="group flex flex-col rounded-2xl bg-teal-500/20 border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-1-plant.png'); mask-image:url('assets/images/huerta/icon-step-1-plant.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">01</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Plant the seeds" data-es="Plantar las semillas">Plant the seeds</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Discovery" data-es="Descubrimiento">Discovery</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-2" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-2-prep-soil.png'); mask-image:url('assets/images/huerta/icon-step-2-prep-soil.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">02</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Prepare the soil" data-es="Preparar la tierra">Prepare the soil</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Risk prep" data-es="Preparación de riesgos">Risk prep</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-3" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-3-sprout.png'); mask-image:url('assets/images/huerta/icon-step-3-sprout.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">03</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Watch it sprout" data-es="Ver el brote">Watch it sprout</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Kickoff" data-es="Arranque">Kickoff</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-4" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-4-tend.png'); mask-image:url('assets/images/huerta/icon-step-4-tend.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">04</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Tend the crop" data-es="Cuidar el cultivo">Tend the crop</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Execution" data-es="Ejecución">Execution</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-5" class="group flex flex-col rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-5-storm.png'); mask-image:url('assets/images/huerta/icon-step-5-storm.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">05</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Weather the storm" data-es="Resistir la tormenta">Weather the storm</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Risk mgmt" data-es="Gestión de riesgo">Risk mgmt</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-6" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-6-harvest.png'); mask-image:url('assets/images/huerta/icon-step-6-harvest.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">06</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Reap the harvest" data-es="Cosechar los frutos">Reap the harvest</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Launch" data-es="Lanzamiento">Launch</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-7" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-7-share.png'); mask-image:url('assets/images/huerta/icon-step-7-share.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">07</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Share the harvest" data-es="Compartir la cosecha">Share the harvest</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Value" data-es="Valor">Value</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+                <a href="case-studies/treasure-time.html#step-8" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors" style="-webkit-mask-image:url('assets/images/huerta/icon-step-8-compost.png'); mask-image:url('assets/images/huerta/icon-step-8-compost.png'); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="font-mono text-[11px] text-slate-500/80">08</span>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-between gap-0.5">
+                            <span class="text-[#444] text-[1.05rem] leading-[1.3rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block" data-en="Make compost" data-es="Hacer compost">Make compost</span>
+                            <span class="flex items-center justify-between gap-1.5 text-slate-500 text-xs font-mono"><span data-en="Retro" data-es="Retro">Retro</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                        </div>
+                        <span class="status-tag"><img src="assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="product-work" class="space-y-4 scroll-mt-24">
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif" data-en="Selected Work" data-es="Trabajos seleccionados">
+                Selected Work
+            </h1>
+            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed" data-en="Case studies and tools for running a project from brief to delivery, from manual admin to AI-assisted automation." data-es="Casos de estudio y herramientas para llevar un proyecto desde el brief hasta la entrega, desde la gestión manual hasta la automatización asistida por IA.">
+                Case studies and tools for running a project from brief to delivery, from manual admin to AI-assisted automation.
+            </p>
+        </section>
+
+        <section class="space-y-6">
+            <div class="grid sm:grid-cols-2 gap-6">
+                <a href="case-studies/treasure-time.html" target="_blank" rel="noopener" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                                 style="-webkit-mask-image:url('assets/images/case-study-icon.png'); mask-image:url('assets/images/case-study-icon.png');
+                                        -webkit-mask-size:contain; mask-size:contain;
+                                        -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                        -webkit-mask-position:center; mask-position:center;"></div>
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">
+                                    Treasure Time
+                                </span>
+                                <span class="text-slate-500 text-xs font-mono" data-en="Case Study • Wellness Tech" data-es="Caso de estudio • Wellness Tech">Case Study &bull; Wellness Tech</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed" data-en="A gamified app that turns everyday actions into protected time for well-being, followed step by step from the founder's brief to the real build." data-es="Una app gamificada que convierte acciones cotidianas en tiempo protegido para el bienestar, seguida paso a paso desde el brief de la founder hasta la app real.">
+                            A gamified app that turns everyday actions into protected time for well-being, followed step by step from the founder's brief to the real build.
+                        </p>
+                        <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800"><span data-en="Read case study" data-es="Ver caso de estudio">Read case study</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+
+                <a href="tools/pm-ia-workflow.html" target="_blank" rel="noopener" class="group relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 hover:border-teal-800/70 transition-colors overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                                 style="-webkit-mask-image:url('assets/images/ai-tool-icon.png'); mask-image:url('assets/images/ai-tool-icon.png');
+                                        -webkit-mask-size:contain; mask-size:contain;
+                                        -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                        -webkit-mask-position:center; mask-position:center;"></div>
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">
+                                    PM-AI-Workflow
+                                </span>
+                                <span class="text-slate-500 text-xs font-mono" data-en="Internal Tooling • AI Agents" data-es="Herramientas internas • Agentes de IA">Internal Tooling &bull; AI Agents</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed" data-en="A system of AI skills and subagents that automates the repeatable, structured work of product management." data-es="Un sistema de skills y subagentes de IA que automatiza el trabajo repetible y estructurado de product management.">
+                            A system of AI skills and subagents that automates the repeatable, structured work of product management.
+                        </p>
+                        <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800"><span data-en="View tool" data-es="Ver herramienta">View tool</span><span class="icon-chevron" aria-hidden="true"></span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-black/10 py-8 text-center text-xs text-[#1a1a1a]">
+        <p data-en="Project Manager Portfolio • Built as a static site, hosted on GitHub Pages" data-es="Portfolio de Project Manager • Sitio estático, alojado en GitHub Pages">Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
