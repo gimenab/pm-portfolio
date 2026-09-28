@@ -84,7 +84,7 @@
                 <span class="truncate font-medium text-slate-200 text-sm font-mono">Tool &bull; Project Management</span>
             </div>
             <a href="../index.html" class="shrink-0 whitespace-nowrap text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono">
-                &larr; Back to portfolio
+                &larr; Back to home
             </a>
         </div>
     </header>
@@ -245,7 +245,7 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
-                                <span class="pl-2 text-teal-400">write-user-story &mdash; 2 stories, 13 criteria</span>
+                                <span class="pl-2 text-teal-400">work-item-user-story &mdash; 2 stories, 13 criteria</span>
                             </div>
                             <div class="p-4 space-y-3 leading-relaxed">
                                 <div>
@@ -260,6 +260,7 @@
                                     <span class="text-slate-500 block">US 2, criterion 05 &middot; No double credit <span class="text-teal-400">(proposed)</span></span>
                                     <span class="text-slate-200 block">Given a task is already completed, when I trigger completion again or reload the screen, then the minutes are not added a second time.</span>
                                 </div>
+                                <p class="text-slate-500">The note mixed two needs, so the skill split it into two stories.</p>
                                 <p class="text-slate-500">Also drafted: assumptions, story points, labels and priority. Whatever the skill inferred, and you did not say, is marked &ldquo;(proposed)&rdquo;.</p>
                             </div>
                         </div>
@@ -282,7 +283,7 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-teal-800"></span>
-                                <span class="pl-2 text-teal-400">jira-task-creation &mdash; task draft</span>
+                                <span class="pl-2 text-teal-400">work-item-task &mdash; task draft</span>
                             </div>
                             <div class="p-4 space-y-3 leading-relaxed">
                                 <div>
@@ -333,8 +334,8 @@
                         </p>
                         <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
                         <div class="flex flex-wrap items-center gap-2">
-                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>write-user-story</code><span class="font-semibold">v1.0.0</span></span>
-                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>jira-task-creation</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>work-item-user-story</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>work-item-task</code><span class="font-semibold">v1.0.0</span></span>
                         </div>
                     </div>
                 </div>
@@ -497,7 +498,7 @@
                     </div>
                 </details>
                 <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">write-user-story</code> <span>v1.0.0</span></summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">work-item-user-story</code> <span>v1.0.0</span></summary>
                     <div class="mt-3 space-y-4">
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-25</p>
@@ -508,7 +509,7 @@
                     </div>
                 </details>
                 <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">jira-task-creation</code> <span>v1.0.0</span></summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">work-item-task</code> <span>v1.0.0</span></summary>
                     <div class="mt-3 space-y-4">
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-25</p>
@@ -533,16 +534,15 @@
         <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
             <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
                 <div class="space-y-1">
-                    <p class="text-[10px] font-mono text-teal-800">Example &bull; write-user-story</p>
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; work-item-user-story</p>
                     <h3 class="text-base font-semibold text-slate-200" id="story-modal-title">Raw note &rarr; 2 user stories</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">The complete draft the skill produced, as generated. Nothing was created in Jira.</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">The note mixed two needs, so the skill split it into two stories. The complete draft the skill produced, as generated. Nothing was created in Jira.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
             </div>
             <div class="sow-doc overflow-y-auto p-6">
 <h2>User Stories: Daily Tasks and Bank of Minutes</h2>
 <p>Status: <strong>Draft</strong>. Nothing has been created in Jira. Items marked <em>(proposed)</em> are inferred, not stated by the requester.</p>
-<hr />
 <h2>US 1: View daily tasks</h2>
 <h3>Title</h3>
 <p><code>USER STORY [DAILY TASKS] As a user I want to see today's pre-loaded tasks and my own difficult task so that I know what I have to do today</code></p>
@@ -721,7 +721,7 @@
         <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
             <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
                 <div class="space-y-1">
-                    <p class="text-[10px] font-mono text-teal-800">Example &bull; jira-task-creation</p>
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; work-item-task</p>
                     <h3 class="text-base font-semibold text-slate-200" id="task-modal-title">Raw note &rarr; task draft</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">The complete draft the skill produced, as generated. Nothing was created in Jira.</p>
                 </div>
