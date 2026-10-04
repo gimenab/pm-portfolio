@@ -179,12 +179,15 @@
                     </p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
                         <li>Platform: a web app, not a native mobile app.</li>
-                        <li>Phase 1 covers the whole core loop except enjoying the time, split in two deliveries. 1a (October 4): do tasks, earn minutes, see them accumulate. 1b (October 11): take time and register the moment, which closes the loop.</li>
+                        <li>Phase 1 covers the whole core loop except enjoying the time, split in two deliveries. 1a: do tasks, earn minutes, see them accumulate. 1b: take time and register the moment, which closes the loop. Both are scheduled after Discovery.</li>
                         <li>Minutes are the currency, and accumulated time never expires.</li>
                         <li>The points model is evaluated during Phase 1, starting with 1a. Phase 1 signal: used on 5 of 7 days for 2 weeks.</li>
                         <li>Anything outside Phase 1 needs a written decision in the SOW&rsquo;s Revision History.</li>
                     </ul>
-                    <button type="button" onclick="openExampleModal('sow-v2-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View example output<span class="icon-chevron" aria-hidden="true"></span></button>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="openExampleModal('kickoff-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View kickoff decisions<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <button type="button" onclick="openExampleModal('sow-v2-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View SOW v2<span class="icon-chevron" aria-hidden="true"></span></button>
+                    </div>
                 </div>
                 <!-- 1.4 Discovery & research -->
                 <div class="p-6 space-y-3 bg-[#f7f7f7]">
@@ -665,6 +668,12 @@
 <td>Founder (self-approval)</td>
 <td>v2: kickoff decisions incorporated. Predefined tasks set as a catalog of 10, with up to 3 shown per day. Platform changed from "mobile application" to web app. Phase 1 scope (full core loop except ENJOY, split into 1a and 1b), exclusions, acceptance and validation criteria, timeline, hours and change control added. Stakeholders filled in.</td>
 </tr>
+<tr>
+<td>2026-10-04</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v2.1: Phase 1a and 1b target dates (2026-10-04 and 2026-10-11) removed. Discovery (1.4) comes before the build and has not started, so the build is re-planned after it. Scope unchanged.</td>
+</tr>
 </tbody>
 </table>
 <h2>Purpose</h2>
@@ -689,7 +698,7 @@
 <p><em>To be validated in Discovery (step 1.4). There is no research behind this audience yet.</em></p>
 <h2>Scope / Major Project Activities</h2>
 <p><strong>Platform.</strong> Web app (React + Vite + Tailwind). No native app and no PWA for now. Features that need a native app wait until the core loop is validated.</p>
-<h3>Phase 1a — in scope (target 2026-10-04)</h3>
+<h3>Phase 1a — in scope</h3>
 <p>From DO to ACCUMULATE: the user does tasks and sees the minutes pile up.</p>
 <ul>
 <li>Three categories: Health, Home, Work / Purpose.</li>
@@ -702,7 +711,7 @@
 <li><strong>Values still to define in the build:</strong> the extra minutes for the difficult task and the bonus for completing the day.</li>
 <li><strong>If 1a slips,</strong> the difficult custom task and the day bonus are the first things to move to 1b.</li>
 </ul>
-<h3>Phase 1b — in scope (target 2026-10-11)</h3>
+<h3>Phase 1b — in scope</h3>
 <p>CHOOSE and REGISTER: closes the loop, so a full cycle works.</p>
 <ul>
 <li>Taking time: the user uses all or part of the accumulated time. When time builds up, the app shows messages that ask what they want to do with it.</li>
@@ -817,18 +826,18 @@
 </tr>
 <tr>
 <td>Phase 1a delivered</td>
-<td>2026-10-04</td>
+<td>After Discovery; no date set</td>
 </tr>
 <tr>
 <td>Phase 1b delivered (full cycle works)</td>
-<td>2026-10-11</td>
+<td>After 1a; no date set</td>
 </tr>
 </tbody>
 </table>
 <h2>Estimated Hours for Completion</h2>
-<p>Builders: the founder and Claude. Up to 3 hours per day, with job applications first, so a realistic pace is 1.5–2.5 hours per day. Estimate made on 2026-09-24 for Discovery and Phase 1 (1a and 1b): Discovery is the least certain part, at 4–8 hours. The 1b date is the first one to re-check if 1a slips.</p>
+<p>Builders: the founder and Claude. Up to 3 hours per day, with job applications first, so a realistic pace is 1.5–2.5 hours per day. Estimate made on 2026-09-24 for Discovery and Phase 1 (1a and 1b): Discovery is the least certain part, at 4–8 hours. Target dates were removed in v2.1 and are set again after Discovery.</p>
 <h2>Estimated Date for Completion</h2>
-<p>Phase 1a: 2026-10-04. Phase 1b: 2026-10-11. Later phases: not scheduled.</p>
+<p>Phase 1a and 1b: re-planned after Discovery (1.4). Later phases: not scheduled.</p>
 <h2>Budget and Payment Terms</h2>
 <p>No money budget. The only cost is time, capped at 3 hours per day.</p>
 <h2>Change Control</h2>
@@ -845,6 +854,100 @@
         </div>
     </div>
 
+    <!-- kickoff-modal -->
+    <div id="kickoff-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="kickoff-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Kickoff &bull; 9 questions</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="kickoff-modal-title">Intake gap &rarr; kickoff question &rarr; decision</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Nine of the 31 intake gaps, chosen by scope-creep risk, each with the decision taken. SOW v2 folds these decisions in.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Intake gap(s)</th>
+<th>Kickoff question</th>
+<th>Decision</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>No sponsor, lead or decision authority</td>
+<td>Who decides and approves?</td>
+<td>The founder decides: founder, product owner and PM in one person. Approvals are self-approvals, recorded in the SOW&rsquo;s Revision History.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Platform</td>
+<td>Which platform does the MVP support?</td>
+<td>A web app (React + Vite + Tailwind). No native app and no PWA for now; native-only features wait until the core loop validates. This changed the SOW&rsquo;s &ldquo;mobile application&rdquo;.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Protected mode not defined &middot; Suggestion system &middot; Emotional reflection &middot; Task setup unclear</td>
+<td>What is in Phase 1 and what is not?</td>
+<td><strong>In:</strong> the whole core loop except ENJOY. 3 categories (Health, Home, Work/Purpose); a catalog of 10 predefined tasks, with up to 3 shown per day, plus one custom difficult task per day per category; completing a task adds minutes; day bonus and difficult-task extra; a Time Bank view; taking all or part of the time; registering the moment with a note; everything saved in the browser. <strong>Out:</strong> Protected mode, photos, suggestion engine, emotional reflection, sync, accounts, backend, editing predefined tasks. Reason: without taking time and registering it, the app has no point.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Recovered-time rules missing &middot; Time bank undefined &middot; Recovered vs. real time</td>
+<td>How does recovered time work?</td>
+<td>Minutes are the currency. Time accumulates and never expires: there is no way to know what keeps a user from taking it, so it stays in the bank, and the app asks what they want to do with it as it builds up. The user takes all of it or part of it, and the total is always visible. Minute values come from the brief (make the bed +2 min, a 15-minute walk +10 min, a focus block +15 min), hardcoded in Phase 1.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>5</td>
+<td>No exclusions &middot; &ldquo;Gamified&rdquo; is not specified</td>
+<td>What is explicitly out of scope?</td>
+<td>The &ldquo;Out&rdquo; list in row 3. Game mechanics need research on what makes people come back, so they are carried forward to Discovery. Starting idea: a personal feed of registered moments.</td>
+<td>Decided (exclusions) &middot; Open (game mechanics)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>No acceptance criteria</td>
+<td>How is &ldquo;done&rdquo; judged?</td>
+<td>Eight Phase 1 criteria, listed in SOW v2: tasks and one custom difficult task per day; minutes added right away, with the difficult extra; day bonus; the total survives a reload; Time Bank view; taking all or part of the time; registering a note; a full cycle works. The tone of the brief stays as design intent, not as a criterion.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>7</td>
+<td>No validation criteria &middot; Hypothesis vs. North Star mismatch &middot; Secondary metrics need data</td>
+<td>What does &ldquo;validated&rdquo; mean?</td>
+<td>Phase 1 validates the mechanic and the points model, not the full hypothesis. MVP success: at least 3 full cycles in a week. Phase 1 signal: used on 5 of 7 days for 2 weeks. With a cohort of one, signals are counted, not turned into percentages.</td>
+<td>Decided</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Timeline, budget and resourcing absent</td>
+<td>How much time, and by when?</td>
+<td>Builders: the founder and Claude. No money budget, only time: up to 3 hours per day, at a realistic pace of 1.5&ndash;2.5. Phase 1 is split into 1a (do, earn, accumulate) and 1b (take time, register). Target dates were removed in SOW v2.1 and are set again after Discovery.</td>
+<td>Decided &middot; dates re-planned</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Not among the 31: the intake did not ask it</td>
+<td>How are scope changes handled?</td>
+<td>Anything outside Phase 1 goes to a later-phases list. It only enters through an explicit decision, written in the SOW&rsquo;s Revision History.</td>
+<td>Decided</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Core loop:</strong> DO &rarr; complete &rarr; +X minutes &rarr; ACCUMULATE &rarr; CHOOSE &rarr; ENJOY &rarr; REGISTER &rarr; back to DO. Phase 1a covers DO to ACCUMULATE; 1b adds CHOOSE and REGISTER. ENJOY happens outside the app.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openExampleModal(id) {
             var m = document.getElementById(id);
@@ -852,7 +955,7 @@
             m.querySelector('.sow-doc').scrollTop = 0;
         }
         function closeExampleModals() {
-            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal').forEach(function (m) {
+            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal').forEach(function (m) {
                 m.classList.add('hidden'); m.classList.remove('flex');
             });
         }
