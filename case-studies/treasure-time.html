@@ -182,7 +182,7 @@
                         <li>Phase 1 covers the whole core loop except enjoying the time, split in two deliveries. 1a: do tasks, earn minutes, see them accumulate. 1b: take time and register the moment, which closes the loop. Both are scheduled after Discovery.</li>
                         <li>Minutes are the currency, and accumulated time never expires.</li>
                         <li>The points model is evaluated during Phase 1, starting with 1a. Phase 1 signal: used on 5 of 7 days for 2 weeks.</li>
-                        <li>Anything outside Phase 1 needs a written decision in the SOW&rsquo;s Revision History.</li>
+                        <li>Anything outside Phase 1 needs an explicit, written decision before it enters.</li>
                     </ul>
                     <div class="flex flex-wrap gap-2">
                         <button type="button" onclick="openExampleModal('kickoff-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View kickoff decisions<span class="icon-chevron" aria-hidden="true"></span></button>
@@ -407,25 +407,6 @@
 <p><em>(The brief calls the product "Tiempo Valioso". "Treasure Time" is the project name provided by the user. The brief also lists other exploratory names, such as "Banco de Tiempo", "Tiempo Vital" and "Minutos para Vos", and doesn't settle on one.)</em></p>
 <h2>Stakeholders</h2>
 <p>Not specified in the source. The brief names no founder, decision-maker, approver or other involved party.</p>
-<h2>Revision History</h2>
-<table>
-<thead>
-<tr>
-<th>Revision date</th>
-<th>Revised by</th>
-<th>Approved by</th>
-<th>Description of change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <h2>Purpose</h2>
 <p><em>(Literal from the source, translated.)</em></p>
 <p>Treasure Time is a gamified mobile app focused on human well-being and on balancing daily obligations with meaningful personal time. It helps people recover quality time for activities that give them real well-being. It does this by turning small everyday actions (health, home, work and functional responsibilities) into protected time for activities the user chooses.</p>
@@ -615,7 +596,7 @@
                 <div class="space-y-1">
                     <p class="text-[10px] font-mono text-teal-800">Example &bull; kickoff decisions</p>
                     <h3 class="text-base font-semibold text-slate-200" id="sow-v2-modal-title">SOW v2, after the kickoff</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">The SOW from step 1.1 with the kickoff decisions folded in. The Revision History records the change from v1.</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">The SOW from step 1.1 with the kickoff decisions folded in.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
             </div>
@@ -635,7 +616,7 @@
 <tr>
 <td>Founder, product owner, PM and first user</td>
 <td>One person</td>
-<td>Decides and approves everything. Approvals are self-approvals, recorded in the Revision History.</td>
+<td>Decides and approves everything. Approvals are self-approvals, written into the SOW.</td>
 </tr>
 <tr>
 <td>Build and documentation support</td>
@@ -645,37 +626,6 @@
 </tbody>
 </table>
 <p>There are no external stakeholders. The founder holds every project role, because this is a self-driven project. The test cohort is one person: the founder, using the app in their own day-to-day.</p>
-<h2>Revision History</h2>
-<table>
-<thead>
-<tr>
-<th>Revision date</th>
-<th>Revised by</th>
-<th>Approved by</th>
-<th>Description of change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2026-09-21</td>
-<td>Founder, with the <code>sow-drafting</code> skill</td>
-<td>—</td>
-<td>v1: SOW drafted from the founder brief. Anything the brief did not say is marked "Not specified in the source".</td>
-</tr>
-<tr>
-<td>2026-09-24</td>
-<td>Founder, with Claude</td>
-<td>Founder (self-approval)</td>
-<td>v2: kickoff decisions incorporated. Predefined tasks set as a catalog of 10, with up to 3 shown per day. Platform changed from "mobile application" to web app. Phase 1 scope (full core loop except ENJOY, split into 1a and 1b), exclusions, acceptance and validation criteria, timeline, hours and change control added. Stakeholders filled in.</td>
-</tr>
-<tr>
-<td>2026-10-04</td>
-<td>Founder, with Claude</td>
-<td>Founder (self-approval)</td>
-<td>v2.1: Phase 1a and 1b target dates (2026-10-04 and 2026-10-11) removed. Discovery (1.4) comes before the build and has not started, so the build is re-planned after it. Scope unchanged.</td>
-</tr>
-</tbody>
-</table>
 <h2>Purpose</h2>
 <p><em>(Unchanged from v1.)</em></p>
 <p>Treasure Time is a gamified app focused on human well-being and on balancing daily obligations with meaningful personal time. It helps people recover quality time for activities that give them real well-being. It does this by turning small everyday actions (health, home, work and functional responsibilities) into protected time for activities the user chooses.</p>
@@ -802,7 +752,7 @@
 <h2>Validation Criteria</h2>
 <p>Phase 1 validates the mechanic and the points model.</p>
 <ul>
-<li><strong>Points model:</strong> the minutes per task, the day bonus and the difficult-task extra are evaluated during Phase 1, starting with 1a, where they already work. The goal is to check they feel fair and motivating. Changes are recorded in the Revision History.</li>
+<li><strong>Points model:</strong> the minutes per task, the day bonus and the difficult-task extra are evaluated during Phase 1, starting with 1a, where they already work. The goal is to check they feel fair and motivating. Changes are written into the SOW.</li>
 <li><strong>Phase 1 signal:</strong> the app is used on 5 of 7 days for 2 weeks.</li>
 <li><strong>MVP success:</strong> the user completes at least 3 full cycles in a week.</li>
 <li><strong>Signals to observe:</strong> return next day and within the week, use after 30 days, tasks completed, tasks converted to minutes, minutes used for an activity, moments registered. With a cohort of one they are counted, not turned into percentages.</li>
@@ -835,13 +785,13 @@
 </tbody>
 </table>
 <h2>Estimated Hours for Completion</h2>
-<p>Builders: the founder and Claude. Up to 3 hours per day, with job applications first, so a realistic pace is 1.5–2.5 hours per day. Estimate made on 2026-09-24 for Discovery and Phase 1 (1a and 1b): Discovery is the least certain part, at 4–8 hours. Target dates were removed in v2.1 and are set again after Discovery.</p>
+<p>Builders: the founder and Claude. Up to 3 hours per day, with job applications first, so a realistic pace is 1.5–2.5 hours per day. Estimate made on 2026-09-24 for Discovery and Phase 1 (1a and 1b): Discovery is the least certain part, at 4–8 hours. Target dates are set after Discovery.</p>
 <h2>Estimated Date for Completion</h2>
 <p>Phase 1a and 1b: re-planned after Discovery (1.4). Later phases: not scheduled.</p>
 <h2>Budget and Payment Terms</h2>
 <p>No money budget. The only cost is time, capped at 3 hours per day.</p>
 <h2>Change Control</h2>
-<p>Anything not in Phase 1a or 1b goes to the later-phases list. It only enters through an explicit decision by the founder, written in the Revision History.</p>
+<p>Anything not in Phase 1a or 1b goes to the later-phases list. It only enters through an explicit decision by the founder, written into the SOW.</p>
 <h2>Open Items (carried forward, not resolved at kickoff)</h2>
 <ul>
 <li>Audience, evidence for the problem, market and language → Discovery (1.4).</li>
@@ -882,7 +832,7 @@
 <td>1</td>
 <td>No sponsor, lead or decision authority</td>
 <td>Who decides and approves?</td>
-<td>The founder decides: founder, product owner and PM in one person. Approvals are self-approvals, recorded in the SOW&rsquo;s Revision History.</td>
+<td>The founder decides: founder, product owner and PM in one person. Approvals are self-approvals, written into the SOW.</td>
 <td>Decided</td>
 </tr>
 <tr>
@@ -931,14 +881,14 @@
 <td>8</td>
 <td>Timeline, budget and resourcing absent</td>
 <td>How much time, and by when?</td>
-<td>Builders: the founder and Claude. No money budget, only time: up to 3 hours per day, at a realistic pace of 1.5&ndash;2.5. Phase 1 is split into 1a (do, earn, accumulate) and 1b (take time, register). Target dates were removed in SOW v2.1 and are set again after Discovery.</td>
+<td>Builders: the founder and Claude. No money budget, only time: up to 3 hours per day, at a realistic pace of 1.5&ndash;2.5. Phase 1 is split into 1a (do, earn, accumulate) and 1b (take time, register). Target dates are set after Discovery.</td>
 <td>Decided &middot; dates re-planned</td>
 </tr>
 <tr>
 <td>9</td>
 <td>Not among the 31: the intake did not ask it</td>
 <td>How are scope changes handled?</td>
-<td>Anything outside Phase 1 goes to a later-phases list. It only enters through an explicit decision, written in the SOW&rsquo;s Revision History.</td>
+<td>Anything outside Phase 1 goes to a later-phases list. It only enters through an explicit decision, written into the SOW.</td>
 <td>Decided</td>
 </tr>
 </tbody>
