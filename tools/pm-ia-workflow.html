@@ -315,7 +315,7 @@
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">Core Components</h2>
             </div>
 
-            <p class="text-[#1a1a1a] text-xs font-mono">Each component shows its status. The SOW pair is applied to a real project in the Treasure Time case study, and the version history of each skill is at the end of the page.</p>
+            <p class="text-[#1a1a1a] text-xs font-mono">Each component shows its status. The SOW skills are applied to a real project in the Treasure Time case study, and the version history of each skill is at the end of the page.</p>
 
             <div class="grid md:grid-cols-2 gap-4">
                 <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
@@ -397,14 +397,15 @@
                                     -webkit-mask-position:center; mask-position:center;"></div>
                             <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
                         </div>
-                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">SOW Intake &amp; Scope Analysis</span>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">SOW: from brief to Discovery</span>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            Two skills that handle a Statement of Work end to end: one drafts a formal SOW from an unstructured client brief, the other critically reads an existing SOW and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; before discovery starts. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
+                            Three skills that take a Statement of Work from the client brief to Discovery: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
                         </p>
                         <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-drafting</code><span class="font-semibold">v1.2.2</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-discovery-prep</code><span class="font-semibold">v1.0.0</span></span>
                         </div>
                         <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800">See it applied in Treasure Time<span class="icon-chevron" aria-hidden="true"></span></span>
                     </div>
@@ -492,7 +493,18 @@
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-22</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
-                                <li><strong>Added:</strong> first version, as a prompt. It worked well overall but had the one failure described above.</li><li><strong>Why:</strong> the Treasure Time PM-process backlog needed a critical reading of the SOW before discovery. This version was never committed to the skill's repo.<code>pm-portfolio</code> spec above.</li>
+                                <li><strong>Added:</strong> first version, as a prompt. It worked well overall but had the one failure described above.</li><li><strong>Why:</strong> the Treasure Time PM-process backlog needed a critical reading of the SOW before discovery. This version was never committed to the skill's repo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-discovery-prep</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-04</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version, from a &ldquo;Pre-Discovery &amp; Lean Inception Planning&rdquo; prompt I wrote. Four sections: vision and boundaries, persona, feature matrix, Discovery agenda.</li><li><strong>Changed from the original prompt:</strong> the persona is a hypothesis with every attribute marked by origin, because before Discovery there is no research to base it on; the feature matrix is copied from the decisions of the alignment meeting instead of being decided again, and conflicts are flagged; the agenda is built from the SOW&rsquo;s open items (question &rarr; method &rarr; evidence &rarr; decision) instead of a fixed 3-day workshop. Design decisions that need no research go to a separate list.</li><li><strong>Why:</strong> the original prompt could invent a persona, contradict decisions already approved, and ignore the items the meeting left open, which are what Discovery exists to answer.</li>
                             </ul>
                         </div>
                     </div>
