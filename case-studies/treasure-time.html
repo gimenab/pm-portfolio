@@ -98,8 +98,8 @@
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif">
                 Treasure Time: Reinventing Personal Productivity
             </h1>
-            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed text-pretty" data-en="A gamified app that turns small everyday actions (health, home, work) into protected time for well-being. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app." data-es="Una app gamificada que convierte peque&ntilde;as acciones cotidianas (salud, hogar, trabajo) en tiempo protegido para el bienestar. Este caso la sigue a lo largo de todo el ciclo del proyecto, paso a paso, desde el brief de la founder y la SOW hasta construir la app real.">
-                A gamified app that turns small everyday actions (health, home, work) into protected time for well-being. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app.
+            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed text-pretty" data-en="A well-being app that turns small everyday actions (health, home, work) into protected time for yourself. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app." data-es="Una app de bienestar que convierte peque&ntilde;as acciones cotidianas (salud, hogar, trabajo) en tiempo protegido para vos. Este caso la sigue a lo largo de todo el ciclo del proyecto, paso a paso, desde el brief de la founder y la SOW hasta construir la app real.">
+                A well-being app that turns small everyday actions (health, home, work) into protected time for yourself. This case follows it through the whole project cycle, step by step, from the founder's brief and SOW to building the real app.
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-xs font-mono">
@@ -175,7 +175,7 @@
                         <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Nine of the 31 intake gaps were picked for the kickoff, ranked by scope-creep risk. There are no outside stakeholders: I am founder, product owner and PM, so every question got a written decision, and the SOW became v2. The decisions that changed the project:
+                        Nine of the 31 intake gaps were picked for the alignment meeting, ranked by scope-creep risk. There are no outside stakeholders: I am founder, product owner and PM, so every question got a written decision, and the SOW became v2. The decisions that changed the project:
                     </p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
                         <li>Platform: a web app, not a native mobile app.</li>
@@ -185,21 +185,53 @@
                         <li>Anything outside Phase 1 needs an explicit, written decision before it enters.</li>
                     </ul>
                     <div class="flex flex-wrap gap-2">
-                        <button type="button" onclick="openExampleModal('kickoff-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View kickoff decisions<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <button type="button" onclick="openExampleModal('kickoff-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View alignment decisions<span class="icon-chevron" aria-hidden="true"></span></button>
                         <button type="button" onclick="openExampleModal('sow-v2-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View SOW v2<span class="icon-chevron" aria-hidden="true"></span></button>
                     </div>
                 </div>
                 <!-- 1.4 Discovery & research -->
-                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                <div class="p-6 space-y-4 bg-teal-500/20">
                     <div class="flex items-center justify-between gap-3 flex-wrap">
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">1.4</span><span data-en="Discovery &amp; research" data-es="Discovery e investigaci&oacute;n">Discovery &amp; research</span>
                         </h3>
-                        <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">sow-discovery-prep</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-en="The research and problem exploration behind the MVP." data-es="La investigaci&oacute;n y exploraci&oacute;n del problema detr&aacute;s del MVP.">
-                        The research and problem exploration behind the MVP.
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The alignment meeting left open questions about the audience, similar apps and what makes people come back. Discovery starts with four desk-research sessions, and the findings turn the SOW into v3. Sessions 1 and 2 are done. Each session follows the same path:
                     </p>
+                    <ol class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
+                        <li class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">1 &middot; Question</p>
+                            <p class="text-slate-400 leading-relaxed">Who feels they have no time for themselves?</p>
+                        </li>
+                        <li class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">2 &middot; Method</p>
+                            <p class="text-slate-400 leading-relaxed">Desk research with AI, every source checked before use</p>
+                        </li>
+                        <li class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">3 &middot; Evidence</p>
+                            <p class="text-slate-400 leading-relaxed">Time-use surveys (Gallup, UN Women, INDEC), store reviews, Reddit</p>
+                        </li>
+                        <li class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">4 &middot; Decision</p>
+                            <p class="text-slate-400 leading-relaxed">Describe the persona by life situation, not by age &rarr; SOW v3</p>
+                        </li>
+                    </ol>
+                    <p class="text-slate-400 text-sm leading-relaxed">What changed so far:</p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li>Audience: adults whose paid work and care of others compete for their own time. In Argentina, 44% of women living with a partner and children are time-poor.</li>
+                        <li>&ldquo;I have no time&rdquo; means three different things: no time left, no permission to rest (guilt), or too tired to use it. The app cannot create time, so it targets the second.</li>
+                        <li>The mechanic already exists, but competitors spend the earned minutes on screen time. Treasure Time spends them away from the screen. &ldquo;Guilt-free&rdquo; and &ldquo;Time Bank&rdquo; are already in use, so neither sets it apart.</li>
+                        <li>In every similar app studied, the app ends up becoming the goal: streaks, weekly resets and games of chance keep people through pressure until they quit. Design rule for Phase 1: quick to use, no streaks, nothing resets, and a day with no tasks costs nothing.</li>
+                    </ul>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        On AI: ChatGPT and Gemini ran the same prompts, and nothing went into the findings without checking the source. In session 1, Gemini invented 5 of its 6 sources; in session 2, 2 of ChatGPT&rsquo;s Reddit quotes were not in the threads it cited. I read the store reviews and Reddit threads myself.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Next: session 3 (should time be earned or free, and what brings people back), a walk through the core loop and user flow, and short talks with 3 to 5 people. Then the synthesis into SOW v3.
+                    </p>
+                    <button type="button" onclick="openExampleModal('discovery-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View Discovery findings<span class="icon-chevron" aria-hidden="true"></span></button>
                 </div>
                 <!-- 1.5 Problem framing & hypothesis -->
                 <div class="p-6 space-y-3 bg-[#f7f7f7]">
@@ -594,9 +626,9 @@
         <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
             <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
                 <div class="space-y-1">
-                    <p class="text-[10px] font-mono text-teal-800">Example &bull; kickoff decisions</p>
-                    <h3 class="text-base font-semibold text-slate-200" id="sow-v2-modal-title">SOW v2, after the kickoff</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">The SOW from step 1.1 with the kickoff decisions folded in.</p>
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; alignment decisions</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="sow-v2-modal-title">SOW v2, after the alignment meeting</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The SOW from step 1.1 with the alignment decisions folded in.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
             </div>
@@ -767,7 +799,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Kickoff step (1.3) closed</td>
+<td>Alignment step (1.3) closed</td>
 <td>2026-09-24</td>
 </tr>
 <tr>
@@ -792,7 +824,7 @@
 <p>No money budget. The only cost is time, capped at 3 hours per day.</p>
 <h2>Change Control</h2>
 <p>Anything not in Phase 1a or 1b goes to the later-phases list. It only enters through an explicit decision by the founder, written into the SOW.</p>
-<h2>Open Items (carried forward, not resolved at kickoff)</h2>
+<h2>Open Items (carried forward, not resolved at the alignment meeting)</h2>
 <ul>
 <li>Audience, evidence for the problem, market and language → Discovery (1.4).</li>
 <li>What makes people come back (game mechanics, retention) → Discovery (1.4).</li>
@@ -810,8 +842,8 @@
         <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
             <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
                 <div class="space-y-1">
-                    <p class="text-[10px] font-mono text-teal-800">Kickoff &bull; 9 questions</p>
-                    <h3 class="text-base font-semibold text-slate-200" id="kickoff-modal-title">Intake gap &rarr; kickoff question &rarr; decision</h3>
+                    <p class="text-[10px] font-mono text-teal-800">Alignment meeting &bull; 9 questions</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="kickoff-modal-title">Intake gap &rarr; alignment question &rarr; decision</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">Nine of the 31 intake gaps, chosen by scope-creep risk, each with the decision taken. SOW v2 folds these decisions in.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
@@ -822,7 +854,7 @@
 <tr>
 <th>#</th>
 <th>Intake gap(s)</th>
-<th>Kickoff question</th>
+<th>Alignment question</th>
 <th>Decision</th>
 <th>Status</th>
 </tr>
@@ -898,6 +930,103 @@
         </div>
     </div>
 
+    <!-- discovery-modal -->
+    <div id="discovery-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="discovery-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Discovery &bull; sessions 1 and 2 of 4</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="discovery-modal-title">Discovery findings so far</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Desk research only: every finding cites a public source, and nothing is validated with users yet. Each session ends with what it changes in the SOW.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<h2>Session 1: audience and problem</h2>
+<p><strong>Question:</strong> who feels &ldquo;I have no time for myself&rdquo;, and is it about time, permission or tiredness?</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The pain follows life situation more than age: 61% of working adults and of parents of children under 18 say they lack time, against 21% at 65 and older.</td>
+<td><a href="https://news.gallup.com/poll/187982/americans-perceived-time-crunch-no-worse-past.aspx">Gallup, 2015</a></td>
+</tr>
+<tr>
+<td>In Argentina, 26.7% of people are time-poor, and 44.4% of women living with a partner and children. Women carry 67.4% of unpaid-work hours.</td>
+<td><a href="https://data.unwomen.org/sites/default/files/documents/Publications/2026/TimeUse-and-Social-Inequality_report.pdf">UN Women, 2026</a> &middot; <a href="https://biblioteca.indec.gob.ar/bases/minde/enut_2021_definitivos.pdf">INDEC, ENUT 2021</a></td>
+</tr>
+<tr>
+<td>Feeling time-poor is not the same as having little free time: pressure and fragmentation predict the feeling.</td>
+<td><a href="https://www.sciencenews.org/article/starved-time-poverty-research-autonomy">Science News, 2025</a></td>
+</tr>
+<tr>
+<td>People feel guilty in about 1 in 7 leisure moments, and those high in leisure guilt enjoy rest less.</td>
+<td><a href="https://www.bps.org.uk/research-digest/us-one-seven-leisurely-moments-comes-guilt">Koo et al., via BPS</a></td>
+</tr>
+<tr>
+<td>Effortful leisure feels more meaningful but less enjoyable at first, so a tired user may not pick it.</td>
+<td><a href="https://www.nature.com/articles/s44271-025-00292-9">Campbell et al., 2025</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>For the SOW:</strong> describe the persona by situation (&ldquo;adults whose paid work and care of others compete for the time left for themselves&rdquo;), not as &ldquo;25&ndash;45&rdquo;. &ldquo;No time&rdquo; has three meanings: no time, no permission, too tired. Treasure Time cannot create time; its mechanic fits &ldquo;no permission&rdquo;. Tiredness stays open: there is evidence of exhaustion, none that it is why people skip free time.</p>
+
+<h2>Session 2: similar apps and positioning</h2>
+<p><strong>Question:</strong> which apps already turn tasks into rewards or protected time, and what do they leave uncovered? Apps chosen by mechanic (do something, earn a reward), plus one large well-being app (Fabulous). Store reviews from the last 12 months and Reddit threads read by hand.</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The mechanic exists, and it almost always buys screen time: tasks or exercise earn minutes on social media or games.</td>
+<td>TimeBank, FocusBox, Time Wallet, Dayli, EarnScreen, Run Your Time, Fit to Scroll (store listings)</td>
+</tr>
+<tr>
+<td>&ldquo;Guilt-free&rdquo; and the name &ldquo;Time Bank&rdquo; are already used by competitors.</td>
+<td>FocusBox, Time Wallet, Gamify Tasks; TimeBank, Dayli</td>
+</tr>
+<tr>
+<td>In every app studied, the app becomes the goal: a focus app turned into a game of chance, users invent fake goals to reach a weekly reward, streak animations demand attention.</td>
+<td>Forest and Finch threads on Reddit; Fabulous and Habitica reviews</td>
+</tr>
+<tr>
+<td>Missing a day starts a guilt loop: &ldquo;it feels like a real failure&rdquo;, and the user stays away for weeks. Losing the streak is what makes people quit.</td>
+<td>r/habitica, 2026; r/finch, 2025</td>
+</tr>
+<tr>
+<td>What people praise is the reward, small and reachable: custom real-life treats, a small surprise after brushing their teeth. Nobody praises punishment.</td>
+<td>Habitica and Finch reviews</td>
+</tr>
+<tr>
+<td>Basics push people out first: billing that feels like a scam, long onboarding, lost data, confusing menus, poor translations.</td>
+<td>Fabulous, Finch, Habitica reviews</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For the SOW:</strong> position on the destination (time for yourself, away from the screen), not on &ldquo;guilt-free&rdquo;. Design rule: quick to use, no streaks, nothing resets, a day with no tasks costs nothing, and the Time Bank only grows. Candidates for the Phase 1 re-plan: a history of minutes earned and spent, logging a task for yesterday, a first screen with no questionnaire, and an export or delete option for data kept in the browser.</p>
+
+<h2>How AI was used</h2>
+<p>ChatGPT and Gemini ran the same prompts with web search. Every source was opened and checked before use. Gemini invented 5 of its 6 sources in session 1; 2 of ChatGPT&rsquo;s 6 Reddit quotes were not in the threads it cited. None of them is used. Store reviews and Reddit threads were read by hand.</p>
+
+<h2>Limits</h2>
+<p>Surveys are self-reports about time in general; reviews over-represent very happy or very upset users, and were read in Spanish. This shows the pain exists and what users of similar apps complain about. It does not show that this audience would use Treasure Time.</p>
+
+<h2>Next</h2>
+<p>Session 3: should time be earned or free to use, and what brings people back. Then a walk through the core loop and user flow, asking &ldquo;what happens if...?&rdquo; at each step, and short talks with 3 to 5 people. Session 4: synthesis into SOW v3.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openExampleModal(id) {
             var m = document.getElementById(id);
@@ -905,7 +1034,7 @@
             m.querySelector('.sow-doc').scrollTop = 0;
         }
         function closeExampleModals() {
-            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal').forEach(function (m) {
+            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal, #discovery-modal').forEach(function (m) {
                 m.classList.add('hidden'); m.classList.remove('flex');
             });
         }
