@@ -176,9 +176,9 @@
 
                 <!-- Before / After example -->
                 <details class="rounded-2xl bg-white border border-black/10 px-4 py-3" open>
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800">Example &mdash; SOW Intake &amp; Scope Analysis</summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800">Example &mdash; SOW: from brief to Discovery</summary>
                     <div class="mt-3 space-y-3">
-                    <p class="text-slate-400 text-xs leading-relaxed">A founder brief goes through two skills: <code>sow-drafting</code> turns it into a Statement of Work, and <code>sow-intake-analysis</code> reads that SOW critically and flags what is missing.</p>
+                    <p class="text-slate-400 text-xs leading-relaxed">A founder brief goes through four skills. First, <code>sow-drafting</code> turns it into a Statement of Work, and <code>sow-intake-analysis</code> reads that SOW critically and flags what is missing:</p>
                     <div class="grid md:grid-cols-2 gap-4 items-start">
                         <!-- Before: raw input -->
                         <div class="rounded-xl bg-white border border-black/10 overflow-hidden font-mono text-xs">
@@ -189,8 +189,8 @@
                                 <span class="pl-2 text-slate-500">founder-brief.pdf</span>
                             </div>
                             <div class="p-4 space-y-2 text-slate-400 leading-relaxed">
-                                <p><span class="text-slate-600">&gt;</span> &ldquo;Si un usuario transforma acciones funcionales diarias en tiempo recuperado y protegido, tendr&aacute; m&aacute;s probabilidades de dedicar tiempo real a actividades que le generan bienestar.&rdquo;</p>
-                                <p class="text-slate-500">Excerpt from the original brief, in Spanish. It has no timeline, budget, stakeholders or acceptance criteria.</p>
+                                <p><span class="text-slate-600">&gt;</span> &ldquo;If a user turns everyday functional actions into recovered, protected time, they will be more likely to spend real time on activities that bring them well-being.&rdquo;</p>
+                                <p class="text-slate-500">Excerpt from the original brief, translated from Spanish. It has no timeline, budget, stakeholders or acceptance criteria.</p>
                             </div>
                         </div>
 
@@ -217,6 +217,19 @@
                                 </div>
                                 <p class="text-slate-500">+ 28 more, each with why it matters and a clarifying question.</p>
                             </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">After the alignment meeting decides those gaps, the updated SOW goes through the two skills that prepare Discovery:</p>
+                    <div class="grid md:grid-cols-2 gap-4 items-start font-mono text-xs">
+                        <div class="rounded-xl bg-white border border-teal-800/50 p-4 space-y-1">
+                            <span class="text-teal-400 block">sow-discovery-prep &mdash; SOW v2 &rarr; Discovery plan</span>
+                            <span class="text-slate-200 block">5 research questions, each with method, evidence and the decision it feeds</span>
+                            <span class="text-slate-500">&rarr; e.g. Who feels they have no time for themselves?</span>
+                        </div>
+                        <div class="rounded-xl bg-white border border-teal-800/50 p-4 space-y-1">
+                            <span class="text-teal-400 block">discovery-user-flow &mdash; core loop &rarr; what-if questions</span>
+                            <span class="text-slate-200 block">The loop drawn step by step, with 24 questions for the client to decide</span>
+                            <span class="text-slate-500">&rarr; e.g. What if the user marks a task by mistake?</span>
                         </div>
                     </div>
                     <a href="../case-studies/treasure-time.html#step-1" class="group inline-flex items-center gap-1.5 text-xs font-mono text-teal-800">See the full example in the Treasure Time case study<span class="icon-chevron" aria-hidden="true"></span></a>
@@ -399,13 +412,14 @@
                         </div>
                         <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">SOW: from brief to Discovery</span>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            Three skills that take a Statement of Work from the client brief to Discovery: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
+                            Four skills that take a Statement of Work from the client brief to Discovery: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. During Discovery, a fourth skill walks the core loop with the client and turns each &ldquo;what happens if...?&rdquo; into a decision with an owner, before any user story is written. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
                         </p>
                         <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-drafting</code><span class="font-semibold">v1.2.2</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.0</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-discovery-prep</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-user-flow</code><span class="font-semibold">v1.0.0</span></span>
                         </div>
                         <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800">See it applied in Treasure Time<span class="icon-chevron" aria-hidden="true"></span></span>
                     </div>
@@ -505,6 +519,17 @@
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-04</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
                                 <li><strong>Added:</strong> first version, from a &ldquo;Pre-Discovery &amp; Lean Inception Planning&rdquo; prompt I wrote. Four sections: vision and boundaries, persona, feature matrix, Discovery agenda.</li><li><strong>Changed from the original prompt:</strong> the persona is a hypothesis with every attribute marked by origin, because before Discovery there is no research to base it on; the feature matrix is copied from the decisions of the alignment meeting instead of being decided again, and conflicts are flagged; the agenda is built from the SOW&rsquo;s open items (question &rarr; method &rarr; evidence &rarr; decision) instead of a fixed 3-day workshop. Design decisions that need no research go to a separate list.</li><li><strong>Why:</strong> the original prompt could invent a persona, contradict decisions already approved, and ignore the items the meeting left open, which are what Discovery exists to answer.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">discovery-user-flow</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-08</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Two stages: a prep (the happy path taken from the SOW, and what-if questions for each step, written through fixed lenses such as mistakes, limits, time, interruptions and rules that collide) and the workflow session, where the PM asks and the client decides. Output: happy path, flow diagram, what-if log with priority, decision, owner and status, and conflicts with the SOW.</li><li><strong>Changed after the first run:</strong> a priority column. The first run on Treasure Time produced 24 questions for a one-hour session, so the ones that block a user story or touch an open decision of the SOW are asked first.</li><li><strong>Why:</strong> in client Discovery work, workflow sessions are where most doubts about a product come out. Without one, those doubts would only appear while writing user stories or building.</li>
                             </ul>
                         </div>
                     </div>

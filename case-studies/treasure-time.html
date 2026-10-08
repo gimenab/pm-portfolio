@@ -245,6 +245,41 @@
                         The problem statement and value proposition, framed from what Discovery finds.
                     </p>
                 </div>
+                <!-- 1.6 Core loop & user flow -->
+                <div class="p-6 space-y-4 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.6</span>Core loop &amp; user flow
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">discovery-user-flow</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Before any user story is written, I walk the core loop step by step with the founder and ask &ldquo;what happens if...?&rdquo; at each step. Each answer becomes a decision with an owner, or an open item for SOW v3. The flow is drawn from the SOW; the session is next.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-xs font-mono text-teal-800">Phase 1a &middot; earn</p>
+                        <ol class="grid grid-cols-2 sm:grid-cols-6 gap-2 text-xs">
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">1</p><p class="text-slate-400 leading-relaxed">See today&rsquo;s tasks</p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">2</p><p class="text-slate-400 leading-relaxed">Add the difficult task</p></li>
+                            <li class="rounded-xl border border-dashed border-teal-800/50 bg-white/60 p-3"><p class="font-mono text-teal-800">3</p><p class="text-slate-400 leading-relaxed">Do it <span class="text-slate-500">(outside the app)</span></p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">4</p><p class="text-slate-400 leading-relaxed">Mark it done: minutes added</p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">5</p><p class="text-slate-400 leading-relaxed">All done: day bonus</p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">6</p><p class="text-slate-400 leading-relaxed">Time Bank: minutes never expire</p></li>
+                        </ol>
+                        <p class="text-xs font-mono text-teal-800 pt-2">Phase 1b &middot; use</p>
+                        <ol class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">7</p><p class="text-slate-400 leading-relaxed">Take all or part of the time</p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">7b &middot; or</p><p class="text-slate-400 leading-relaxed">Free time without earning it</p></li>
+                            <li class="rounded-xl border border-dashed border-teal-800/50 bg-white/60 p-3"><p class="font-mono text-teal-800">8</p><p class="text-slate-400 leading-relaxed">Enjoy it <span class="text-slate-500">(outside the app)</span></p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">9</p><p class="text-slate-400 leading-relaxed">Register the moment</p></li>
+                            <li class="rounded-xl border border-black/10 bg-white p-3"><p class="font-mono text-teal-800">&#8634;</p><p class="text-slate-400 leading-relaxed">Back to step 1</p></li>
+                        </ol>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        24 what-if questions are ready for the session, such as: what if the user marks a task by mistake? What happens at midnight with tasks half done? What if they want more minutes than they have? Three already show a conflict with the SOW.
+                    </p>
+                    <button type="button" onclick="openExampleModal('userflow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View the flow and the questions<span class="icon-chevron" aria-hidden="true"></span></button>
+                </div>
         
             </div>
         </section>
@@ -1028,6 +1063,78 @@
         </div>
     </div>
 
+    <!-- userflow-modal -->
+    <div id="userflow-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="userflow-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Core loop &bull; prep for the workflow session</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="userflow-modal-title">Core loop: the flow and the what-if questions</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Every step comes from the SOW or a recorded decision. No question is answered yet: the founder decides them in the session, and the open ones go to SOW v3.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<h2>Happy path</h2>
+<table>
+<thead><tr><th><h1></h1></th><th>Step</th><th>The user...</th><th>The product...</th><th>Phase</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>SEE today's tasks</td><td>Opens the app</td><td>Shows up to 3 predefined tasks from the catalog of 10 (Health, Home, Work / Purpose)</td><td>1a</td><td>SOW v2, Phase 1a; AC 1</td></tr>
+<tr><td>2</td><td>ADD the difficult task</td><td>Writes one custom task, flagged as the difficult one</td><td>Adds it to today's list</td><td>1a</td><td>SOW v2, Phase 1a; AC 1 (when and how many: open)</td></tr>
+<tr><td>3</td><td>DO</td><td>Does the task</td><td>— (outside the app)</td><td>1a</td><td>SOW v2, Core loop</td></tr>
+<tr><td>4</td><td>COMPLETE</td><td>Marks the task complete</td><td>Adds its minutes to the Time Bank right away; the difficult task adds extra minutes</td><td>1a</td><td>AC 2</td></tr>
+<tr><td>5</td><td>DAY BONUS</td><td>Completes all of the day's tasks</td><td>Adds bonus minutes</td><td>1a</td><td>AC 3</td></tr>
+<tr><td>6</td><td>ACCUMULATE</td><td>Looks at the Time Bank</td><td>Shows the total, which never expires, with "Look at all the time you recovered"</td><td>1a</td><td>SOW v2, Core loop; AC 5</td></tr>
+<tr><td>7</td><td>CHOOSE</td><td>Takes all or part of the time</td><td>Lowers the total by the amount taken; when time builds up, asks what they want to do with it</td><td>1b</td><td>AC 6</td></tr>
+<tr><td>7b</td><td>WILDCARD</td><td>Takes free time without earning it</td><td>Takes no minutes; shows "It's okay to rest after a hard day. Existing is enough." and offers to share a thought or a record (optional)</td><td>1b <strong>(assumption: phase not decided)</strong></td><td>Founder decision, 2026-10-07</td></tr>
+<tr><td>8</td><td>ENJOY</td><td>Does the activity, or nothing</td><td>— (outside the app)</td><td>1b</td><td>SOW v2, Core loop</td></tr>
+<tr><td>9</td><td>REGISTER</td><td>Writes a note about the moment (or a voice note, if feasible)</td><td>Saves the note</td><td>1b</td><td>AC 7</td></tr>
+<tr><td>10</td><td>Back to DO</td><td>—</td><td>—</td><td>—</td><td>SOW v2, Core loop</td></tr>
+</tbody>
+</table>
+<h2>Conflicts with the SOW, visible before the session</h2>
+<ul>
+<li>The wildcard expires after 48 hours (founder decision, 2026-10-07), while "time accumulates and never expires" (SOW v2, Core loop). Row 17.</li>
+<li>The wildcard is not in the SOW v2 scope; it enters through the change control. Row 20.</li>
+<li>One custom task per day (AC 1) vs. one per category per day (Phase 1a). Row 4.</li>
+</ul>
+<details class="all-gaps"><summary>Show all 24 what-if questions</summary>
+<p>Priority 1 blocks a user story or touches an open decision of the SOW, and is asked first. The session lasts one hour, so some priority 2 questions may stay for later.</p>
+<table>
+<thead><tr><th>#</th><th>Step</th><th>What if...?</th><th>Priority</th><th>Goes to</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>1 · See tasks</td><td>It is the first visit: no tasks done, the Time Bank is at 0. What does the user see first?</td><td>1</td><td>User story</td></tr>
+<tr><td>2</td><td>1 · See tasks</td><td>The user cannot do one of the 3 tasks today (sick, away). Can they swap it? (Editing predefined tasks is a later phase; swapping is not the same thing.)</td><td>2</td><td>User story / later-phases list</td></tr>
+<tr><td>3</td><td>2 · Difficult task</td><td>When does the user write the custom task: when opening the app, at any time, or the night before?</td><td>1</td><td>SOW v3 (open in SOW v2)</td></tr>
+<tr><td>4</td><td>2 · Difficult task</td><td>One custom task per day, or one per category per day?</td><td>1</td><td>SOW v3 (inconsistency 1)</td></tr>
+<tr><td>5</td><td>2 · Difficult task</td><td>The user writes the difficult task and does not finish it today. Does it carry over, disappear, or stay without penalty?</td><td>2</td><td>User story</td></tr>
+<tr><td>6</td><td>4 · Complete</td><td>The user marks a task by mistake. Can they undo it, and do the minutes come back out?</td><td>1</td><td>User story</td></tr>
+<tr><td>7</td><td>4 · Complete</td><td>The user did a task yesterday and forgot to mark it. Can they log it today? (A complaint seen in Fabulous reviews.)</td><td>1</td><td>User story</td></tr>
+<tr><td>8</td><td>4 · Complete</td><td>It is midnight with tasks half done. Does the list reset, and what happens to the unfinished ones?</td><td>1</td><td>User story</td></tr>
+<tr><td>9</td><td>5 · Day bonus</td><td>The user undoes a task after the bonus was added. Does the bonus go too?</td><td>2</td><td>User story</td></tr>
+<tr><td>10</td><td>5 · Day bonus</td><td>Does "all of the day's tasks" include the difficult one? What if the user wrote none?</td><td>1</td><td>SOW v3</td></tr>
+<tr><td>11</td><td>6 · Time Bank</td><td>The browser storage is cleared, or the user opens the app on another device: the total is gone. Is that acceptable in Phase 1, and does the app warn about it?</td><td>2</td><td>SOW v3 (known limit of <code>localStorage</code>)</td></tr>
+<tr><td>12</td><td>7 · Choose</td><td>The user wants more minutes than the total has.</td><td>1</td><td>User story</td></tr>
+<tr><td>13</td><td>7 · Choose</td><td>Is taking time a timer that counts down, or does it just subtract the minutes? (The SOW only says the total goes down.)</td><td>1</td><td>SOW v3</td></tr>
+<tr><td>14</td><td>7 · Choose</td><td>The user takes 30 minutes and stops after 10. Do the unused minutes go back?</td><td>2</td><td>User story</td></tr>
+<tr><td>15</td><td>7 · Choose</td><td>The total is 0 and the user needs to rest. Does the app point to the wildcard?</td><td>1</td><td>User story</td></tr>
+<tr><td>16</td><td>7b · Wildcard</td><td>How much free time is a wildcard: a fixed number of minutes, or open?</td><td>1</td><td>SOW v3</td></tr>
+<tr><td>17</td><td>7b · Wildcard</td><td>The wildcard is not used in 48 hours and expires, while minutes never expire. Does that feel like a loss?</td><td>1</td><td>SOW v3 (conflict, see section 4)</td></tr>
+<tr><td>18</td><td>7b · Wildcard</td><td>When does the count of 3 tasks for the next wildcard start: when the wildcard is used, when it expires, or from the moment it is given?</td><td>1</td><td>SOW v3</td></tr>
+<tr><td>19</td><td>7b · Wildcard</td><td>Do unused wildcards accumulate? Ask after the agenda row 5 research.</td><td>1</td><td>SOW v3 (agenda row 5)</td></tr>
+<tr><td>20</td><td>7b · Wildcard</td><td>Is the wildcard Phase 1b, or later? It is not in the SOW v2 scope.</td><td>1</td><td>SOW v3 (change control)</td></tr>
+<tr><td>21</td><td>9 · Register</td><td>Is registering required to keep earning, or optional?</td><td>1</td><td>SOW v3 (open in SOW v2)</td></tr>
+<tr><td>22</td><td>9 · Register</td><td>The user closes the app before registering. Can they register later, and until when?</td><td>2</td><td>User story</td></tr>
+<tr><td>23</td><td>9 · Register</td><td>The browser does not allow the microphone, or the user denies it.</td><td>2</td><td>User story (if the voice note is feasible)</td></tr>
+<tr><td>24</td><td>9 · Register</td><td>The user wants to see earlier notes. The personal feed is a later phase: where does a note go in Phase 1?</td><td>2</td><td>Later-phases list</td></tr>
+</tbody>
+</table>
+</details>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openExampleModal(id) {
             var m = document.getElementById(id);
@@ -1035,7 +1142,7 @@
             m.querySelector('.sow-doc').scrollTop = 0;
         }
         function closeExampleModals() {
-            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal, #discovery-modal').forEach(function (m) {
+            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal, #discovery-modal, #userflow-modal').forEach(function (m) {
                 m.classList.add('hidden'); m.classList.remove('flex');
             });
         }
