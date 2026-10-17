@@ -1,0 +1,23 @@
+flowchart LR
+  S([Open the app]) --> Q0{First visit?}
+  Q0 -- yes --> W0[Welcome: pick tasks and how they repeat]
+  Q0 -- no --> T1[/Home: today's tasks, feed below/]
+  W0 --> T1
+  T1 --> T2[/Write a difficult task, optional/]
+  T2 --> D3[/Do the task, outside the app\]
+  D3 --> C4[Mark it done: add its minutes]
+  C4 --> Q1{All of today's tasks done?}
+  Q1 -- yes --> B5[Add the day bonus]
+  Q1 -- no --> TB[(Your treasure, never expires)]
+  B5 --> TB
+  TB --> Q2{Earned time or wildcard?}
+  Q2 -- earned --> C7[Subtract the minutes, down to 0]
+  Q2 -- wildcard --> W7[Use the wildcard, 15 minutes]
+  C7 --> TM[Start the timer, can pause]
+  W7 --> TM
+  TM --> E8[/Enjoy it, outside the app\]
+  E8 --> Q3{Register the moment?}
+  Q3 -- yes --> ML[(Minutes lived)]
+  Q3 -- no --> T1
+  ML --> FD[(Personal feed of moments)]
+  FD -- back to home --> T1
