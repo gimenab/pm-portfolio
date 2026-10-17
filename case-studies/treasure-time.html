@@ -149,7 +149,7 @@
                     <button type="button" onclick="openExampleModal('sow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View example output<span class="icon-chevron" aria-hidden="true"></span></button>
                 </div>
                 <!-- 1.2 SOW Intake & initial risks -->
-                <div class="p-6 space-y-3 bg-teal-500/20">
+                <div class="p-6 space-y-3 bg-[#f7f7f7]">
                     <div class="flex items-center justify-between gap-3 flex-wrap">
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">1.2</span><span data-en="SOW Intake &amp; initial risks" data-es="SOW Intake y riesgos iniciales">SOW Intake &amp; initial risks</span>
@@ -190,15 +190,15 @@
                     </div>
                 </div>
                 <!-- 1.4 Discovery & research -->
-                <div class="p-6 space-y-4 bg-teal-500/20">
+                <div class="p-6 space-y-4 bg-[#f7f7f7]">
                     <div class="flex items-center justify-between gap-3 flex-wrap">
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">1.4</span><span data-en="Discovery &amp; research" data-es="Discovery e investigaci&oacute;n">Discovery &amp; research</span>
                         </h3>
-                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">sow-discovery-prep</code> <span class="text-white/80 font-normal">v1.0.1</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">sow-discovery-prep</code> <span class="text-white/80 font-normal">v1.0.1</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        The alignment meeting left open questions about the audience, similar apps and what makes people come back. Discovery starts with four desk-research sessions, and the findings turn the SOW into v3. Sessions 1 and 2 are done. Each session follows the same path:
+                        The alignment meeting left open questions about the audience, similar apps and what makes people come back. Discovery ran four desk-research sessions and a synthesis, and the findings turned the SOW into v3. Each session followed the same path:
                     </p>
                     <ol class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
                         <li class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
@@ -218,35 +218,69 @@
                             <p class="text-slate-400 leading-relaxed">Describe the persona by life situation, not by age &rarr; SOW v3</p>
                         </li>
                     </ol>
-                    <p class="text-slate-400 text-sm leading-relaxed">What changed so far:</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">What changed:</p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
                         <li>Audience: adults whose paid work and care of others compete for their own time. In Argentina, 44% of women living with a partner and children are time-poor.</li>
                         <li>&ldquo;I have no time&rdquo; means three different things: no time left, no permission to rest (guilt), or too tired to use it. The app cannot create time, so it targets the second.</li>
                         <li>The mechanic already exists, but competitors spend the earned minutes on screen time. Treasure Time spends them away from the screen. &ldquo;Guilt-free&rdquo; and &ldquo;Time Bank&rdquo; are already in use, so neither sets it apart.</li>
                         <li>In every similar app studied, the app ends up becoming the goal: streaks, weekly resets and games of chance keep people through pressure until they quit. Design rule for Phase 1: quick to use, no streaks, nothing resets, and a day with no tasks costs nothing.</li>
+                        <li>Earning minutes can ease guilt, but measuring rest spoils it. So the user earns, and on hard days takes a wildcard: 15 free minutes, at most one saved, never expiring.</li>
+                        <li>The synthesis grouped 35 findings into 8 themes and 27 changes to the SOW. Phase 1 grew, so it was split by the question each part answers: 1a, does it work? (the founder alone); 1b, does it help? (3 to 5 testers for 2 weeks).</li>
                     </ul>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         On AI: ChatGPT and Gemini ran the same prompts, and nothing went into the findings without checking the source. In session 1, Gemini invented 5 of its 6 sources; in session 2, 2 of ChatGPT&rsquo;s Reddit quotes were not in the threads it cited. I read the store reviews and Reddit threads myself.
                     </p>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Next: session 3 (should time be earned or free, and what brings people back), a walk through the core loop and user flow, and short talks with 3 to 5 people. Then the synthesis into SOW v3.
+                        Still open: short talks with 3 to 5 people from the persona. If they do not happen before the build, Phase 1b checks the same questions with real testers.
                     </p>
-                    <button type="button" onclick="openExampleModal('discovery-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View Discovery findings<span class="icon-chevron" aria-hidden="true"></span></button>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="openExampleModal('discovery-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View Discovery findings<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <button type="button" onclick="openExampleModal('sow-v3-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View SOW v3<span class="icon-chevron" aria-hidden="true"></span></button>
+                    </div>
                 </div>
                 <!-- 1.5 Problem framing & hypothesis -->
-                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                <div class="p-6 space-y-4 bg-teal-500/20">
                     <div class="flex items-center justify-between gap-3 flex-wrap">
                         <h3 class="text-base font-semibold text-slate-200">
-                            <span class="font-mono text-teal-400 text-xs mr-2">1.5</span><span data-en="Problem framing &amp; hypothesis" data-es="Problem framing e hip&oacute;tesis">Problem framing &amp; hypothesis</span>
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.5</span>Problem framing &amp; hypothesis
                         </h3>
-                        <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">discovery-synthesis</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-en="The problem statement and value proposition, framed from what Discovery finds." data-es="El planteo del problema y la propuesta de valor, definidos a partir de lo que encuentre Discovery.">
-                        The problem statement and value proposition, framed from what Discovery finds.
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Discovery narrowed the brief&rsquo;s &ldquo;I have no time for myself&rdquo; to one problem the app can act on. The hypothesis says what Phase 1 has to prove, and each open assumption has a check.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">Problem</p>
+                            <p class="text-slate-400 leading-relaxed">Adults whose work and care of others fill their days do have moments for themselves, but those moments do not feel like theirs: they feel they should be doing something else.</p>
+                        </div>
+                        <div class="rounded-xl border border-black/10 bg-white p-3 space-y-1">
+                            <p class="font-mono text-teal-800">Hypothesis</p>
+                            <p class="text-slate-400 leading-relaxed">We believe these people will take more time for themselves, and enjoy it without guilt, if the small tasks they already do give them permission to rest, with a free wildcard for hard days and a feed of the moments they lived.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left text-slate-400 border-collapse">
+                            <thead>
+                                <tr class="font-mono text-teal-800 border-b border-black/10">
+                                    <th class="py-2 pr-3 font-normal">Still unknown</th>
+                                    <th class="py-2 pr-3 font-normal">How Phase 1 checks it</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">Earning minutes eases guilt rather than feeding it</td><td class="py-2 pr-3 align-top">Testers&rsquo; check-in: did earning feel like relief or like pressure?</td></tr>
+                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">An app with no pressure is not boring: people come back</td><td class="py-2 pr-3 align-top">Used on 5 of 7 days for 2 weeks, with no streaks to push them</td></tr>
+                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">People want to look back at the moments they lived</td><td class="py-2 pr-3 align-top">Whether testers open the feed, and say so in the check-in</td></tr>
+                                <tr><td class="py-2 pr-3 align-top">Tiredness, not only guilt, keeps people from resting</td><td class="py-2 pr-3 align-top">Wildcard use on tired days</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Phase 1a, tested by the founder alone, shows the app <em>works</em>. Only Phase 1b, with 3 to 5 people for 2 weeks, can show it <em>helps</em>.
                     </p>
                 </div>
                 <!-- 1.6 Core loop & user flow -->
-                <div class="p-6 space-y-4 bg-teal-500/20">
+                <div class="p-6 space-y-4 bg-[#f7f7f7]">
                     <div class="flex items-center justify-between gap-3 flex-wrap">
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">1.6</span>Core loop &amp; user flow
@@ -257,7 +291,7 @@
                         Before any user story is written, I walk the core loop step by step with the founder and ask &ldquo;what happens if...?&rdquo; at each step. Each answer becomes a decision with an owner, or an open item for SOW v3. The flow below includes the decisions from both sessions.
                     </p>
                     <div class="overflow-x-auto">
-                    <svg viewBox="0 0 1080 600" class="w-full min-w-[720px] h-auto text-teal-800 font-mono" role="img" aria-label="Core loop flowchart after the workflow session. Open the app. Decision: first visit? Yes shows a welcome to pick tasks, how they repeat and a relax time; both paths go to the home, with today's tasks on top and the feed of moments below. Optionally write a difficult task, do the task outside the app, mark it done and add its minutes. Decision: all of today's tasks done? Yes adds the day bonus; both paths go to the Time Bank. Decision: earned time or wildcard? Earned subtracts the minutes, down to 0; wildcard gives 15 minutes. Both start a timer that can be paused. Enjoy it outside the app. Decision: register the moment? Yes adds the time to minutes lived and the note to the personal feed of moments. Both answers go back to the home."><defs><marker id="uf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs><rect x="0" y="40" width="110" height="44" rx="22" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="55.0" y="66.0" text-anchor="middle" font-size="13" fill="#333">Open the app</text><polygon points="220,18 290,62 220,106 150,62" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="220" y="58" text-anchor="middle" font-size="12" fill="#333">First</text><text x="220" y="74" text-anchor="middle" font-size="11" fill="#666">visit?</text><polygon points="342,40 470,40 458,84 330,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="400.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Home: tasks</text><text x="400.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">+ feed below</text><polygon points="517,40 645,40 633,84 505,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="575.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Difficult task</text><text x="575.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">(optional)</text><polygon points="680,40 820,40 806,84 694,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="750.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Do the task</text><text x="750.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">(outside the app)</text><rect x="860" y="40" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="935.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Mark it done:</text><text x="935.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">add its minutes</text><path d="M110 62 H146" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M290 62 H326" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="298" y="54" font-size="11.5" fill="currentColor" text-anchor="start">no</text><path d="M470 62 H501" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M645 62 H676" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M820 62 H856" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><rect x="135" y="138" width="170" height="64" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="220.0" y="158.0" text-anchor="middle" font-size="13" fill="#333">Welcome:</text><text x="220.0" y="174.0" text-anchor="middle" font-size="12" fill="#666">pick tasks &amp; repeat</text><text x="220.0" y="190.0" text-anchor="middle" font-size="12" fill="#666">+ a relax time</text><path d="M220 106 V134" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="228" y="124" font-size="11.5" fill="currentColor" text-anchor="start">yes</text><path d="M305 170 H400 V88" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M935 84 V210" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="935,214 1010,260 935,306 860,260" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="935" y="256" text-anchor="middle" font-size="12" fill="#333">All of today&#8217;s</text><text x="935" y="272" text-anchor="middle" font-size="11" fill="#666">tasks done?</text><rect x="690" y="238" width="130" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="755.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Add the</text><text x="755.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">day bonus</text><path d="M860 260 H824" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="840" y="250" font-size="11.5" fill="currentColor" text-anchor="middle">yes</text><path d="M514 238 H650 Q636 260.0 650 282 H514 Q494 260.0 514 238" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="579.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Time Bank</text><text x="579.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">(never expires)</text><path d="M690 260 H654" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M935 306 V330 H580 V286" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="943" y="324" font-size="11.5" fill="currentColor" text-anchor="start">no</text><polygon points="390,214 465,260 390,306 315,260" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390" y="256" text-anchor="middle" font-size="12" fill="#333">Earned time</text><text x="390" y="272" text-anchor="middle" font-size="11" fill="#666">or wildcard?</text><path d="M500 260 H469" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><rect x="120" y="238" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Subtract minutes</text><text x="195.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">(down to 0)</text><path d="M315 260 H274" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="293" y="250" font-size="11.5" fill="currentColor" text-anchor="middle">earned</text><rect x="315" y="380" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390.0" y="398.0" text-anchor="middle" font-size="13" fill="#333">Use the wildcard</text><text x="390.0" y="414.0" text-anchor="middle" font-size="12" fill="#666">(15 minutes)</text><path d="M390 306 V376" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="398" y="346" font-size="11.5" fill="currentColor" text-anchor="start">wildcard</text><rect x="120" y="380" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="398.0" text-anchor="middle" font-size="13" fill="#333">Start the timer</text><text x="195.0" y="414.0" text-anchor="middle" font-size="12" fill="#666">(can pause)</text><path d="M195 282 V376" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M315 402 H274" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="120,508 270,508 256,552 134,552" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Enjoy it</text><text x="195.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(outside the app)</text><path d="M195 424 V504" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="390,484 465,530 390,576 315,530" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390" y="526" text-anchor="middle" font-size="12" fill="#333">Register</text><text x="390" y="542" text-anchor="middle" font-size="11" fill="#666">the moment?</text><path d="M270 530 H311" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M514 508 H650 Q636 530.0 650 552 H514 Q494 530.0 514 508" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="579.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Minutes lived</text><text x="579.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(registered)</text><path d="M465 530 H496" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="480" y="520" font-size="11.5" fill="currentColor" text-anchor="middle">yes</text><path d="M720 508 H856 Q842 530.0 856 552 H720 Q700 530.0 720 508" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="785.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Personal feed</text><text x="785.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(moments)</text><path d="M654 530 H702" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M785 552 V590 H1050 V20 H400 V36" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M390 576 V590 H785" stroke="currentColor" stroke-width="1.4" fill="none"/><text x="382" y="586" font-size="11.5" fill="currentColor" text-anchor="end">no</text><text x="1042" y="460" font-size="11.5" fill="currentColor" text-anchor="end">back to home</text><text x="0" y="14" font-size="11.5" fill="currentColor" text-anchor="start">PHASE 1A · EARN</text><text x="320" y="200" font-size="11.5" fill="currentColor" text-anchor="start">PHASE 1B · USE</text></svg>
+                    <svg viewBox="0 0 1080 600" class="w-full min-w-[720px] h-auto text-teal-800 font-mono" role="img" aria-label="Core loop flowchart after the workflow session. Open the app. Decision: first visit? Yes shows a welcome to pick tasks and how they repeat; both paths go to the home, with today's tasks on top and the feed of moments below. Optionally write a difficult task, do the task outside the app, mark it done and add its minutes. Decision: all of today's tasks done? Yes adds the day bonus; both paths go to Your treasure. Decision: earned time or wildcard? Earned subtracts the minutes, down to 0; wildcard gives 15 minutes. Both start a timer that can be paused. Enjoy it outside the app. Decision: register the moment? Yes adds the time to minutes lived and the note to the personal feed of moments. Both answers go back to the home."><defs><marker id="uf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs><rect x="0" y="40" width="110" height="44" rx="22" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="55.0" y="66.0" text-anchor="middle" font-size="13" fill="#333">Open the app</text><polygon points="220,18 290,62 220,106 150,62" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="220" y="58" text-anchor="middle" font-size="12" fill="#333">First</text><text x="220" y="74" text-anchor="middle" font-size="11" fill="#666">visit?</text><polygon points="342,40 470,40 458,84 330,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="400.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Home: tasks</text><text x="400.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">+ feed below</text><polygon points="517,40 645,40 633,84 505,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="575.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Difficult task</text><text x="575.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">(optional)</text><polygon points="680,40 820,40 806,84 694,84" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="750.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Do the task</text><text x="750.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">(outside the app)</text><rect x="860" y="40" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="935.0" y="58.0" text-anchor="middle" font-size="13" fill="#333">Mark it done:</text><text x="935.0" y="74.0" text-anchor="middle" font-size="12" fill="#666">add its minutes</text><path d="M110 62 H146" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M290 62 H326" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="298" y="54" font-size="11.5" fill="currentColor" text-anchor="start">no</text><path d="M470 62 H501" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M645 62 H676" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M820 62 H856" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><rect x="135" y="138" width="170" height="64" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="220.0" y="166.0" text-anchor="middle" font-size="13" fill="#333">Welcome:</text><text x="220.0" y="182.0" text-anchor="middle" font-size="12" fill="#666">pick tasks &amp; repeat</text><path d="M220 106 V134" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="228" y="124" font-size="11.5" fill="currentColor" text-anchor="start">yes</text><path d="M305 170 H400 V88" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M935 84 V210" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="935,214 1010,260 935,306 860,260" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="935" y="256" text-anchor="middle" font-size="12" fill="#333">All of today&#8217;s</text><text x="935" y="272" text-anchor="middle" font-size="11" fill="#666">tasks done?</text><rect x="690" y="238" width="130" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="755.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Add the</text><text x="755.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">day bonus</text><path d="M860 260 H824" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="840" y="250" font-size="11.5" fill="currentColor" text-anchor="middle">yes</text><path d="M514 238 H650 Q636 260.0 650 282 H514 Q494 260.0 514 238" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="579.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Your treasure</text><text x="579.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">(never expires)</text><path d="M690 260 H654" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M935 306 V330 H580 V286" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="943" y="324" font-size="11.5" fill="currentColor" text-anchor="start">no</text><polygon points="390,214 465,260 390,306 315,260" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390" y="256" text-anchor="middle" font-size="12" fill="#333">Earned time</text><text x="390" y="272" text-anchor="middle" font-size="11" fill="#666">or wildcard?</text><path d="M500 260 H469" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><rect x="120" y="238" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="256.0" text-anchor="middle" font-size="13" fill="#333">Subtract minutes</text><text x="195.0" y="272.0" text-anchor="middle" font-size="12" fill="#666">(down to 0)</text><path d="M315 260 H274" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="293" y="250" font-size="11.5" fill="currentColor" text-anchor="middle">earned</text><rect x="315" y="380" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390.0" y="398.0" text-anchor="middle" font-size="13" fill="#333">Use the wildcard</text><text x="390.0" y="414.0" text-anchor="middle" font-size="12" fill="#666">(15 minutes)</text><path d="M390 306 V376" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="398" y="346" font-size="11.5" fill="currentColor" text-anchor="start">wildcard</text><rect x="120" y="380" width="150" height="44" rx="2" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="398.0" text-anchor="middle" font-size="13" fill="#333">Start the timer</text><text x="195.0" y="414.0" text-anchor="middle" font-size="12" fill="#666">(can pause)</text><path d="M195 282 V376" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M315 402 H274" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="120,508 270,508 256,552 134,552" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="195.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Enjoy it</text><text x="195.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(outside the app)</text><path d="M195 424 V504" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><polygon points="390,484 465,530 390,576 315,530" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="390" y="526" text-anchor="middle" font-size="12" fill="#333">Register</text><text x="390" y="542" text-anchor="middle" font-size="11" fill="#666">the moment?</text><path d="M270 530 H311" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M514 508 H650 Q636 530.0 650 552 H514 Q494 530.0 514 508" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="579.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Minutes lived</text><text x="579.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(registered)</text><path d="M465 530 H496" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><text x="480" y="520" font-size="11.5" fill="currentColor" text-anchor="middle">yes</text><path d="M720 508 H856 Q842 530.0 856 552 H720 Q700 530.0 720 508" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.3" fill="#ffffff"/><text x="785.0" y="526.0" text-anchor="middle" font-size="13" fill="#333">Personal feed</text><text x="785.0" y="542.0" text-anchor="middle" font-size="12" fill="#666">(moments)</text><path d="M654 530 H702" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M785 552 V590 H1050 V20 H400 V36" stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#uf-arrow)"/><path d="M390 576 V590 H785" stroke="currentColor" stroke-width="1.4" fill="none"/><text x="382" y="586" font-size="11.5" fill="currentColor" text-anchor="end">no</text><text x="1042" y="460" font-size="11.5" fill="currentColor" text-anchor="end">back to home</text><text x="0" y="14" font-size="11.5" fill="currentColor" text-anchor="start">PHASE 1A · EARN</text><text x="320" y="200" font-size="11.5" fill="currentColor" text-anchor="start">PHASE 1B · USE</text></svg>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         All 27 what-if questions are decided. Four decisions changed the design: time only counts once the user registers the moment, in a &ldquo;minutes lived&rdquo; counter; a timer starts when the user takes time, to notice it, not to control it; the wildcard no longer expires, lasts 15 minutes and has a cap of one; and the personal feed of moments moves into Phase 1, because without it the app is one more to-do list. The rule behind them: nothing is imposed.
@@ -856,6 +890,310 @@
         </div>
     </div>
 
+    <!-- sow-v3-modal -->
+    <div id="sow-v3-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="sow-v3-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; Discovery outcome</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="sow-v3-modal-title">SOW v3, after Discovery</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">SOW v2 with the 27 Discovery changes folded in. Each changed item cites its change ID (C-01 to C-27).</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><strong>Project Lead:</strong> The founder, who is also the product owner and the project manager (one person)
+<strong>Project Sponsor:</strong> The founder (self-funded, self-driven project)</p>
+<h2>Stakeholders</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Held by</th>
+<th>Decision authority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Founder, product owner, project manager and first user</td>
+<td>One person</td>
+<td>Decides and approves everything. Approvals are self-approvals, recorded in the Revision History.</td>
+</tr>
+<tr>
+<td>Testers (Phase 1b)</td>
+<td>3 to 5 people from the persona, ideally the people from the Discovery talks</td>
+<td>None. They use the app for 2 weeks and answer a short check-in. (C-26)</td>
+</tr>
+<tr>
+<td>Build and documentation support</td>
+<td>Claude</td>
+<td>None. Proposes; the founder decides.</td>
+</tr>
+</tbody>
+</table>
+<h2>Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Revision date</th>
+<th>Revised by</th>
+<th>Approved by</th>
+<th>Description of change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-09-21</td>
+<td>Founder, with the sow-drafting skill</td>
+<td>—</td>
+<td>v1: SOW drafted from the founder brief. Anything the brief did not say is marked "Not specified in the source".</td>
+</tr>
+<tr>
+<td>2026-09-24</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v2: alignment meeting decisions incorporated. Predefined tasks set as a catalog of 10, with up to 3 shown per day. Platform changed from "mobile application" to web app. Phase 1 scope (full core loop except ENJOY, split into 1a and 1b), exclusions, acceptance and validation criteria, timeline, hours and change control added. Stakeholders filled in.</td>
+</tr>
+<tr>
+<td>2026-10-04</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v2.1: Phase 1a and 1b target dates (2026-10-04 and 2026-10-11) removed. Discovery (1.4) comes before the build and has not started, so the build is re-planned after it. Scope unchanged.</td>
+</tr>
+<tr>
+<td>2026-10-17</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v3: Discovery outcome incorporated (C-01 to C-27, decided 2026-10-07 to 2026-10-16). Problem narrowed, positioning and persona rewritten, "Time Bank" renamed "Your treasure". Phase 1 grew through change control: user-picked tasks with repetition, wildcard, timer, "minutes lived", camera photo, dated feed, export / restore / delete. Retention written as a design rule. Phase 1b now tested by 3–5 people. New dates set.</td>
+</tr>
+</tbody>
+</table>
+<h2>Purpose</h2>
+<p>Treasure Time is a <strong>well-being app</strong> (C-02). It helps people take time for themselves, away from the screen, starting from the small things they already do every day (health, home, work and functional responsibilities).</p>
+<p><strong>Positioning (C-03):</strong> "Time for yourself, away from the screen, from the small things you already do." (Spanish: "Tiempo para vos, lejos de la pantalla, a partir de las cosas pequeñas que ya hacés.") Not "guilt-free" and not "earn your time": both feed the guilt the product wants to ease.</p>
+<p><strong>Problem (C-01).</strong> People say "I have no time for myself" in three different ways: (a) they truly have no time; (b) they have moments, but those moments do not feel like their own, because they feel they should be doing something else; (c) they have time, but arrive too tired to use it. Treasure Time solves <strong>case b</strong>, and supports <strong>case c</strong> through the wildcard and low-setup rest. Case c has no evidence yet (assumption A-10). Case a is out of reach for an app.</p>
+<p><strong>Hypothesis (Lean UX, from the Discovery synthesis).</strong> We believe more time for oneself, enjoyed without guilt (moments registered as lived), will be achieved if adults whose paid work and care compete for their time attain permission to rest, earned from small tasks they already do or free on a hard day, with "Your treasure" of minutes, a wildcard and a feed of the moments they lived. Still unknown: A-01 (earning eases guilt rather than feeding it), A-02 (no pressure is not boring), A-03 (people want to look back at their moments). Step 1.5 develops this in full.</p>
+<p><strong>MVP objective.</strong> Phase 1a checks that the app <strong>works</strong>; Phase 1b checks whether it <strong>helps</strong> (C-26).</p>
+<p><strong>Product philosophy and tone.</strong> This is design intent, not a testable requirement.</p>
+<ul>
+<li>Nothing is imposed: every prompt is an offer the user can ignore.</li>
+<li>It should not feel like an endless task list, toxic productivity, "earning the right to rest", or guilt for not complying.</li>
+<li>The expected tone is warm, human, hopeful, calm, contemplative and non-judgmental.</li>
+</ul>
+<p><strong>Retention rule (C-09).</strong> Unlike tone, this is a design rule and it can be checked: <strong>no streaks, nothing that resets, no random rewards, no weekly targets; an absence costs nothing.</strong> A feature that breaks it does not go in.</p>
+<h2>Core loop</h2>
+<p>DO a task → COMPLETE it → earn +X minutes → ACCUMULATE in "Your treasure" → CHOOSE how much time to take → ENJOY it → REGISTER the moment → back to DO.</p>
+<ul>
+<li><strong>Minutes are the currency.</strong> They never expire. The user can take all, part, or more than the balance; above the balance, "Your treasure" goes to 0. The app works on trust (C-08).</li>
+<li><strong>Wildcard (C-06).</strong> On a hard day the user can take 15 minutes without earning them. It does not expire, the user holds at most 1, and the next one comes after completing 3 tasks. The moment shows in the feed with a mark.</li>
+<li><strong>Registering (C-07).</strong> Optional to keep earning, but time only <strong>counts</strong> once registered: it moves to a second counter, "minutes lived", which only grows and never resets.</li>
+<li><strong>Taking time (C-08).</strong> A timer the user can pause. It stops on its own when the time taken runs out; unused minutes can be saved.</li>
+</ul>
+<p>Phase 1a covers DO to ACCUMULATE. Phase 1b adds CHOOSE and REGISTER, which closes the loop. ENJOY happens outside the app.</p>
+<h2>Target Audience (C-05)</h2>
+<p><strong>People who feel their time is never their own.</strong></p>
+<p>Evidence of where the pain peaks: adults whose paid work and care of others compete for the time left for themselves (Discovery findings 1, 6, 7, 8). The 25–45 age range from v2 is dropped: the line is the experience, not the age.</p>
+<p><em>Discovery was desk research plus the founder's sessions. The short talks with 3 to 5 people are pending; if they do not happen before the build, the persona stays a desk-research persona and Phase 1b is its first real check.</em></p>
+<h2>Scope / Major Project Activities</h2>
+<p><strong>Platform.</strong> Web app (React + Vite + Tailwind). No native app, no PWA and no server for now. Features that need a native app or a server wait until the core loop is validated.</p>
+<h3>Phase 1a — "Does it work?" (earn; the founder tests alone) (C-27)</h3>
+<ul>
+<li><strong>First visit (C-10, C-15).</strong> Only one step: the user picks tasks from a catalog of 10 predefined tasks (Health, Home, Work / Purpose) and sets how each repeats: every day, chosen days, or once. They can also create a custom routine task that is not in the catalog. No questionnaire. Replaces v2's "the app pre-loads up to 3".</li>
+<li><strong>Daily list</strong> of the tasks scheduled for today, reset at midnight.</li>
+<li><strong>Difficult task (C-11).</strong> One per day, not per category, always optional; the user can add more. The user writes it in their own words when opening the app. If it is not finished, it comes back the next day as a suggestion ("Yesterday: X · add again"); if ignored, it disappears with no penalty.</li>
+<li><strong>Mark and undo (C-12).</strong> Completing a task adds its minutes right away. A task can be undone on the same day, down to 0; the day bonus follows the same rule.</li>
+<li><strong>Minute values (C-17).</strong> Catalog tasks keep the brief's examples (up to +15). Difficult task <strong>+20</strong>. Day bonus <strong>+10</strong> for completing all of the day's tasks, including the difficult one if the user wrote one. A full day gives about 50–60 minutes. Starting values, adjusted during Phase 1.</li>
+<li><strong>"Your treasure" (C-04):</strong> the view with the accumulated minutes. Replaces "Time Bank".</li>
+<li><strong>Home with one card at a time (C-14, C-16).</strong> Today's tasks (collapsible) on top. At most one question per opening, no pop-ups. One adjustment notice when a repeating task is missed 3 times in a row on its scheduled days: change how often it repeats, swap it, or turn it off.</li>
+<li><strong>"Forgot something yesterday?" (C-13).</strong> A discreet option, opened by the user, to log yesterday's task or register yesterday's moment. Available until the end of the next day.</li>
+<li><strong>Data on the device (C-21).</strong> Saved in the browser, with a notice on the first visit ("Your minutes are saved on this device") and, on iPhone, a tip to add the app to the home screen.</li>
+<li><strong>Export, restore and delete (C-22).</strong> "Export a copy" downloads a file with everything; "Restore from a copy" loads it on a new device or after the browser data is cleared; "Delete my data" removes everything.</li>
+<li><strong>If 1a slips:</strong> "Forgot something yesterday?" and the adjustment notice move to 1b first.</li>
+</ul>
+<h3>Phase 1b — "Does it help?" (use and register; 3–5 testers) (C-27)</h3>
+<ul>
+<li><strong>Taking time</strong> with the timer (C-08), and the <strong>wildcard</strong> (C-06).</li>
+<li><strong>Registering the moment (C-07, C-19, C-25)</strong> with a written note or a <strong>photo taken with the camera at that moment</strong>, not picked from the gallery. Build note: a web app can open the camera on a phone but cannot fully block the gallery on every browser or on desktop.</li>
+<li><strong>"Minutes lived"</strong> counter next to "Your treasure" (C-07).</li>
+<li><strong>Dated feed on the home (C-16, C-18).</strong> The registered moments, each with its date, below today's tasks, with a message when it is empty. It is a place to look back, not a retention mechanic: no counts of days in a row, no streaks, no badges, no "you have not posted in N days". A date is not a count, so it fits the rule.</li>
+<li><strong>Relax-time card (C-15, C-23).</strong> Asked later as a card on the home, not on the first visit. The preferred time shows as a line of text; no push reminders.</li>
+<li><strong>2-week test</strong> with 3 to 5 people (C-26).</li>
+</ul>
+<h3>Later phases — not in Phase 1 (C-24, C-25)</h3>
+<p>Each enters only through the change control below.</p>
+<ul>
+<li><strong>Postponed:</strong> protected mode while taking time (needs a native app), suggestion system, simple emotional reflection, voice notes (C-19), real reminders (prefer cues tied to a moment of the day over notifications, C-23), a changing avatar, a 7-day agenda for difficult tasks, Tumblr-style public profiles.</li>
+<li><strong>Dropped from v2's list:</strong> "editing or deleting predefined tasks" no longer applies, because the user picks and adjusts their own tasks.</li>
+<li><strong>Moved into Phase 1 from v2's later phases:</strong> registering with a photo (now camera only) and the personal feed.</li>
+</ul>
+<h2>Out-of-scope Activities</h2>
+<ul>
+<li>Everything in "Later phases" above.</li>
+<li>Sync, accounts, backend.</li>
+<li>A history or log of minutes earned and spent: the feed already shows what matters, and a minutes log moves toward measuring rest (C-20).</li>
+<li>Monetization and any commercial goal in this phase.</li>
+</ul>
+<h2>Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Phase</th>
+<th>Format</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First visit: pick tasks, repetition, custom routine task</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Daily list, difficult task with yesterday's suggestion, mark and undo</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Minutes system (task values, difficult task +20, day bonus +10)</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>"Your treasure" view and home with one card at a time (adjustment notice included)</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>"Forgot something yesterday?"</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Data on the device with notice; export, restore and delete</td>
+<td>1a</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Taking time (timer) and wildcard</td>
+<td>1b</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Registering the moment (note or camera photo) and "minutes lived"</td>
+<td>1b</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Dated feed on the home and relax-time card</td>
+<td>1b</td>
+<td>Web app feature</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>2-week test with 3–5 people and check-in summary</td>
+<td>1b</td>
+<td>Short report</td>
+<td>Founder</td>
+</tr>
+</tbody>
+</table>
+<h2>Acceptance Criteria</h2>
+<p><strong>Phase 1a is done when:</strong></p>
+<ol>
+<li>On the first visit the user picks tasks from the catalog of 10, sets how each repeats, and can create a custom routine task. No other step is required.</li>
+<li>Each day shows the tasks scheduled for that day; the list resets at midnight.</li>
+<li>The user can add a difficult task (one offered, more allowed). An unfinished one shows up the next day as a suggestion.</li>
+<li>Marking a task adds its minutes right away (difficult task +20); completing all of the day's tasks adds +10. Undo on the same day takes them back, never below 0.</li>
+<li>"Your treasure" is still there after reloading or closing the browser, and the first visit shows the on-device notice.</li>
+<li>"Export a copy" downloads a file; "Restore from a copy" loads it in a clean browser with the same totals; "Delete my data" leaves the app as on a first visit.</li>
+<li>The home shows at most one card per opening, and no feature shows a streak, a reset, a random reward or a weekly target.</li>
+</ol>
+<p><strong>Phase 1b is done when:</strong></p>
+<ol>
+<li>The user can take all, part or more than the balance; the timer can be paused and stops on its own; the balance goes down by the time taken, never below 0.</li>
+<li>The user can take a wildcard of 15 minutes with 0 earned, holds at most 1, and gets the next one after 3 tasks.</li>
+<li>The user can register the moment with a note or a camera photo; registered time adds to "minutes lived".</li>
+<li>The feed shows each registered moment with its date, and wildcard moments with their mark.</li>
+<li>A user can complete one full cycle: do a task, earn minutes, take time, register the moment, see it in the feed.</li>
+</ol>
+<p>The tone of the brief stays as design intent. The retention rule (criterion 7) is the checkable part.</p>
+<h2>Validation Criteria (C-26)</h2>
+<ul>
+<li><strong>Phase 1a:</strong> the founder uses it alone to check that it works end to end and that the minute values feel fair. Changes to values are recorded in the Revision History.</li>
+<li><strong>Phase 1b:</strong> 3 to 5 people use it for 2 weeks to check whether it helps (A-01, A-02, A-03, A-10). The app has no server, so each tester's data stays on their phone; signals come from a short check-in, not from data collection.</li>
+<li><strong>Phase 1 signal:</strong> the app is used on 5 of 7 days for 2 weeks. Noted: this is far above what similar apps reach (about 3.3% of users still active at 30 days, finding 25), so missing it is not by itself a failure.</li>
+<li><strong>MVP success:</strong> a tester completes at least 3 full cycles in a week.</li>
+<li><strong>Signals to observe in the check-in:</strong> days they opened it, tasks completed, wildcard use on tired days, moments registered, whether they looked back at the feed, and whether earning minutes felt like relief or like pressure.</li>
+</ul>
+<h2>Schedule Overview / Major Milestones (C-27)</h2>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Target date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alignment step (1.3) closed</td>
+<td>2026-09-24</td>
+</tr>
+<tr>
+<td>Discovery (1.4) closed, with the 1.5 problem framing and the 1.7 charter</td>
+<td>2026-10-23</td>
+</tr>
+<tr>
+<td>Phase 1a built and in self-test</td>
+<td>2026-11-06</td>
+</tr>
+<tr>
+<td>Phase 1b built</td>
+<td>2026-11-20</td>
+</tr>
+<tr>
+<td>Test with 3–5 people</td>
+<td>2026-11-23 to 2026-12-04</td>
+</tr>
+</tbody>
+</table>
+<h2>Estimated Hours for Completion</h2>
+<p>Builders: the founder and Claude, at 1–1.5 hours per day, job applications first. Whether the larger Phase 1 fits these dates is itself an assumption (A-09), tracked against the milestones; the cut line is set in Phase 1a.</p>
+<h2>Estimated Date for Completion</h2>
+<p>Phase 1 (1a and 1b, with the test): 2026-12-04. Later phases: not scheduled.</p>
+<h2>Budget and Payment Terms</h2>
+<p>No money budget. The only cost is time.</p>
+<h2>Change Control</h2>
+<p>Anything not in Phase 1a or 1b goes to the later-phases list. It only enters through an explicit decision by the founder, written in the Revision History. In Discovery, 9 changes entered Phase 1 this way (C-06, C-07, C-08, C-10, C-13, C-14, C-16, C-18, C-22).</p>
+<h2>Risks (from the user flow review and the assumption log)</h2>
+<ul>
+<li><strong>Data loss.</strong> With the feed and photos in Phase 1, losing browser data means losing the user's moments. Safari on iPhone can delete it after about 7 days without use. Mitigation: home-screen tip, export / restore (C-21, C-22).</li>
+<li><strong>Storage size.</strong> Photos are heavy for browser storage and for the exported file. To size in the build.</li>
+<li><strong>Scope vs. time (A-09).</strong> Phase 1 grew. Mitigation: the 1a cut line and the dates above.</li>
+<li><strong>"Your treasure" has no hard limit (A-04).</strong> Taking more than the balance weakens the bonus, the difficult task and the wildcard as incentives. Accepted as part of the trust principle; observed in 1b.</li>
+</ul>
+<h2>Open Items (carried forward)</h2>
+<ul>
+<li><strong>Language of the app (A-07).</strong> The first audience is likely Spanish-speaking (Argentina). To decide before the build.</li>
+<li><strong>Short talks with 3 to 5 people.</strong> Pending. If they do not happen before the build, A-01, A-02, A-05 and A-10 are checked in Phase 1b instead.</li>
+<li><strong>Copy to review in the build:</strong> "minutes lived", the "forgot something yesterday?" question, the adjustment offer.</li>
+<li><strong>Visual style:</strong> minimalist, warm, customizable and accessible, with a nod to the first social networks. Defined in the build.</li>
+<li><strong>Privacy and sensitive data:</strong> moot in Phase 1, because data never leaves the device. Revisit before any sync, account or backend.</li>
+<li><strong>Non-functional requirements</strong> (accessibility, offline, localization): decided when the build starts.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+
     <!-- kickoff-modal -->
     <div id="kickoff-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="kickoff-modal-title">
         <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
@@ -956,8 +1294,8 @@
         <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
             <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
                 <div class="space-y-1">
-                    <p class="text-[10px] font-mono text-teal-800">Discovery &bull; sessions 1 and 2 of 4</p>
-                    <h3 class="text-base font-semibold text-slate-200" id="discovery-modal-title">Discovery findings so far</h3>
+                    <p class="text-[10px] font-mono text-teal-800">Discovery &bull; 4 sessions and the synthesis</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="discovery-modal-title">Discovery findings</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">Desk research only: every finding cites a public source, and nothing is validated with users yet. Each session ends with what it changes in the SOW.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
@@ -1041,8 +1379,37 @@
 <h2>Limits</h2>
 <p>Surveys are self-reports about time in general; reviews over-represent very happy or very upset users, and were read in Spanish. This shows the pain exists and what users of similar apps complain about. It does not show that this audience would use Treasure Time.</p>
 
-<h2>Next</h2>
-<p>Session 3: should time be earned or free to use, and what brings people back. Then a walk through the core loop and user flow, asking &ldquo;what happens if...?&rdquo; at each step, and short talks with 3 to 5 people. Session 4: synthesis into SOW v3.</p>
+<h2>Session 3: earned or free time, and what brings people back</h2>
+<p><strong>Question:</strong> does earning minutes ease the guilt of resting or feed it, and what makes people come back to an app like this, or leave it?</p>
+<ul>
+<li>Effort lowers the guilt of enjoying something, mostly for people who feel guilt the most. Calling rest productive, rewarding it or measuring it makes it less enjoyable.</li>
+<li>Streaks, weekly resets and pressure keep people for a while and then lose them. Most leave apps like this within weeks; a missed day does not break a habit, but a broken streak lowers what people do next.</li>
+<li>Reminders build repetition, not habits. Cues tied to a moment of the day work better.</li>
+</ul>
+<p><strong>For the SOW:</strong> keep earning minutes, but add a <strong>wildcard</strong>: some time can be taken without earning it, for the days when earning would feel like a condition (founder decision). Doing nothing counts.</p>
+<p><strong>Follow-up: should unused wildcards expire?</strong> Rewards that expire get used through regret and pressure; a small saved reserve with a cap works without it. Decision: the wildcard does not expire, and the user holds at most one.</p>
+
+<h2>Session 4: synthesis</h2>
+<p>The 35 findings were grouped into 8 themes (affinity diagram). Each theme became an insight, and each insight a change to the SOW.</p>
+<table>
+<thead>
+<tr><th>Theme</th><th>What it means for Treasure Time</th></tr>
+</thead>
+<tbody>
+<tr><td>The pain follows life situation</td><td>The persona is a situation, not an age range.</td></tr>
+<tr><td>Time feels short because it does not feel one&rsquo;s own</td><td>The app cannot create time; it can make it feel like one&rsquo;s own.</td></tr>
+<tr><td>Earning can give permission, measuring rest spoils it</td><td>Earn minutes, but never rate or measure the rest itself. The wildcard covers hard days.</td></tr>
+<tr><td>Apps that push end up being the goal</td><td>A design rule: no streaks, nothing resets, an absence costs nothing.</td></tr>
+<tr><td>Rest has to be easy to start</td><td>Any kind of rest counts, including doing nothing, with no setup first.</td></tr>
+<tr><td>The mechanic and the words are taken</td><td>Position on where the time goes: away from the screen. &ldquo;Time Bank&rdquo; becomes &ldquo;Your treasure&rdquo;.</td></tr>
+<tr><td>Basics decide whether people stay</td><td>A short first visit, a calm home, and a way to export and restore data.</td></tr>
+<tr><td>Saved rest works with a cap, not a deadline</td><td>One wildcard at most, no expiry.</td></tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> 27 changes to the SOW, each traced to its findings. 13 were already decided in earlier sessions and 14 were decided with the founder in session 4, two of them conflicts between the research and the user flow. The outcome is SOW v3.</p>
+
+<h2>Still open</h2>
+<p>Short talks with 3 to 5 people from the persona. If they do not happen before the build, Phase 1b checks the same questions with 3 to 5 testers.</p>
             </div>
         </div>
     </div>
@@ -1117,7 +1484,7 @@
             m.querySelector('.sow-doc').scrollTop = 0;
         }
         function closeExampleModals() {
-            document.querySelectorAll('#sow-modal, #intake-modal, #sow-v2-modal, #kickoff-modal, #discovery-modal, #userflow-modal').forEach(function (m) {
+            document.querySelectorAll('[role="dialog"][id$="-modal"]').forEach(function (m) {
                 m.classList.add('hidden'); m.classList.remove('flex');
             });
         }
