@@ -412,14 +412,15 @@
                         </div>
                         <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif group-hover:translate-x-1 transition-transform inline-block">SOW: from brief to Discovery</span>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            Four skills that take a Statement of Work from the client brief to Discovery: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. During Discovery, a fourth skill walks the core loop with the client and turns each &ldquo;what happens if...?&rdquo; into a decision with an owner, before any user story is written. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
+                            Five skills that take a Statement of Work from the client brief through Discovery: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. During Discovery, a fourth skill walks the core loop with the client and turns each &ldquo;what happens if...?&rdquo; into a decision with an owner, before any user story is written. A fifth brings the findings and decisions together into a traceable list of changes for the next SOW, asking the client only what is still open. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
                         </p>
                         <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-drafting</code><span class="font-semibold">v1.2.2</span></span>
-                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.0</span></span>
-                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-discovery-prep</code><span class="font-semibold">v1.0.0</span></span>
-                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-user-flow</code><span class="font-semibold">v1.1.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.1</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-discovery-prep</code><span class="font-semibold">v1.0.1</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-user-flow</code><span class="font-semibold">v1.1.1</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-synthesis</code><span class="font-semibold">v1.0.0</span></span>
                         </div>
                         <span class="mt-auto flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800">See it applied in Treasure Time<span class="icon-chevron" aria-hidden="true"></span></span>
                     </div>
@@ -496,8 +497,14 @@
                     </div>
                 </details>
                 <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3" open>
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-intake-analysis</code> <span>v2.0.0</span></summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-intake-analysis</code> <span>v2.0.1</span></summary>
                     <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v2.0.1</span> &middot; 2026-10-16</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed (wording only):</strong> the skill names its standard equivalents: document analysis, gap analysis, and the first entries of the assumption log and the stakeholder register. The output is the same.</li><li><strong>Why:</strong> while designing <code>discovery-synthesis</code>, I asked whether the output matched a standard artifact from PMI or Agile. With the standard names, a reader from either world recognizes each part, and the skills connect: the assumption log starts in <code>sow-intake-analysis</code> and continues in <code>discovery-synthesis</code> and the project charter.</li>
+                            </ul>
+                        </div>
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v2.0.0</span> &middot; 2026-09-22</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
@@ -513,8 +520,14 @@
                     </div>
                 </details>
                 <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-discovery-prep</code> <span>v1.0.0</span></summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-discovery-prep</code> <span>v1.0.1</span></summary>
                     <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.1</span> &middot; 2026-10-16</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed (wording only):</strong> section names carry their standard term: proto-persona (Lean UX), a MoSCoW-style feature matrix and a research plan. The content is the same.</li><li><strong>Why:</strong> while designing <code>discovery-synthesis</code>, I asked whether the output matched a standard artifact from PMI or Agile. With the standard names, a reader from either world recognizes each part, and the skills connect: the assumption log starts in <code>sow-intake-analysis</code> and continues in <code>discovery-synthesis</code> and the project charter.</li>
+                            </ul>
+                        </div>
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-04</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
@@ -524,8 +537,14 @@
                     </div>
                 </details>
                 <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
-                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">discovery-user-flow</code> <span>v1.1.0</span></summary>
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">discovery-user-flow</code> <span>v1.1.1</span></summary>
                     <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.1.1</span> &middot; 2026-10-16</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Changed (wording only):</strong> the session is named as a facilitated workshop, and section names carry their standard term: main success scenario, decision log and change requests. The content is the same.</li><li><strong>Why:</strong> while designing <code>discovery-synthesis</code>, I asked whether the output matched a standard artifact from PMI or Agile. With the standard names, a reader from either world recognizes each part, and the skills connect: the assumption log starts in <code>sow-intake-analysis</code> and continues in <code>discovery-synthesis</code> and the project charter.</li>
+                            </ul>
+                        </div>
                         <div class="space-y-1">
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.1.0</span> &middot; 2026-10-08</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
@@ -536,6 +555,17 @@
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-08</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
                                 <li><strong>Added:</strong> first version. Two stages: a prep (the happy path taken from the SOW, and what-if questions for each step, written through fixed lenses such as mistakes, limits, time, interruptions and rules that collide) and the workflow session, where the project manager asks and the client decides. Output: happy path, flow diagram, what-if log with priority, decision, owner and status, and conflicts with the SOW.</li><li><strong>Changed after the first run:</strong> a priority column. The first run on Treasure Time produced 24 questions for a one-hour session, so the ones that block a user story or touch an open decision of the SOW are asked first.</li><li><strong>Why:</strong> in client Discovery work, workflow sessions are where most doubts about a product come out. Without one, those doubts would only appear while writing user stories or building.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">discovery-synthesis</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-10-16</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Two stages: a prep (findings grouped into themes, an insight per theme, every SOW change with its origin and status, an assumption log, a hypothesis statement and a traceability map) and the synthesis session, where the client decides only the open rows. Each section carries its standard name: affinity diagram, Requirements Traceability Matrix with change requests, decision log, assumption log, Lean UX hypothesis statement.</li><li><strong>Design decisions:</strong> it ends at the SOW changes and the hypothesis, because SMART objectives belong to the project charter; it never asks again what the workflow session already decided; it runs with the evidence that exists and lists missing user talks as pending.</li><li><strong>Why:</strong> Treasure Time&rsquo;s Discovery left its results in three places: 35 research findings, 27 workflow-session decisions and the inconsistencies found in the SOW. Without a synthesis, the next SOW would be written from memory, and the case study could not show how each decision was reached.</li>
                             </ul>
                         </div>
                     </div>
