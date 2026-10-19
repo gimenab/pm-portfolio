@@ -131,7 +131,7 @@
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
                     <span class="text-teal-300" data-en="Discovery" data-es="Descubrimiento">Discovery</span>
                 </h2>
-                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span></span>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span></span>
             </div>
 
             <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
@@ -231,7 +231,7 @@
                         On AI: ChatGPT and Gemini ran the same prompts, and nothing went into the findings without checking the source. In session 1, Gemini invented 5 of its 6 sources; in session 2, 2 of ChatGPT&rsquo;s Reddit quotes were not in the threads it cited. I read the store reviews and Reddit threads myself.
                     </p>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Still open: short talks with 3 to 5 people from the persona. If they do not happen before the build, Phase 1b checks the same questions with real testers.
+                        Trade-off: the short talks with 3 to 5 people were not run, to keep the schedule. The evidence on guilt is desk research only, and the risk is accepted. The talk guide waits for a test with other people, in a later phase.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <button type="button" onclick="openExampleModal('discovery-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View Discovery findings<span class="icon-chevron" aria-hidden="true"></span></button>
@@ -268,15 +268,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">Earning minutes eases guilt rather than feeding it</td><td class="py-2 pr-3 align-top">Testers&rsquo; check-in: did earning feel like relief or like pressure?</td></tr>
+                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">Earning minutes eases guilt rather than feeding it</td><td class="py-2 pr-3 align-top">Phase 1: a one-word note after each time taken, relief or pressure (founder only). With other people: a later phase</td></tr>
                                 <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">An app with no pressure is not boring: people come back</td><td class="py-2 pr-3 align-top">Used on 5 of 7 days for 2 weeks, with no streaks to push them</td></tr>
-                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">People want to look back at the moments they lived</td><td class="py-2 pr-3 align-top">Whether testers open the feed, and say so in the check-in</td></tr>
+                                <tr class="border-b border-black/5"><td class="py-2 pr-3 align-top">People want to look back at the moments they lived</td><td class="py-2 pr-3 align-top">Phase 1: whether the founder looks back at the feed. With other people: a later phase</td></tr>
                                 <tr><td class="py-2 pr-3 align-top">Tiredness, not only guilt, keeps people from resting</td><td class="py-2 pr-3 align-top">Wildcard use on tired days</td></tr>
                             </tbody>
                         </table>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Phase 1a, tested by the founder alone, shows the app <em>works</em>. Only Phase 1b, with 3 to 5 people for 2 weeks, can show it <em>helps</em>.
+                        Phase 1 is tested by the founder alone, so it can show the app <em>works</em> and give a first signal from one person. Whether it <em>helps</em> the persona needs a test with other people, moved to a later phase (change request CR-01, recorded in the charter).
                     </p>
                 </div>
                 <!-- 1.6 Core loop & user flow -->
@@ -300,6 +300,31 @@
                         <button type="button" onclick="openExampleModal('userflow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View the decisions<span class="icon-chevron" aria-hidden="true"></span></button>
                         <a href="../assets/downloads/treasure-time-core-loop.drawio" download class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Download diagram (editable in draw.io)<span class="icon-chevron" aria-hidden="true"></span></a>
                     </div>
+                </div>
+                <!-- 1.7 Project charter -->
+                <div class="p-6 space-y-4 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1.7</span>Project charter
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">project-charter</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The charter closes Discovery and authorizes building Phase 1. It points to SOW v3 and the hypothesis instead of repeating them, and adds what only a charter has: goals with a measure and a date, who can decide what, and when the project pauses or stops. Sections follow the order of the Google Project Management Certificate exemplar, plus assumptions, authority and exit criteria from PMBOK. I wrote it by hand first and then turned it into a skill, checked by ChatGPT, Gemini and a blind run.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">SMART goals, measured on my own use (a cohort of one, because testers could not be secured):</p>
+                    <ul class="space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><span class="font-mono text-teal-800">O1.</span> Have zero data-loss incidents and zero blocking issues during the 2 weeks of daily use, November 23 to December 4, 2026. A data-loss incident is any task, minute or moment missing after a reload, a browser restart or a restore from an exported copy; a blocking issue is one that stops a full cycle.</li>
+                        <li><span class="font-mono text-teal-800">O2.</span> Register at least 1 moment in each of the 2 weeks of use by December 4, 2026.</li>
+                        <li><span class="font-mono text-teal-800">O3.</span> Complete 3 full cycles (do a task, earn minutes, take time, register the moment) in one week by December 4, 2026.</li>
+                        <li><span class="font-mono text-teal-800">O4.</span> Rate at least half of the times taken as "relief" rather than "pressure" by December 4, 2026.</li>
+                    </ul>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li>One person is sponsor, product owner and project manager, so the charter splits the hats. As project manager I can reorder work, apply the cut line, tune minute values and move a milestone up to a week. Anything that adds scope or moves a date further goes to the sponsor.</li>
+                        <li>Pause if Phase 1a is two weeks late, if the pace drops for two weeks, or if a new job starts, and re-plan instead of squeezing the test. Stop building if earning minutes feels like pressure more than half of the time: that answer is what Phase 1 exists to find.</li>
+                        <li>The appendix keeps seven real misalignments from Discovery and how each was decided, such as moving the feed into Phase 1 and testing Phase 1 without other people, because testers could not be secured.</li>
+                    </ul>
+                    <button type="button" onclick="openExampleModal('charter-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View project charter<span class="icon-chevron" aria-hidden="true"></span></button>
                 </div>
         
             </div>
@@ -1197,6 +1222,411 @@
         </div>
     </div>
 
+    <!-- charter-modal -->
+    <div id="charter-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="charter-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Example &bull; Step 1.7</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="charter-modal-title">Project charter, Phase 1</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Approved by the founder on 2026-10-19. It authorizes building Phase 1 and is the input to planning (step 02).</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p>DATE: 2026-10-19</p>
+<h2>Project Summary</h2>
+<p>We plan to build Phase 1 of Treasure Time, a well-being web app where small daily tasks earn
+minutes of time for oneself, away from the screen, and use it every day for 2 weeks, from
+November 23 to December 4, 2026. This will answer the problem framed in Discovery: people whose
+work and care of others fill their days have moments for themselves, but those moments do not feel
+like theirs. Phase 1 shows whether the app works end to end and whether the core loop (earn
+minutes, take time, register the moment) holds up in daily life. Additionally, it will give a
+first, honest signal on the central question (does earning minutes feel like relief or like
+pressure?), from one person, before anyone else is asked to use it. It is worth doing now because
+Discovery closed with desk research only, and a working app is the cheapest way to get real
+evidence.</p>
+<h2>Project Goals</h2>
+<p><em>SMART: Specific, Measurable, Attainable, Relevant, and Time-bound</em></p>
+<p>All goals are measured on the founder's own use (a cohort of one, CR-01). There is no baseline
+for this app, so every target is provisional.</p>
+<ul>
+<li><strong>O1.</strong> Have zero data-loss incidents and zero blocking issues during the 2 weeks of daily use,
+  November 23 to December 4, 2026. A data-loss incident is any task, minute or moment missing after
+  a reload, a browser restart or a restore from an exported copy; a blocking issue is one that
+  stops a full cycle. Measured by: the totals checked each evening, an export and restore at the
+  end, and a log of issues. Evidence for the target: lost data pushes people out of similar apps
+  (finding 18), so any loss counts as a failure.</li>
+<li><strong>O2.</strong> Register at least 1 moment in each of the 2 weeks of use by December 4, 2026. Measured
+  by: the dated feed. Evidence for the target: provisional; it is the lowest level of use at which
+  the feed has something to show.</li>
+<li><strong>O3.</strong> Complete 3 full cycles (do a task, earn minutes, take time, register the moment) in one
+  week by December 4, 2026. Measured by: the feed and "minutes lived". Evidence for the target:
+  the MVP success criterion of SOW v3.1.</li>
+<li><strong>O4.</strong> Rate at least half of the times taken as "relief" rather than "pressure" by
+  December 4, 2026. Measured by: a one-word note after each time taken. Evidence for the target:
+  provisional; the research is mixed (findings 20 to 24), so half is the line between support and
+  doubt. Below it, the hypothesis is not supported for the founder.</li>
+</ul>
+<h2>Deliverables</h2>
+<ul>
+<li>Phase 1a web app: first visit with task picking and repetition, daily list, difficult task,
+  minutes and day bonus, "Your treasure"</li>
+<li>Data kept on the device, with a notice, and export, restore and delete</li>
+<li>Phase 1b web app: timer, wildcard, registering the moment with a note or a camera photo,
+  "minutes lived", dated feed of moments</li>
+<li>App copy in Spanish (Argentina), kept in one file so English can be added later</li>
+<li>2 weeks of daily use by the founder, with a one-word relief or pressure note after each time
+  taken</li>
+<li>Self-test report: results against O1 to O4, updated assumption log and lessons learned</li>
+</ul>
+<p>The feature-level list is in SOW v3.1, "Deliverables".</p>
+<h2>Scope and Exclusion</h2>
+<p><strong>In-Scope:</strong> Phase 1a (earn) and Phase 1b (use and register) as listed in SOW v3.1, web app with
+data on the device, Spanish (Argentina) copy, 2 weeks of daily use by the founder, self-test
+report</p>
+<p><strong>Out-of-Scope:</strong> a test with other people (moved to a later phase, CR-01), accounts, sync and
+backend, native app, monetization, the later-phase features of SOW v3.1 (protected mode,
+suggestions, voice notes, reminders, avatar, public profiles), and any streak, reset, random reward
+or weekly target (retention rule, SOW v3.1)</p>
+<h2>Benefits &amp; Costs</h2>
+<p><strong>Benefits</strong></p>
+<ol>
+<li>Learn whether the core loop works in daily life before asking anyone else to use it</li>
+<li>Get a first signal on whether earning minutes feels like relief or pressure (O4)</li>
+<li>Give the founder a working app for daily use, testing the minute values and the retention rule
+   in real life</li>
+<li>Know in 7 weeks, at no money cost, whether the idea is worth a test with other people</li>
+</ol>
+<p><strong>Costs</strong></p>
+<ul>
+<li>Approved money budget: none</li>
+<li>Cost estimate: $0 (free tiers and tools already in use)</li>
+<li>Estimated effort (time available), at the pace agreed in SOW v3.1 of 1 to 1.5 hours per
+  weekday, job applications first:</li>
+<li>Planning, October 20 to 28: 7 weekdays, 7 to 10.5 hours</li>
+<li>Phase 1a build, October 29 to November 6: 7 weekdays, 7 to 10.5 hours</li>
+<li>Phase 1b build, November 9 to 20: 10 weekdays, 10 to 15 hours</li>
+<li>Daily use and fixes, November 23 to December 4: 10 weekdays, 10 to 15 hours</li>
+<li>Self-test report, December 7 to 11: 5 weekdays, 5 to 7.5 hours</li>
+</ul>
+<p>Planning (step 02) replaces the effort with estimates.</p>
+<p><strong>Budget needed:</strong></p>
+<ul>
+<li>Money: $0</li>
+<li>Effort: 39 to 58.5 hours of the founder's time, with Claude as build and documentation support</li>
+</ul>
+<h2>Assumptions and Constraints</h2>
+<p><strong>Assumptions</strong> (IDs from the assumption log in the Discovery synthesis)</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>How it will be checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-01</td>
+<td>Earning minutes eases guilt rather than feeding it</td>
+<td>O4 for the founder; for the persona, a test with other people (later phase)</td>
+</tr>
+<tr>
+<td>A-02</td>
+<td>An app with no pressure is engaging enough to come back to</td>
+<td>O2 for the founder; for the persona, a later phase</td>
+</tr>
+<tr>
+<td>A-03</td>
+<td>People want to look back at the moments they registered</td>
+<td>Whether the founder opens the feed; for the persona, a later phase</td>
+</tr>
+<tr>
+<td>A-08</td>
+<td>Keeping data on one device is acceptable, with a notice and export / restore</td>
+<td>O1</td>
+</tr>
+<tr>
+<td>A-09</td>
+<td>Phase 1 fits these dates at 1 to 1.5 hours a day</td>
+<td>Tracked against the milestones; cut line set in planning</td>
+</tr>
+<tr>
+<td>A-10</td>
+<td>Tiredness, not only guilt, keeps people from using their free time</td>
+<td>Wildcard use on tired days, founder only</td>
+</tr>
+<tr>
+<td>A-11</td>
+<td>One moment a week is a meaningful level of use (O2 target, provisional)</td>
+<td>Reviewed after the first week of use, 2026-11-27</td>
+</tr>
+<tr>
+<td>A-12</td>
+<td>Half of the times taken is the line between support and doubt (O4 target, provisional)</td>
+<td>Reviewed after the first week of use, 2026-11-27</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constraints</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Constraint</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CN-01</td>
+<td>No money budget</td>
+<td>Cost</td>
+</tr>
+<tr>
+<td>CN-02</td>
+<td>1 to 1.5 hours per weekday, job applications first</td>
+<td>Time</td>
+</tr>
+<tr>
+<td>CN-03</td>
+<td>Web app with data on the device, no server</td>
+<td>Scope</td>
+</tr>
+<tr>
+<td>CN-04</td>
+<td>One person holds every role, with Claude as support</td>
+<td>Resources</td>
+</tr>
+<tr>
+<td>CN-05</td>
+<td>No testers in Phase 1 (CR-01)</td>
+<td>Resources</td>
+</tr>
+<tr>
+<td>CN-06</td>
+<td>Retention rule: no streaks, nothing that resets, no random rewards, no weekly targets</td>
+<td>Scope</td>
+</tr>
+<tr>
+<td>CN-07</td>
+<td>Copy in Spanish (Argentina)</td>
+<td>Scope</td>
+</tr>
+</tbody>
+</table>
+<h2>Summary milestones</h2>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charter approved</td>
+<td>2026-10-19</td>
+</tr>
+<tr>
+<td>Discovery closed</td>
+<td>2026-10-23</td>
+</tr>
+<tr>
+<td>Planning (step 02) done: backlog, estimates, cut line confirmed</td>
+<td>2026-10-28</td>
+</tr>
+<tr>
+<td>Phase 1a built: acceptance criteria 1&ndash;7 pass</td>
+<td>2026-11-06</td>
+</tr>
+<tr>
+<td>Phase 1b built: acceptance criteria 8&ndash;12 pass</td>
+<td>2026-11-20</td>
+</tr>
+<tr>
+<td>2 weeks of daily use</td>
+<td>2026-11-23 to 2026-12-04</td>
+</tr>
+<tr>
+<td>Review of provisional targets (A-11, A-12)</td>
+<td>2026-11-27</td>
+</tr>
+<tr>
+<td>Phase 1 closed: self-test report delivered</td>
+<td>2026-12-11</td>
+</tr>
+</tbody>
+</table>
+<h2>Key risks</h2>
+<p>The full list is in SOW v3.1, "Risks". The ones that can stop the project:</p>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Impact</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope vs. time (A-09): Phase 1 grew by 9 changes in Discovery</td>
+<td>Dates slip and the 2 weeks of use move into the holidays</td>
+<td>Cut line set in planning; "Forgot something yesterday?" and the adjustment notice move to 1b first</td>
+</tr>
+<tr>
+<td>A cohort of one: the founder is also the only user (CR-01)</td>
+<td>The results show what works for one person who knows the design, not for the persona</td>
+<td>Stated in the report; A-01, A-02, A-03 and A-10 stay open until a test with other people</td>
+</tr>
+<tr>
+<td>Data loss on iPhone (Safari clears storage after about 7 days unused)</td>
+<td>Moments are lost and O1 fails</td>
+<td>Home-screen tip and export / restore in 1a, before the 2 weeks of use</td>
+</tr>
+<tr>
+<td>Earning minutes feels like pressure (O4 missed)</td>
+<td>The core idea fails</td>
+<td>Not a project failure: it is the answer Phase 1 exists to find</td>
+</tr>
+</tbody>
+</table>
+<h2>Stakeholders</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Held by</th>
+<th>Decision authority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sponsor, product owner, project manager and only user in Phase 1</td>
+<td>The founder (one person)</td>
+<td>Decides everything; see "Project manager authority"</td>
+</tr>
+<tr>
+<td>Build and documentation support</td>
+<td>Claude</td>
+<td>None. Proposes; the founder decides</td>
+</tr>
+<tr>
+<td>Testers</td>
+<td>None in Phase 1 (CR-01)</td>
+<td>A later phase, when people from the persona can be recruited</td>
+</tr>
+</tbody>
+</table>
+<h2>Project manager authority</h2>
+<p>One person holds the sponsor, product owner and project manager roles. The charter separates
+them so each decision is made with the right hat on.</p>
+<p><strong>The project manager can decide alone:</strong></p>
+<ul>
+<li>The order of work inside a phase, and moving items to 1b along the cut line already set</li>
+<li>Minute values inside Phase 1 (recorded in the SOW Revision History)</li>
+<li>Technical choices in the build, with Claude's proposal</li>
+<li>Moving a milestone by up to 1 week</li>
+</ul>
+<p><strong>The sponsor must decide:</strong></p>
+<ul>
+<li>Adding anything to Phase 1, or dropping an acceptance criterion (change control, SOW v3.1)</li>
+<li>Moving a milestone by more than 1 week</li>
+<li>Pausing, stopping or restarting the project (see "Exit criteria")</li>
+</ul>
+<h2>Exit criteria</h2>
+<ul>
+<li><strong>Close Phase 1:</strong> the 2 weeks of daily use are done and the self-test report, with the result
+  of each goal, is delivered. A missed goal does not block closing; it feeds the decision on what
+  comes next.</li>
+<li><strong>Pause:</strong> if Phase 1a is not built by 2026-11-20 (two weeks late), if the pace drops below 1
+  hour per weekday for 2 weeks in a row, or if a new job starts, stop and re-plan the dates with
+  the sponsor through change control, instead of compressing 1b and the 2 weeks of use.</li>
+<li><strong>Stop:</strong> if O4 is missed (relief less than half of the times taken), no new features are built; the
+  problem framing (1.5) is revisited first.</li>
+</ul>
+<h2>Approval</h2>
+<p><strong>Approval requirements:</strong> the sponsor signs off the closing of Phase 1 when the "Close Phase 1"
+exit criterion is met: the 2 weeks of use are done and the self-test report gives the result of
+each goal. The founder signs as sponsor.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Decision</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sponsor</td>
+<td>The founder</td>
+<td>Approved, with CR-01</td>
+<td>2026-10-19</td>
+</tr>
+<tr>
+<td>Project manager</td>
+<td>The founder</td>
+<td>Acknowledged</td>
+<td>2026-10-19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Open items accepted:</strong> none.</p>
+<h2>Appendix</h2>
+<p><strong>Misalignments and Decisions:</strong></p>
+<ul>
+<li>Misalignment: research session 3 concluded that Phase 1 needs no retention mechanic, so the
+  personal feed should stay in a later phase. The workflow session found that without the feed
+  the app is one more to-do list.<ul>
+<li>Decision (C-18): the feed moves into Phase 1 as a place to look back, not a retention
+  mechanic: no streaks, no counts of days in a row, no "you have not posted" messages.</li>
+</ul>
+</li>
+<li>Misalignment: the user flow asked for tasks, repetition and a relax-time question on the first
+  visit; the research says long onboarding pushes people out.<ul>
+<li>Decision (C-15): the first visit only asks to pick tasks and how they repeat. The relax-time
+  question comes later, as a card on the home.</li>
+</ul>
+</li>
+<li>Misalignment: earning minutes before resting clashed with the brief's tone ("nothing is
+  imposed", no "earning the right to rest") (inconsistency 4 of the Discovery prep).<ul>
+<li>Decision (C-06): earning stays, with a wildcard for hard days: 15 free minutes, no expiry,
+  a cap of 1, the next one after 3 tasks.</li>
+</ul>
+</li>
+<li>Misalignment: SOW v2 set "used on 5 of 7 days for 2 weeks" as the Phase 1 signal; similar apps
+  keep about 3.3% of users at 30 days (finding 25).<ul>
+<li>Decision (C-26): the signal is observed, not a goal. Missing it does not fail the project, so
+  it is not among the Project Goals.</li>
+</ul>
+</li>
+<li>Misalignment: registering a moment with a photo was in a later phase, to keep Phase 1 small; the
+  founder said that without it the app loses its point.<ul>
+<li>Decision (C-25): the photo enters Phase 1 through change control, taken with the camera at
+  the moment. Impact accepted: storage size and more Phase 1 scope (risk A-09).</li>
+</ul>
+</li>
+<li>Misalignment: the plan had 3 to 5 user talks before the build; there was no time to run them
+  without moving the schedule.<ul>
+<li>Decision (2026-10-19): Discovery closes without talks, as an accepted risk.</li>
+</ul>
+</li>
+<li>Misalignment: SOW v3 tested Phase 1b with 3 to 5 people (C-26), and the first draft of this
+  charter set goals on them; the founder cannot secure testers for these dates.<ul>
+<li>Decision (CR-01, 2026-10-19): Phase 1 is tested by the founder alone, with goals measured on
+  the founder's own use. The test with other people, and the talk guide, move to a later phase. SOW
+  v3.1 records the change.</li>
+</ul>
+</li>
+</ul>
+            </div>
+        </div>
+    </div>
+
     <!-- kickoff-modal -->
     <div id="kickoff-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="kickoff-modal-title">
         <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
@@ -1411,8 +1841,8 @@
 </table>
 <p><strong>Result:</strong> 27 changes to the SOW, each traced to its findings. 13 were already decided in earlier sessions and 14 were decided with the founder in session 4, two of them conflicts between the research and the user flow. The outcome is SOW v3.</p>
 
-<h2>Still open</h2>
-<p>Short talks with 3 to 5 people from the persona. If they do not happen before the build, Phase 1b checks the same questions with 3 to 5 testers.</p>
+<h2>Not done: user talks</h2>
+<p>The short talks with 3 to 5 people were not run, to keep the schedule (decided 2026-10-19). A-01, A-02, A-03, A-05 and A-10 stay on desk research only, and the risk is accepted. The talk guide is reused in Phase 1b with 3 to 5 testers, who answer after two weeks of real use.</p>
             </div>
         </div>
     </div>
