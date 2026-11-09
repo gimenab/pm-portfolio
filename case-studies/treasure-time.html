@@ -225,7 +225,7 @@
                         <li>The mechanic already exists, but competitors spend the earned minutes on screen time. Treasure Time spends them away from the screen. &ldquo;Guilt-free&rdquo; and &ldquo;Time Bank&rdquo; are already in use, so neither sets it apart.</li>
                         <li>In every similar app studied, the app ends up becoming the goal: streaks, weekly resets and games of chance keep people through pressure until they quit. Design rule for Phase 1: quick to use, no streaks, nothing resets, and a day with no tasks costs nothing.</li>
                         <li>Earning minutes can ease guilt, but measuring rest spoils it. So the user earns, and on hard days takes a wildcard: 15 free minutes, at most one saved, never expiring.</li>
-                        <li>The synthesis grouped 35 findings into 8 themes and 27 changes to the SOW. Phase 1 grew, so it was split by the question each part answers: 1a, does it work? (the founder alone); 1b, does it help? (3 to 5 testers for 2 weeks).</li>
+                        <li>The synthesis grouped 35 findings into 8 themes and 27 changes to the SOW. Phase 1 grew, so it was split by the question each part answers: 1a, does it work? (the founder alone); 1b, does it help? (3 to 5 testers for 2 weeks; later changed to the founder alone, CR-01).</li>
                     </ul>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         On AI: ChatGPT and Gemini ran the same prompts, and nothing went into the findings without checking the source. In session 1, Gemini invented 5 of its 6 sources; in session 2, 2 of ChatGPT&rsquo;s Reddit quotes were not in the threads it cited. I read the store reviews and Reddit threads myself.
@@ -322,7 +322,7 @@
                     <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
                         <li>One person is sponsor, product owner and project manager, so the charter splits the hats. As project manager I can reorder work, apply the cut line, tune minute values and move a milestone up to a week. Anything that adds scope or moves a date further goes to the sponsor.</li>
                         <li>Pause if Phase 1a is two weeks late, if the pace drops for two weeks, or if a new job starts, and re-plan instead of squeezing the test. Stop building if earning minutes feels like pressure more than half of the time: that answer is what Phase 1 exists to find.</li>
-                        <li>The appendix keeps seven real misalignments from Discovery and how each was decided, such as moving the feed into Phase 1 and testing Phase 1 without other people, because testers could not be secured.</li>
+                        <li>The appendix keeps seven real misalignments from Discovery and how each was decided, such as moving the feed into Phase 1 and testing Phase 1 without other people, because testers could not be secured. An eighth, the CR-02 re-plan after the dates slipped, was added on 2026-11-09.</li>
                     </ul>
                     <button type="button" onclick="openExampleModal('charter-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View project charter<span class="icon-chevron" aria-hidden="true"></span></button>
                 </div>
@@ -926,7 +926,7 @@
                 <div class="space-y-1">
                     <p class="text-[10px] font-mono text-teal-800">Example &bull; Discovery outcome</p>
                     <h3 class="text-base font-semibold text-slate-200" id="sow-v3-modal-title">SOW v3, after Discovery</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">SOW v2 with the 27 Discovery changes folded in. Each changed item cites its change ID (C-01 to C-27).</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">SOW v2 with the 27 Discovery changes folded in. Each changed item cites its change ID (C-01 to C-27). Now v3.2: CR-01 (no testers in Phase 1) and CR-02 (re-plan with a cut line) are in the Revision History.</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
             </div>
@@ -949,9 +949,9 @@
 <td>Decides and approves everything. Approvals are self-approvals, recorded in the Revision History.</td>
 </tr>
 <tr>
-<td>Testers (Phase 1b)</td>
-<td>3 to 5 people from the persona, ideally the people from the Discovery talks</td>
-<td>None. They use the app for 2 weeks and answer a short check-in. (C-26)</td>
+<td>Testers</td>
+<td>None in Phase 1 (CR-01). A test with 3 to 5 people from the persona moves to a later phase</td>
+<td>None.</td>
 </tr>
 <tr>
 <td>Build and documentation support</td>
@@ -995,6 +995,18 @@
 <td>Founder (self-approval)</td>
 <td>v3: Discovery outcome incorporated (C-01 to C-27, decided 2026-10-07 to 2026-10-16). Problem narrowed, positioning and persona rewritten, "Time Bank" renamed "Your treasure". Phase 1 grew through change control: user-picked tasks with repetition, wildcard, timer, "minutes lived", camera photo, dated feed, export / restore / delete. Retention written as a design rule. Phase 1b now tested by 3–5 people. New dates set.</td>
 </tr>
+<tr>
+<td>2026-10-19</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval)</td>
+<td>v3.1: change request CR-01. The founder cannot secure testers for these dates, so Phase 1 is tested by the founder alone, with 2 weeks of daily use (2026-11-23 to 2026-12-04). The 2-week test with 3–5 people and the talk guide move to a later phase; A-01, A-02, A-03 and A-10 stay open. Discovery closed without user talks (accepted risk). Language of the app decided: Spanish (Argentina), closes A-07. Recorded in the project charter (step 1.7).</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>Founder, with Claude</td>
+<td>Founder (self-approval, as sponsor)</td>
+<td>v3.2: change request CR-02, re-plan. Planning (due 2026-10-28) and Phase 1a (due 2026-11-06) did not start: the time went to a second portfolio case study and job applications. New constraints: 1 hour per weekday (shared with the second case study) and build support limited after 2026-11-22, so the build must be done and published by then. New dates: planning 2026-11-09 to 11-10, Phase 1a 11-11 to 11-16, Phase 1b 11-17 to 11-20, buffer and publish 11-21 to 11-22. The 2 weeks of daily use keep their dates (2026-11-23 to 2026-12-04): the slip is absorbed by cutting the build, not the test. Cut line: "Forgot something yesterday?", the adjustment notice and the relax-time card move to a later phase; the wildcard and the camera photo become stretch items (criterion 9 and the photo in criterion 10 apply only if they are built). Recorded in the project charter.</td>
+</tr>
 </tbody>
 </table>
 <h2>Purpose</h2>
@@ -1022,7 +1034,7 @@
 <h2>Target Audience (C-05)</h2>
 <p><strong>People who feel their time is never their own.</strong></p>
 <p>Evidence of where the pain peaks: adults whose paid work and care of others compete for the time left for themselves (Discovery findings 1, 6, 7, 8). The 25–45 age range from v2 is dropped: the line is the experience, not the age.</p>
-<p><em>Discovery was desk research plus the founder's sessions. The short talks with 3 to 5 people are pending; if they do not happen before the build, the persona stays a desk-research persona and Phase 1b is its first real check.</em></p>
+<p><em>Discovery was desk research plus the founder's sessions. The short talks were not run (2026-10-19), so the persona stays a desk-research persona until a test with other people (later phase, CR-01).</em></p>
 <h2>Scope / Major Project Activities</h2>
 <p><strong>Platform.</strong> Web app (React + Vite + Tailwind). No native app, no PWA and no server for now. Features that need a native app or a server wait until the core loop is validated.</p>
 <h3>Phase 1a — "Does it work?" (earn; the founder tests alone) (C-27)</h3>
@@ -1037,20 +1049,21 @@
 <li><strong>"Forgot something yesterday?" (C-13).</strong> A discreet option, opened by the user, to log yesterday's task or register yesterday's moment. Available until the end of the next day.</li>
 <li><strong>Data on the device (C-21).</strong> Saved in the browser, with a notice on the first visit ("Your minutes are saved on this device") and, on iPhone, a tip to add the app to the home screen.</li>
 <li><strong>Export, restore and delete (C-22).</strong> "Export a copy" downloads a file with everything; "Restore from a copy" loads it on a new device or after the browser data is cleared; "Delete my data" removes everything.</li>
-<li><strong>If 1a slips:</strong> "Forgot something yesterday?" and the adjustment notice move to 1b first.</li>
+<li><strong>Cut line (CR-02, 2026-11-09):</strong> "Forgot something yesterday?" (C-13) and the adjustment notice (C-14) move to a later phase. The home keeps one card at a time.</li>
 </ul>
-<h3>Phase 1b — "Does it help?" (use and register; 3–5 testers) (C-27)</h3>
+<h3>Phase 1b — use and register (C-27; tested by the founder alone, CR-01)</h3>
 <ul>
-<li><strong>Taking time</strong> with the timer (C-08), and the <strong>wildcard</strong> (C-06).</li>
-<li><strong>Registering the moment (C-07, C-19, C-25)</strong> with a written note or a <strong>photo taken with the camera at that moment</strong>, not picked from the gallery. Build note: a web app can open the camera on a phone but cannot fully block the gallery on every browser or on desktop.</li>
+<li><strong>Taking time</strong> with the timer (C-08), and the <strong>wildcard</strong> (C-06). The wildcard is a stretch item (CR-02): built only if time allows.</li>
+<li><strong>Registering the moment (C-07, C-19, C-25)</strong> with a written note or a <strong>photo taken with the camera at that moment</strong>, not picked from the gallery. The photo is a stretch item (CR-02); the note is required. Build note: a web app can open the camera on a phone but cannot fully block the gallery on every browser or on desktop.</li>
 <li><strong>"Minutes lived"</strong> counter next to "Your treasure" (C-07).</li>
 <li><strong>Dated feed on the home (C-16, C-18).</strong> The registered moments, each with its date, below today's tasks, with a message when it is empty. It is a place to look back, not a retention mechanic: no counts of days in a row, no streaks, no badges, no "you have not posted in N days". A date is not a count, so it fits the rule.</li>
-<li><strong>Relax-time card (C-15, C-23).</strong> Asked later as a card on the home, not on the first visit. The preferred time shows as a line of text; no push reminders.</li>
-<li><strong>2-week test</strong> with 3 to 5 people (C-26).</li>
+<li>~~<strong>Relax-time card (C-15, C-23).</strong>~~ Moved to a later phase (CR-02).</li>
+<li><strong>2 weeks of daily use by the founder</strong> (CR-01), with a one-word relief or pressure note after each time taken.</li>
 </ul>
 <h3>Later phases — not in Phase 1 (C-24, C-25)</h3>
 <p>Each enters only through the change control below.</p>
 <ul>
+<li><strong>Moved out of Phase 1 by CR-02 (2026-11-09):</strong> "Forgot something yesterday?" (C-13), the adjustment notice (C-14), the relax-time card (C-15, C-23); the wildcard and the camera photo if they are not built by 2026-11-20.</li>
 <li><strong>Postponed:</strong> protected mode while taking time (needs a native app), suggestion system, simple emotional reflection, voice notes (C-19), real reminders (prefer cues tied to a moment of the day over notifications, C-23), a changing avatar, a 7-day agenda for difficult tasks, Tumblr-style public profiles.</li>
 <li><strong>Dropped from v2's list:</strong> "editing or deleting predefined tasks" no longer applies, because the user picks and adjusts their own tasks.</li>
 <li><strong>Moved into Phase 1 from v2's later phases:</strong> registering with a photo (now camera only) and the personal feed.</li>
@@ -1092,16 +1105,16 @@
 <td>Founder</td>
 </tr>
 <tr>
-<td>"Your treasure" view and home with one card at a time (adjustment notice included)</td>
+<td>"Your treasure" view and home with one card at a time (adjustment notice moved to a later phase, CR-02)</td>
 <td>1a</td>
 <td>Web app feature</td>
 <td>Founder</td>
 </tr>
 <tr>
-<td>"Forgot something yesterday?"</td>
-<td>1a</td>
-<td>Web app feature</td>
-<td>Founder</td>
+<td>~~"Forgot something yesterday?"~~ Later phase (CR-02)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Data on the device with notice; export, restore and delete</td>
@@ -1110,25 +1123,25 @@
 <td>Founder</td>
 </tr>
 <tr>
-<td>Taking time (timer) and wildcard</td>
+<td>Taking time (timer); wildcard as a stretch item (CR-02)</td>
 <td>1b</td>
 <td>Web app feature</td>
 <td>Founder</td>
 </tr>
 <tr>
-<td>Registering the moment (note or camera photo) and "minutes lived"</td>
+<td>Registering the moment (note; camera photo as a stretch item, CR-02) and "minutes lived"</td>
 <td>1b</td>
 <td>Web app feature</td>
 <td>Founder</td>
 </tr>
 <tr>
-<td>Dated feed on the home and relax-time card</td>
+<td>Dated feed on the home (relax-time card moved to a later phase, CR-02)</td>
 <td>1b</td>
 <td>Web app feature</td>
 <td>Founder</td>
 </tr>
 <tr>
-<td>2-week test with 3–5 people and check-in summary</td>
+<td>2 weeks of daily use and self-test report (CR-01)</td>
 <td>1b</td>
 <td>Short report</td>
 <td>Founder</td>
@@ -1149,8 +1162,8 @@
 <p><strong>Phase 1b is done when:</strong></p>
 <ol>
 <li>The user can take all, part or more than the balance; the timer can be paused and stops on its own; the balance goes down by the time taken, never below 0.</li>
-<li>The user can take a wildcard of 15 minutes with 0 earned, holds at most 1, and gets the next one after 3 tasks.</li>
-<li>The user can register the moment with a note or a camera photo; registered time adds to "minutes lived".</li>
+<li><em>(Stretch, CR-02: applies only if the wildcard is built.)</em> The user can take a wildcard of 15 minutes with 0 earned, holds at most 1, and gets the next one after 3 tasks.</li>
+<li>The user can register the moment with a note (and a camera photo, if built: stretch, CR-02); registered time adds to "minutes lived".</li>
 <li>The feed shows each registered moment with its date, and wildcard moments with their mark.</li>
 <li>A user can complete one full cycle: do a task, earn minutes, take time, register the moment, see it in the feed.</li>
 </ol>
@@ -1158,9 +1171,9 @@
 <h2>Validation Criteria (C-26)</h2>
 <ul>
 <li><strong>Phase 1a:</strong> the founder uses it alone to check that it works end to end and that the minute values feel fair. Changes to values are recorded in the Revision History.</li>
-<li><strong>Phase 1b:</strong> 3 to 5 people use it for 2 weeks to check whether it helps (A-01, A-02, A-03, A-10). The app has no server, so each tester's data stays on their phone; signals come from a short check-in, not from data collection.</li>
+<li><strong>Phase 1b:</strong> the founder uses it every day for 2 weeks (CR-01). This shows whether the loop holds up in daily life for one person; whether it helps the persona (A-01, A-02, A-03, A-10) waits for a test with other people in a later phase. The app has no server, so each tester's data stays on their phone; signals come from a short check-in, not from data collection.</li>
 <li><strong>Phase 1 signal:</strong> the app is used on 5 of 7 days for 2 weeks. Noted: this is far above what similar apps reach (about 3.3% of users still active at 30 days, finding 25), so missing it is not by itself a failure.</li>
-<li><strong>MVP success:</strong> a tester completes at least 3 full cycles in a week.</li>
+<li><strong>MVP success:</strong> at least 3 full cycles completed in a week.</li>
 <li><strong>Signals to observe in the check-in:</strong> days they opened it, tasks completed, wildcard use on tired days, moments registered, whether they looked back at the feed, and whether earning minutes felt like relief or like pressure.</li>
 </ul>
 <h2>Schedule Overview / Major Milestones (C-27)</h2>
@@ -1181,21 +1194,29 @@
 <td>2026-10-23</td>
 </tr>
 <tr>
-<td>Phase 1a built and in self-test</td>
-<td>2026-11-06</td>
+<td>Planning (step 02): backlog, cut line, risks (CR-02)</td>
+<td>2026-11-10</td>
 </tr>
 <tr>
-<td>Phase 1b built</td>
+<td>Phase 1a built and in self-test (baseline 2026-11-06; CR-02)</td>
+<td>2026-11-16</td>
+</tr>
+<tr>
+<td>Phase 1b built (CR-02)</td>
 <td>2026-11-20</td>
 </tr>
 <tr>
-<td>Test with 3–5 people</td>
+<td>Buffer; app frozen and published for daily use (CR-02)</td>
+<td>2026-11-22</td>
+</tr>
+<tr>
+<td>2 weeks of daily use by the founder (CR-01)</td>
 <td>2026-11-23 to 2026-12-04</td>
 </tr>
 </tbody>
 </table>
 <h2>Estimated Hours for Completion</h2>
-<p>Builders: the founder and Claude, at 1–1.5 hours per day, job applications first. Whether the larger Phase 1 fits these dates is itself an assumption (A-09), tracked against the milestones; the cut line is set in Phase 1a.</p>
+<p>Builders: the founder and Claude. Since CR-02: 1 hour per weekday from 2026-11-09 to 2026-11-20 (about 10 hours, shared days with a second case study), plus a 2-day buffer. Claude writes the code; the founder decides, reviews and tests. The baseline estimate for planning and build was 24 to 36 hours, so CR-02 sets a cut line. Whether the cut scope fits is still assumption A-09, tracked against the milestones.</p>
 <h2>Estimated Date for Completion</h2>
 <p>Phase 1 (1a and 1b, with the test): 2026-12-04. Later phases: not scheduled.</p>
 <h2>Budget and Payment Terms</h2>
@@ -1206,13 +1227,14 @@
 <ul>
 <li><strong>Data loss.</strong> With the feed and photos in Phase 1, losing browser data means losing the user's moments. Safari on iPhone can delete it after about 7 days without use. Mitigation: home-screen tip, export / restore (C-21, C-22).</li>
 <li><strong>Storage size.</strong> Photos are heavy for browser storage and for the exported file. To size in the build.</li>
-<li><strong>Scope vs. time (A-09).</strong> Phase 1 grew. Mitigation: the 1a cut line and the dates above.</li>
+<li><strong>Scope vs. time (A-09).</strong> Phase 1 grew, and the baseline dates slipped (CR-02). Mitigation: the CR-02 cut line, stretch items built last, and a 2-day buffer.</li>
+<li><strong>Build support limited after 2026-11-22 (CR-02).</strong> Fixes after that date are slower. Mitigation: the app is frozen and published on 2026-11-22; after it, only small fixes.</li>
 <li><strong>"Your treasure" has no hard limit (A-04).</strong> Taking more than the balance weakens the bonus, the difficult task and the wildcard as incentives. Accepted as part of the trust principle; observed in 1b.</li>
 </ul>
 <h2>Open Items (carried forward)</h2>
 <ul>
-<li><strong>Language of the app (A-07).</strong> The first audience is likely Spanish-speaking (Argentina). To decide before the build.</li>
-<li><strong>Short talks with 3 to 5 people.</strong> Pending. If they do not happen before the build, A-01, A-02, A-05 and A-10 are checked in Phase 1b instead.</li>
+<li>~~Language of the app (A-07)~~ Decided 2026-10-19: Spanish (Argentina), copy in one file.</li>
+<li><strong>Test with other people (CR-01).</strong> Moved to a later phase, with the talk guide. A-01, A-02, A-03, A-05 and A-10 stay open until then.</li>
 <li><strong>Copy to review in the build:</strong> "minutes lived", the "forgot something yesterday?" question, the adjustment offer.</li>
 <li><strong>Visual style:</strong> minimalist, warm, customizable and accessible, with a nod to the first social networks. Defined in the build.</li>
 <li><strong>Privacy and sensitive data:</strong> moot in Phase 1, because data never leaves the device. Revisit before any sync, account or backend.</li>
@@ -1230,12 +1252,12 @@
                 <div class="space-y-1">
                     <p class="text-[10px] font-mono text-teal-800">Example &bull; Step 1.7</p>
                     <h3 class="text-base font-semibold text-slate-200" id="charter-modal-title">Project charter, Phase 1</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Approved by the founder on 2026-10-19. It authorizes building Phase 1 and is the input to planning (step 02).</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">Approved by the founder on 2026-10-19, revised on 2026-11-09 with CR-02 (re-plan). It authorizes building Phase 1 and is the input to planning (step 02).</p>
                 </div>
                 <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
             </div>
             <div class="sow-doc overflow-y-auto p-6">
-<p>DATE: 2026-10-19</p>
+<p>DATE: 2026-10-19 · Revised 2026-11-09 (CR-02, re-plan)</p>
 <h2>Project Summary</h2>
 <p>We plan to build Phase 1 of Treasure Time, a well-being web app where small daily tasks earn
 minutes of time for oneself, away from the screen, and use it every day for 2 weeks, from
@@ -1263,7 +1285,7 @@ for this app, so every target is provisional.</p>
   the feed has something to show.</li>
 <li><strong>O3.</strong> Complete 3 full cycles (do a task, earn minutes, take time, register the moment) in one
   week by December 4, 2026. Measured by: the feed and "minutes lived". Evidence for the target:
-  the MVP success criterion of SOW v3.1.</li>
+  the MVP success criterion of SOW v3.2.</li>
 <li><strong>O4.</strong> Rate at least half of the times taken as "relief" rather than "pressure" by
   December 4, 2026. Measured by: a one-word note after each time taken. Evidence for the target:
   provisional; the research is mixed (findings 20 to 24), so half is the line between support and
@@ -1274,22 +1296,22 @@ for this app, so every target is provisional.</p>
 <li>Phase 1a web app: first visit with task picking and repetition, daily list, difficult task,
   minutes and day bonus, "Your treasure"</li>
 <li>Data kept on the device, with a notice, and export, restore and delete</li>
-<li>Phase 1b web app: timer, wildcard, registering the moment with a note or a camera photo,
-  "minutes lived", dated feed of moments</li>
+<li>Phase 1b web app: timer, registering the moment with a note, "minutes lived", dated feed of
+  moments; the wildcard and the camera photo are stretch items (CR-02)</li>
 <li>App copy in Spanish (Argentina), kept in one file so English can be added later</li>
 <li>2 weeks of daily use by the founder, with a one-word relief or pressure note after each time
   taken</li>
 <li>Self-test report: results against O1 to O4, updated assumption log and lessons learned</li>
 </ul>
-<p>The feature-level list is in SOW v3.1, "Deliverables".</p>
+<p>The feature-level list is in SOW v3.2, "Deliverables".</p>
 <h2>Scope and Exclusion</h2>
-<p><strong>In-Scope:</strong> Phase 1a (earn) and Phase 1b (use and register) as listed in SOW v3.1, web app with
+<p><strong>In-Scope:</strong> Phase 1a (earn) and Phase 1b (use and register) as listed in SOW v3.2, web app with
 data on the device, Spanish (Argentina) copy, 2 weeks of daily use by the founder, self-test
 report</p>
 <p><strong>Out-of-Scope:</strong> a test with other people (moved to a later phase, CR-01), accounts, sync and
-backend, native app, monetization, the later-phase features of SOW v3.1 (protected mode,
+backend, native app, monetization, the later-phase features of SOW v3.2 (protected mode,
 suggestions, voice notes, reminders, avatar, public profiles), and any streak, reset, random reward
-or weekly target (retention rule, SOW v3.1)</p>
+or weekly target (retention rule, SOW v3.2)</p>
 <h2>Benefits &amp; Costs</h2>
 <p><strong>Benefits</strong></p>
 <ol>
@@ -1303,19 +1325,22 @@ or weekly target (retention rule, SOW v3.1)</p>
 <ul>
 <li>Approved money budget: none</li>
 <li>Cost estimate: $0 (free tiers and tools already in use)</li>
-<li>Estimated effort (time available), at the pace agreed in SOW v3.1 of 1 to 1.5 hours per
-  weekday, job applications first:</li>
-<li>Planning, October 20 to 28: 7 weekdays, 7 to 10.5 hours</li>
-<li>Phase 1a build, October 29 to November 6: 7 weekdays, 7 to 10.5 hours</li>
-<li>Phase 1b build, November 9 to 20: 10 weekdays, 10 to 15 hours</li>
+<li>Estimated effort (time available), re-planned by CR-02 at 1 hour per weekday, job applications
+  first, shared days with a second case study:</li>
+<li>Planning, November 9 to 10: 2 weekdays, 2 hours</li>
+<li>Phase 1a build, November 11 to 16: 4 weekdays, 4 hours</li>
+<li>Phase 1b build, November 17 to 20: 4 weekdays, 4 hours</li>
+<li>Buffer and publishing, November 21 to 22: weekend, up to 4 hours</li>
 <li>Daily use and fixes, November 23 to December 4: 10 weekdays, 10 to 15 hours</li>
 <li>Self-test report, December 7 to 11: 5 weekdays, 5 to 7.5 hours</li>
 </ul>
-<p>Planning (step 02) replaces the effort with estimates.</p>
+<p>Baseline (2026-10-19): planning October 20 to 28, Phase 1a October 29 to November 6, Phase 1b
+November 9 to 20, 39 to 58.5 hours in total. Planning (step 02) replaces the effort with estimates.</p>
 <p><strong>Budget needed:</strong></p>
 <ul>
 <li>Money: $0</li>
-<li>Effort: 39 to 58.5 hours of the founder's time, with Claude as build and documentation support</li>
+<li>Effort: 25 to 36.5 hours of the founder's time (CR-02; baseline 39 to 58.5), with Claude writing
+  the code and the founder deciding, reviewing and testing</li>
 </ul>
 <h2>Assumptions and Constraints</h2>
 <p><strong>Assumptions</strong> (IDs from the assumption log in the Discovery synthesis)</p>
@@ -1350,8 +1375,8 @@ or weekly target (retention rule, SOW v3.1)</p>
 </tr>
 <tr>
 <td>A-09</td>
-<td>Phase 1 fits these dates at 1 to 1.5 hours a day</td>
-<td>Tracked against the milestones; cut line set in planning</td>
+<td>Phase 1, with the CR-02 cut line, fits these dates at 1 hour a day</td>
+<td>Tracked against the milestones; stretch items built last</td>
 </tr>
 <tr>
 <td>A-10</td>
@@ -1387,7 +1412,7 @@ or weekly target (retention rule, SOW v3.1)</p>
 </tr>
 <tr>
 <td>CN-02</td>
-<td>1 to 1.5 hours per weekday, job applications first</td>
+<td>1 hour per weekday, job applications first, shared with a second case study (CR-02; was 1 to 1.5 hours)</td>
 <td>Time</td>
 </tr>
 <tr>
@@ -1415,6 +1440,11 @@ or weekly target (retention rule, SOW v3.1)</p>
 <td>Copy in Spanish (Argentina)</td>
 <td>Scope</td>
 </tr>
+<tr>
+<td>CN-08</td>
+<td>Build support limited after 2026-11-22 (CR-02)</td>
+<td>Resources</td>
+</tr>
 </tbody>
 </table>
 <h2>Summary milestones</h2>
@@ -1436,15 +1466,19 @@ or weekly target (retention rule, SOW v3.1)</p>
 </tr>
 <tr>
 <td>Planning (step 02) done: backlog, estimates, cut line confirmed</td>
-<td>2026-10-28</td>
+<td>2026-11-10 (baseline 2026-10-28)</td>
 </tr>
 <tr>
-<td>Phase 1a built: acceptance criteria 1&ndash;7 pass</td>
-<td>2026-11-06</td>
+<td>Phase 1a built: acceptance criteria 1–7 pass</td>
+<td>2026-11-16 (baseline 2026-11-06)</td>
 </tr>
 <tr>
-<td>Phase 1b built: acceptance criteria 8&ndash;12 pass</td>
-<td>2026-11-20</td>
+<td>Phase 1b built: acceptance criteria 8–12 pass</td>
+<td>2026-11-20 (unchanged)</td>
+</tr>
+<tr>
+<td>App frozen and published for daily use</td>
+<td>2026-11-22 (new, CR-02)</td>
 </tr>
 <tr>
 <td>2 weeks of daily use</td>
@@ -1461,7 +1495,7 @@ or weekly target (retention rule, SOW v3.1)</p>
 </tbody>
 </table>
 <h2>Key risks</h2>
-<p>The full list is in SOW v3.1, "Risks". The ones that can stop the project:</p>
+<p>The full list is in SOW v3.2, "Risks". The ones that can stop the project:</p>
 <table>
 <thead>
 <tr>
@@ -1472,9 +1506,14 @@ or weekly target (retention rule, SOW v3.1)</p>
 </thead>
 <tbody>
 <tr>
-<td>Scope vs. time (A-09): Phase 1 grew by 9 changes in Discovery</td>
+<td>Scope vs. time (A-09): Phase 1 grew by 9 changes in Discovery, and the baseline slipped (CR-02)</td>
 <td>Dates slip and the 2 weeks of use move into the holidays</td>
-<td>Cut line set in planning; "Forgot something yesterday?" and the adjustment notice move to 1b first</td>
+<td>CR-02 cut line: three features to a later phase, wildcard and camera photo as stretch items, 2-day buffer</td>
+</tr>
+<tr>
+<td>Build support limited after 2026-11-22 (CN-08)</td>
+<td>Bugs found during the 2 weeks of use take longer to fix</td>
+<td>App frozen and published on 2026-11-22; after it, only small fixes</td>
 </tr>
 <tr>
 <td>A cohort of one: the founder is also the only user (CR-01)</td>
@@ -1532,7 +1571,7 @@ them so each decision is made with the right hat on.</p>
 </ul>
 <p><strong>The sponsor must decide:</strong></p>
 <ul>
-<li>Adding anything to Phase 1, or dropping an acceptance criterion (change control, SOW v3.1)</li>
+<li>Adding anything to Phase 1, or dropping an acceptance criterion (change control, SOW v3.2)</li>
 <li>Moving a milestone by more than 1 week</li>
 <li>Pausing, stopping or restarting the project (see "Exit criteria")</li>
 </ul>
@@ -1566,6 +1605,12 @@ each goal. The founder signs as sponsor.</p>
 <td>The founder</td>
 <td>Approved, with CR-01</td>
 <td>2026-10-19</td>
+</tr>
+<tr>
+<td>Sponsor</td>
+<td>The founder</td>
+<td>CR-02 approved (re-plan and cut line)</td>
+<td>2026-11-09</td>
 </tr>
 <tr>
 <td>Project manager</td>
@@ -1620,6 +1665,17 @@ each goal. The founder signs as sponsor.</p>
 <li>Decision (CR-01, 2026-10-19): Phase 1 is tested by the founder alone, with goals measured on
   the founder's own use. The test with other people, and the talk guide, move to a later phase. SOW
   v3.1 records the change.</li>
+</ul>
+</li>
+<li>Misalignment: planning (due 2026-10-28) and Phase 1a (due 2026-11-06) did not start, because the
+  time went to a second portfolio case study and job applications. Two new constraints: 1 hour per
+  weekday shared with that case study (CN-02), and build support limited after 2026-11-22 (CN-08).
+  Moving milestones by more than 1 week and dropping acceptance criteria are sponsor decisions, and
+  the pause exit criterion asks for a re-plan through change control.<ul>
+<li>Decision (CR-02, 2026-11-09): re-plan instead of compressing the test. Phase 1a moves to
+  2026-11-16; Phase 1b and the 2 weeks of use keep their dates. "Forgot something yesterday?",
+  the adjustment notice and the relax-time card move to a later phase; the wildcard and the
+  camera photo become stretch items. SOW v3.2 records the change.</li>
 </ul>
 </li>
 </ul>
