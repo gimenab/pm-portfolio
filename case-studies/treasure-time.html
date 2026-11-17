@@ -65,6 +65,7 @@
         .sow-doc ol { list-style: decimal; padding-left: 1.25rem; margin: 0.4rem 0; }
         .sow-doc li { margin: 0.2rem 0; }
         .sow-doc table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.75rem; }
+        #backlog-modal td:first-child, #risks-modal td:first-child { white-space: nowrap; }
         .sow-doc th, .sow-doc td { border: 1px solid rgba(0,0,0,.12); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
         .sow-doc th { background: #f7f7f7; font-weight: 600; }
         .sow-doc strong { font-weight: 600; color: #1a1a1a; }
@@ -117,7 +118,7 @@
                 </div>
                 <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10">
                     <span class="text-slate-500 block">Status</span>
-                    <span class="text-teal-400 font-medium" data-en="In progress &mdash; Step 1: Discovery" data-es="En curso &mdash; Paso 1: Discovery">In progress &mdash; Step 1: Discovery</span>
+                    <span class="text-teal-400 font-medium" data-en="In progress &mdash; Building Phase 1" data-es="En curso &mdash; Construyendo la Fase 1">In progress &mdash; Building Phase 1</span>
                 </div>
             </div>
         </section>
@@ -298,7 +299,7 @@
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <button type="button" onclick="openExampleModal('userflow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View the decisions<span class="icon-chevron" aria-hidden="true"></span></button>
-                        <a href="../assets/downloads/treasure-time-core-loop.drawio" download class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Download diagram (editable in draw.io)<span class="icon-chevron" aria-hidden="true"></span></a>
+                        <a href="../assets/downloads/treasure-time-core-loop.drawio" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download diagram (editable in draw.io)</a>
                     </div>
                 </div>
                 <!-- 1.7 Project charter -->
@@ -330,28 +331,101 @@
             </div>
         </section>
 
-        <!-- 2. Prepare the soil — Risk prep -->
+        <!-- 2. Prepare the soil — Planning -->
         <section id="step-2" class="space-y-8 scroll-mt-24">
             <div class="flex flex-wrap items-baseline gap-x-3">
                 <span class="font-mono text-teal-400 text-sm font-semibold">02 /</span>
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
-                    <span data-en="Prepare the soil" data-es="Preparar la tierra">Prepare the soil</span>
+                    <span>Prepare the soil</span>
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
-                    <span class="text-teal-300" data-en="Risk prep" data-es="Preparaci&oacute;n de riesgos">Risk prep</span>
+                    <span class="text-teal-300">Planning</span>
                 </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span></span>
             </div>
 
-            <!-- 2.1 Backlog, Roadmap, RACI, Risk Register -->
-            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
-                    <h3 class="text-base font-semibold text-slate-200">
-                        <span data-en="Backlog, Roadmap, RACI &amp; Risk Register" data-es="Backlog, Roadmap, RACI y Risk Register">Backlog, Roadmap, RACI &amp; Risk Register</span>
-                    </h3>
-                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 2.1 CR-02 re-plan -->
+                <div class="p-6 space-y-3 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">2.1</span>CR-02: re-plan with a cut line
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Planning and Phase 1a did not start on time: the hours went to a second case study and job applications. Two new constraints came in: less time per day, and build support limited after 2026-11-22. Approved on 2026-11-09.
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-slate-400 border-collapse">
+                            <thead><tr class="text-left text-slate-200"><th class="py-1.5 pr-4 font-semibold"></th><th class="py-1.5 pr-4 font-semibold">Baseline</th><th class="py-1.5 font-semibold">Re-plan</th></tr></thead>
+                            <tbody class="divide-y divide-black/10">
+                                <tr><td class="py-1.5 pr-4">Phase 1a built</td><td class="py-1.5 pr-4">2026-11-06</td><td class="py-1.5">2026-11-16</td></tr>
+                                <tr><td class="py-1.5 pr-4">Phase 1b built</td><td class="py-1.5 pr-4">2026-11-20</td><td class="py-1.5">2026-11-20</td></tr>
+                                <tr><td class="py-1.5 pr-4">App frozen and published</td><td class="py-1.5 pr-4">&mdash;</td><td class="py-1.5">2026-11-22</td></tr>
+                                <tr><td class="py-1.5 pr-4">2 weeks of daily use</td><td class="py-1.5 pr-4">Nov 23 &ndash; Dec 4</td><td class="py-1.5">Nov 23 &ndash; Dec 4 (unchanged)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><strong class="text-slate-200">The trade-off:</strong> the slip was absorbed by cutting the build, not the test. Moving the 2 weeks of use would have pushed them into the holidays.</li>
+                        <li><strong class="text-slate-200">Cut to a later phase:</strong> &ldquo;Forgot something yesterday?&rdquo;, the adjustment notice and the relax-time card.</li>
+                        <li><strong class="text-slate-200">Moved to stretch</strong>, built only if 1b closes on time: the wildcard and the camera photo.</li>
+                    </ul>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="Backlog and Epics come out of Discovery, so they are defined once step 1 closes. The formal Risk Register starts from the initial risks found in 1.2." data-es="El backlog y las Epics salen de Discovery, as&iacute; que se definen cuando el paso 1 cierra. El Risk Register formal parte de los riesgos iniciales de 1.2.">
-                    Backlog and Epics come out of Discovery, so they are defined once step 1 closes. The formal Risk Register starts from the initial risks found in 1.2.
-                </p>
+                <!-- 2.2 Backlog & roadmap -->
+                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">2.2</span>Backlog &amp; roadmap
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Twelve items for Phase 1a and 1b plus two stretch items, each tied to the SOW acceptance criterion it meets, and a build order day by day at 2 hours a day. The cut rule is written in advance: if a day does not close, Friday 11-20 goes first, then the buffer; the photo is the first thing dropped, then the wildcard.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <strong class="text-slate-200">Progress, 2026-11-16:</strong> the first two build days were lost, and the risk register flagged it (R-01). All of Phase 1a (B-01 to B-08) was then built in one session and tested by the founder on the computer and the phone, so 1a closed on its date with no cut. Decisions taken during the build are logged with the backlog.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="openExampleModal('backlog-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View backlog &amp; roadmap<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <a href="../assets/downloads/treasure-time-phase-1-backlog.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download backlog (.xlsx)</a>
+                    </div>
+                </div>
+                <!-- 2.3 Risk register -->
+                <div class="p-6 space-y-3 bg-teal-500/20">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">2.3</span>Risk register
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The formal register starts from the initial risks found in 1.2. Each risk has a type, probability and impact on scales adapted to this project, an owner and a response. The founder owns every risk that needs a decision; Claude owns the two technical ones, solved in the code.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <strong class="text-slate-200">Tracking, 2026-11-16:</strong> R-01 (scope vs. dates) fired and was recovered with no cut. A new risk, R-11, records that publishing on day 1 did not happen: the founder wants a new visual style first.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="openExampleModal('risks-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View risk register<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <a href="../assets/downloads/treasure-time-risk-register.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download risk register (.xlsx)</a>
+                    </div>
+                </div>
+                <!-- 2.4 RACI -->
+                <div class="p-6 space-y-3 bg-[#f7f7f7]">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">2.4</span>RACI
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Two people, ten activities. The founder is the A on every row, because she is founder, sponsor and project manager at once; Claude writes the code and drafts, and the founder tests and accepts each item.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="openExampleModal('raci-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View RACI<span class="icon-chevron" aria-hidden="true"></span></button>
+                        <a href="../assets/downloads/treasure-time-raci.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download RACI (.xlsx)</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1962,6 +2036,480 @@ each goal. The founder signs as sponsor.</p>
 <li><strong>Phase 1:</strong> picking predefined tasks and how they repeat, a custom routine task, the &ldquo;minutes lived&rdquo; counter, the timer, the preferred relax time (used in an in-app message), the wildcard (1b) and the personal feed of moments. Known limit: data is saved on the device, and the app says so on the first visit.</li>
 <li><strong>Later phases:</strong> real reminders, a changing avatar, a 7-day agenda. A web app cannot schedule notifications or change its home-screen icon without a server or a native app.</li>
 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="backlog-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="backlog-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Step 02 &bull; planning, 2026-11-13 &bull; updated 2026-11-16</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="backlog-modal-title">Phase 1 backlog &amp; build order</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Each item is tied to the SOW acceptance criterion it meets. The build order is the roadmap: one day per row, 2 hours a day until the freeze.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-13 · Step 02 (planning). Drafted by Claude from SOW v3.2, approved by the founder. 
+The number in brackets is the SOW acceptance criterion each item meets. Build only: the 
+self-test report (2026-12-11) is not in this backlog.</em></p> 
+<p><em>Updated 2026-11-16: Phase 1a built (B-01 to B-08), tested by the founder on the computer and 
+on the phone (local network). Not published yet: see R-11.</em></p> 
+<h2>Phase 1a: does it work?</h2> 
+<table> 
+<thead> 
+<tr> 
+<th>ID</th> 
+<th>Item</th> 
+<th>Acceptance criterion</th> 
+<th>Status</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>B-01</td> 
+<td>Project base: React + Vite + Tailwind, all copy in one file (es-AR), published at a URL from day 1</td> 
+<td>Opens on the phone from the published URL</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-02</td> 
+<td>Data on the device, with the first-visit notice and the iPhone tip</td> 
+<td>"Your treasure" is still there after reloading or closing the browser (5)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-03</td> 
+<td>First visit: pick from the catalog of 10, set how each repeats, create a custom task</td> 
+<td>No other step is required (1)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-04</td> 
+<td>Daily list, reset at midnight</td> 
+<td>Shows only the tasks scheduled for that day (2)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-05</td> 
+<td>Mark and undo, with minute values and the +10 day bonus</td> 
+<td>Adds right away; undo takes back, never below 0 (4)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-06</td> 
+<td>Difficult task (+20) and the "Yesterday: X" suggestion</td> 
+<td>If not finished, it shows up the next day as a suggestion (3)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-07</td> 
+<td>"Your treasure" view and home with one card per opening</td> 
+<td>At most one card; no streaks, resets, random rewards or weekly targets (7)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+<tr> 
+<td>B-08</td> 
+<td>Export, restore and delete</td> 
+<td>Restore in a clean browser gives the same totals; delete leaves the app as on a first visit (6)</td> 
+<td>Done (11-16)</td> 
+</tr> 
+</tbody> 
+</table> 
+<h2>Phase 1b: use and register</h2> 
+<table> 
+<thead> 
+<tr> 
+<th>ID</th> 
+<th>Item</th> 
+<th>Acceptance criterion</th> 
+<th>Status</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>B-09</td> 
+<td>Taking time with the timer</td> 
+<td>Take all, part or more than the balance; pause; stops on its own; balance never below 0 (8)</td> 
+<td>To do</td> 
+</tr> 
+<tr> 
+<td>B-10</td> 
+<td>Register the moment with a note, and the "minutes lived" counter</td> 
+<td>Registered time adds to "minutes lived" (10)</td> 
+<td>To do</td> 
+</tr> 
+<tr> 
+<td>B-11</td> 
+<td>Dated feed on the home, with a message when empty</td> 
+<td>Each moment shows with its date (11)</td> 
+<td>To do</td> 
+</tr> 
+<tr> 
+<td>B-12</td> 
+<td>Full-cycle test, freeze and publish</td> 
+<td>One full cycle works on the phone: task → minutes → time → register → feed (12)</td> 
+<td>To do</td> 
+</tr> 
+</tbody> 
+</table> 
+<h2>Stretch (only if time allows, CR-02)</h2> 
+<table> 
+<thead> 
+<tr> 
+<th>ID</th> 
+<th>Item</th> 
+<th>Acceptance criterion</th> 
+<th>Status</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>S-01</td> 
+<td>Wildcard</td> 
+<td>15 min with 0 earned, at most 1, the next after 3 tasks, with its mark in the feed (9, 11)</td> 
+<td>To do</td> 
+</tr> 
+<tr> 
+<td>S-02</td> 
+<td>Camera photo</td> 
+<td>Opens the camera on the phone; the photo shows in the feed and in the exported copy (10)</td> 
+<td>To do</td> 
+</tr> 
+</tbody> 
+</table> 
+<h2>Decisions during the build</h2> 
+<table> 
+<thead> 
+<tr> 
+<th>Date</th> 
+<th>Item</th> 
+<th>Decision</th> 
+<th>Why</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>2026-11-16</td> 
+<td>B-03</td> 
+<td>Catalog of 10, confirmed by the founder. Health: drink water +2, take medication +2, mindful pause (5 min) +5, walk 15 min +10. Home: make the bed +2, wash the dishes +5, cook something simple +10. Work / Purpose: answer pending items +5, focus block (25 min) +15, study (30 min) +15</td> 
+<td>The SOW named the catalog but not its tasks; values follow the brief's examples, max +15</td> 
+</tr> 
+<tr> 
+<td>2026-11-16</td> 
+<td>B-03</td> 
+<td>A custom routine task is worth +2, +5, +10 or +15, chosen by the user</td> 
+<td>Same range as the catalog</td> 
+</tr> 
+<tr> 
+<td>2026-11-16</td> 
+<td>B-08</td> 
+<td>"Restore from a copy" is also offered on the first visit</td> 
+<td>Without it, a new device had to pick tasks before it could restore (criterion 6)</td> 
+</tr> 
+<tr> 
+<td>2026-11-16</td> 
+<td>B-08</td> 
+<td>After a restore the app goes to the home and shows a confirmation that closes on its own after 3 seconds</td> 
+<td>Founder's feedback after testing on the phone. Not a pop-up in the sense of row 27: it answers an action the user took</td> 
+</tr> 
+</tbody> 
+</table> 
+<p><strong>Why B-01 publishes on day 1:</strong> leaving the publish for 2026-11-22 puts it on the day build 
+support drops. Publishing first moves that risk to the start.</p> 
+<h2>Build order (2 hours a day, every day until 2026-11-22)</h2> 
+<table> 
+<thead> 
+<tr> 
+<th>Day</th> 
+<th>Work</th> 
+<th>Closes</th> 
+<th>Actual</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>Fri 11-13</td> 
+<td>Finish planning (risks, RACI, CR-02 block)</td> 
+<td>Step 02</td> 
+<td>Done</td> 
+</tr> 
+<tr> 
+<td>Sat 11-14</td> 
+<td>B-01 published base · B-02 data on the device · B-03 first visit</td> 
+<td></td> 
+<td>Not worked (R-01 trigger)</td> 
+</tr> 
+<tr> 
+<td>Sun 11-15</td> 
+<td>B-04 daily list · B-05 mark and undo · B-06 difficult task</td> 
+<td></td> 
+<td>Not worked</td> 
+</tr> 
+<tr> 
+<td>Mon 11-16</td> 
+<td>B-07 "Your treasure" and home · B-08 export, restore and delete</td> 
+<td><strong>1a</strong> (self-test starts)</td> 
+<td>B-01 to B-08 done: <strong>1a built on its date</strong>, no cut</td> 
+</tr> 
+<tr> 
+<td>Tue 11-17</td> 
+<td>B-09 timer</td> 
+<td></td> 
+<td></td> 
+</tr> 
+<tr> 
+<td>Wed 11-18</td> 
+<td>B-10 register and "minutes lived" · B-11 feed</td> 
+<td></td> 
+<td></td> 
+</tr> 
+<tr> 
+<td>Thu 11-19</td> 
+<td>B-12 full cycle → if time allows, S-01 wildcard</td> 
+<td><strong>1b</strong></td> 
+<td></td> 
+</tr> 
+<tr> 
+<td>Fri 11-20</td> 
+<td>S-02 camera photo (cut if it gets complicated)</td> 
+<td>Stretch</td> 
+<td></td> 
+</tr> 
+<tr> 
+<td>Sat 11-21 and Sun 11-22</td> 
+<td>Buffer, fixes, freeze and publish</td> 
+<td><strong>App frozen</strong></td> 
+<td></td> 
+</tr> 
+</tbody> 
+</table> 
+<p><strong>Cut rule:</strong> stretch items start only once 1b is closed. If something slips, Friday 11-20 is used 
+first, then the buffer. What goes first: the photo, then the wildcard.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="risks-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="risks-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Step 02 &bull; planning, 2026-11-13 &bull; updated 2026-11-16</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="risks-modal-title">Phase 1 risk register</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Probability and impact use scales adapted to this project. Mitigate = act to lower the risk; Accept = record and observe.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-13 · Step 02 (planning). Drafted by Claude from the 1.2 intake analysis, SOW v3.2 and the 
+charter; approved by the founder. The founder owns every risk that needs a decision; Claude owns 
+the two technical ones, which are solved in the code.</em></p> 
+<table> 
+<thead> 
+<tr> 
+<th>ID</th> 
+<th>Type</th> 
+<th>Risk</th> 
+<th>Prob.</th> 
+<th>Impact</th> 
+<th>Owner</th> 
+<th>Response</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>R-01</td> 
+<td>Schedule</td> 
+<td>The scope does not fit the dates (A-09)</td> 
+<td>Medium</td> 
+<td>High</td> 
+<td>Founder</td> 
+<td><strong>Mitigate:</strong> CR-02 cut line, stretch items last, cut rule. Trigger: a day of the build order that does not close</td> 
+</tr> 
+<tr> 
+<td>R-02</td> 
+<td>Technical</td> 
+<td>Bugs after 2026-11-22, when build support drops</td> 
+<td>Medium</td> 
+<td>Medium</td> 
+<td>Founder</td> 
+<td><strong>Mitigate:</strong> publish from day 1 (B-01), test on the phone every day, freeze on 11-22</td> 
+</tr> 
+<tr> 
+<td>R-03</td> 
+<td>Data</td> 
+<td>Data loss on iPhone (Safari clears storage after about 7 days unused)</td> 
+<td>Medium</td> 
+<td>High</td> 
+<td>Founder</td> 
+<td><strong>Mitigate:</strong> home-screen tip and export / restore in 1a; export a copy once a week during use</td> 
+</tr> 
+<tr> 
+<td>R-04</td> 
+<td>Technical</td> 
+<td>Photos take too much space in the browser and in the copy (only if S-02 is built)</td> 
+<td>Medium</td> 
+<td>Medium</td> 
+<td>Claude</td> 
+<td><strong>Mitigate:</strong> shrink the photo before saving; if that is not enough, the photo is cut</td> 
+</tr> 
+<tr> 
+<td>R-05</td> 
+<td>Technical</td> 
+<td>On the web, the camera cannot block the gallery</td> 
+<td>High</td> 
+<td>Low</td> 
+<td>Founder</td> 
+<td><strong>Accept:</strong> recorded as a build limit</td> 
+</tr> 
+<tr> 
+<td>R-06</td> 
+<td>Technical</td> 
+<td>Dependence on hosting and the browser (from 1.2: third-party risks)</td> 
+<td>Low</td> 
+<td>Medium</td> 
+<td>Claude</td> 
+<td><strong>Mitigate:</strong> publishing on day 1 finds problems early</td> 
+</tr> 
+<tr> 
+<td>R-07</td> 
+<td>People</td> 
+<td>Fatigue: 2 hours every day, plus the second case study and job applications</td> 
+<td>Medium</td> 
+<td>Medium</td> 
+<td>Founder</td> 
+<td><strong>Mitigate:</strong> buffer on 11-21 and 11-22; a missed day triggers the cut rule, not a longer plan</td> 
+</tr> 
+<tr> 
+<td>R-08</td> 
+<td>Product</td> 
+<td>A cohort of one, who also designed the app (CR-01)</td> 
+<td>High</td> 
+<td>Medium</td> 
+<td>Founder</td> 
+<td><strong>Accept:</strong> stated in the report; A-01, A-02, A-03 and A-10 stay open</td> 
+</tr> 
+<tr> 
+<td>R-09</td> 
+<td>Product</td> 
+<td>Earning minutes feels like pressure</td> 
+<td>—</td> 
+<td>High</td> 
+<td>Founder</td> 
+<td><strong>Accept:</strong> it is the question Phase 1 exists to answer</td> 
+</tr> 
+<tr> 
+<td>R-10</td> 
+<td>Product</td> 
+<td>"Your treasure" has no hard limit (A-04)</td> 
+<td>Medium</td> 
+<td>Low</td> 
+<td>Founder</td> 
+<td><strong>Accept:</strong> observed in 1b</td> 
+</tr> 
+<tr> 
+<td>R-11</td> 
+<td>Schedule</td> 
+<td>Publishing on day 1 did not happen: the repo is private (free GitHub Pages needs a public repo) and the founder wants a new visual style before publishing (2026-11-16)</td> 
+<td>Medium</td> 
+<td>Medium</td> 
+<td>Founder</td> 
+<td><strong>Mitigate:</strong> test on the phone over the local network meanwhile; decide the style, then make the repo public and publish, no later than 11-21 (buffer). Weakens the R-02 and R-06 responses until then</td> 
+</tr> 
+</tbody> 
+</table> 
+<p><strong>R-01 in detail.</strong> Phase 1 grew by 9 changes in Discovery and the dates already slipped once 
+(CR-02). How long each item takes is not measured yet, so whether the plan fits is still an 
+assumption. If it does not, the app is not frozen on 11-22, or the 2 weeks of use move into the 
+holidays. The alarm is daily: if a day ends without closing its items, the cut is decided that same 
+day. The date does not move.</p> 
+<p><strong>Tracking (2026-11-16).</strong> R-01 fired: 11-14 and 11-15 were not worked, so their items did not close. 
+Recovered on 11-16 with no cut: B-01 to B-08 were built in one session and Phase 1a closed on its 
+date. Lesson: the items took less than estimated; the plan has more room than it seemed, which also 
+lowers R-07. R-02 and R-06 depend on publishing, now tracked in R-11.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="raci-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="raci-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-5xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Step 02 &bull; planning, 2026-11-13</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="raci-modal-title">Phase 1 RACI</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">R = does the work &middot; A = decides and approves (one per row) &middot; C = consulted &middot; I = informed.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-13 · Step 02 (planning). Drafted by Claude, approved by the founder. 
+R = does the work · A = decides and approves (one per row) · C = consulted · I = informed. 
+The founder is the A on every row, because she is founder, sponsor and project manager at once.</em></p> 
+<table> 
+<thead> 
+<tr> 
+<th>Activity</th> 
+<th>Founder</th> 
+<th>Claude</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td>Scope, cuts and changes (change control)</td> 
+<td><strong>A, R</strong></td> 
+<td>C</td> 
+</tr> 
+<tr> 
+<td>Build order and the day's cut rule</td> 
+<td><strong>A</strong></td> 
+<td>R (proposes)</td> 
+</tr> 
+<tr> 
+<td>Writing the code</td> 
+<td>A</td> 
+<td><strong>R</strong></td> 
+</tr> 
+<tr> 
+<td>Visual design and app copy (es-AR)</td> 
+<td><strong>A</strong>, R</td> 
+<td>C (drafts)</td> 
+</tr> 
+<tr> 
+<td>Reviewing and testing each item on the phone</td> 
+<td><strong>A, R</strong></td> 
+<td>I</td> 
+</tr> 
+<tr> 
+<td>Accepting each backlog item (Done)</td> 
+<td><strong>A</strong></td> 
+<td>I</td> 
+</tr> 
+<tr> 
+<td>Technical risks (R-04, R-06)</td> 
+<td>A</td> 
+<td><strong>R</strong></td> 
+</tr> 
+<tr> 
+<td>Publish and freeze on 2026-11-22</td> 
+<td><strong>A</strong></td> 
+<td>R</td> 
+</tr> 
+<tr> 
+<td>Portfolio documentation</td> 
+<td><strong>A</strong></td> 
+<td>R (drafts)</td> 
+</tr> 
+<tr> 
+<td>Daily use and self-test report</td> 
+<td><strong>A, R</strong></td> 
+<td>C</td> 
+</tr> 
+</tbody> 
+</table>
             </div>
         </div>
     </div>
