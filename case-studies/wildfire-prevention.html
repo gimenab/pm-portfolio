@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Wildfire Reporting | Project Manager Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:ital,wght@0,400;0,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: { sans: ['Noto Sans', 'sans-serif'], serif: ['EB Garamond', 'Georgia', 'serif'], mono: ['Noto Sans', 'sans-serif'] },
+                colors: {
+                    teal: { 200: '#0b4a63', 300: '#127a9e', 400: '#0ea5d4', 500: '#51d1f6', 700: '#22b8e8', 800: '#1583a8', 950: '#eaf8fd' },
+                    slate: { 100: '#111111', 200: '#1a1a1a', 300: '#333333', 400: '#666666', 500: '#767676', 600: '#8a8a8a', 700: '#a3a3a3', 800: '#b98fc4', 900: '#fbf7fc' },
+                }
+            } }
+        }
+    </script>
+    <style>
+        .icon-chevron {
+            display: inline-block; flex-shrink: 0; width: 0.75em; height: 0.75em;
+            background-color: currentColor; transition: transform 0.2s;
+            -webkit-mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+            mask: url('../assets/images/icon-chevron-right.svg') center / contain no-repeat;
+        }
+        .group:hover .icon-chevron { transform: translateX(3px); }
+        .sow-doc { font-size: 0.8125rem; line-height: 1.6; color: #333; }
+        .sow-doc h2 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 1.25rem 0 0.4rem; padding-top: 0.9rem; border-top: 1px solid rgba(0,0,0,.1); }
+        .sow-doc h2:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+        .sow-doc p { margin: 0.5rem 0; }
+        .sow-doc ul { list-style: disc; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc ol { list-style: decimal; padding-left: 1.25rem; margin: 0.4rem 0; }
+        .sow-doc li { margin: 0.2rem 0; }
+        .sow-doc table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.75rem; display: block; overflow-x: auto; }
+        .sow-doc th, .sow-doc td { border: 1px solid rgba(0,0,0,.12); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        .sow-doc th { background: #f7f7f7; font-weight: 600; }
+        .sow-doc strong { font-weight: 600; color: #1a1a1a; }
+        .sow-doc code { font-size: 0.75rem; }
+        details.read-more > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 0.35rem; }
+        details.read-more > summary::-webkit-details-marker { display: none; }
+        details.read-more > summary::after { content: '+'; }
+        details.read-more[open] > summary::after { content: '2'; }
+    </style>
+</head>
+<body class="bg-[#F0FAFF] text-[#1a1a1a] antialiased font-sans selection:bg-teal-500 selection:text-slate-950">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-black/10">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+            <span class="truncate font-medium text-slate-200 text-sm font-mono">Case Study &bull; Project Initiation</span>
+            <a href="../index.html" class="shrink-0 whitespace-nowrap text-sm font-medium text-slate-400 hover:text-teal-800 transition-colors font-mono">&larr; Back to home</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
+
+        <section class="space-y-6 pt-6 border-b border-black/10 pb-12">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-300 text-xs font-mono">
+                <span>Environmental Tech &bull; Simulated case study</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1a1a1a] leading-tight font-serif">
+                Early Wildfire Reporting in the C&oacute;rdoba Hills
+            </h1>
+            <p class="text-[#1a1a1a] text-sm sm:text-base leading-relaxed text-pretty">
+                A foundation wants an app so that whoever sees smoke first can report it, even without signal. Five stakeholders with conflicting interests, from a vague request to a signed charter.
+            </p>
+            <details class="read-more">
+                <summary class="text-xs font-mono text-teal-800">About this case</summary>
+                <div class="space-y-2 pt-3 text-slate-400 text-sm leading-relaxed">
+                    <p>This case covers the first step of my method only: turning a request into an approved project. <a href="treasure-time.html" class="text-teal-800 underline underline-offset-2 hover:text-teal-300">Treasure Time</a> follows the whole cycle.</p>
+                    <p>Simulated: the foundation, the reserves and the provincial office are fictional. Each stakeholder was played by AI from a secret brief, committed before the meetings and not read by me until the end. Fire figures for C&oacute;rdoba are real (IDECOR, CONAE).</p>
+                </div>
+            </details>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-xs font-mono">
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10"><span class="text-slate-500 block">Role</span><span class="text-slate-200 font-medium">Project Manager &amp; Business Analyst</span></div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10"><span class="text-slate-500 block">Stakeholders</span><span class="text-slate-200 font-medium">5 groups, each with hidden information</span></div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10"><span class="text-slate-500 block">Dilemma</span><span class="text-slate-200 font-medium">Open data vs. protecting condor nests</span></div>
+                <div class="p-4 rounded-xl bg-[#f7f7f7] border border-black/10"><span class="text-slate-500 block">Status</span><span class="text-teal-400 font-medium">Done &mdash; Charter signed</span></div>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">1</span>Elicitation
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"></div>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">BA: elicitation and facilitation &middot; PM: stakeholder management</span>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Three meetings with five stakeholders turned a one-line request into a problem with clear limits.</p>
+                    <div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('map-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Stakeholder map<span class="icon-chevron" aria-hidden="true"></span></button><a href="../assets/downloads/wildfire-stakeholders.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download stakeholder map (.xlsx)</a></div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3"><p class="text-slate-400 text-sm leading-relaxed">The request was one line: &ldquo;modernize how people report fires and care for wildlife in our reserves&rdquo;. Each meeting was followed by a written recap the stakeholders could correct.</p><ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed"><li><strong>Foundation:</strong> a climate grant with a hard date and a fixed budget, and a board member who wants a donate button.</li><li><strong>Province + researchers:</strong> the researchers&rsquo; grant requires open data; a provincial resolution forbids publishing condor nest locations.</li><li><strong>Rangers + firefighters:</strong> 6 rangers for 40,000 ha, no mobile signal in the high hills, and no dispatch without the emergency central.</li></ul><p class="text-[11px] font-mono text-slate-500 pt-1">Supporting documents</p><div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('m1-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Meeting 1<span class="icon-chevron" aria-hidden="true"></span></button><button type="button" onclick="openExampleModal('m2-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Meeting 2<span class="icon-chevron" aria-hidden="true"></span></button><button type="button" onclick="openExampleModal('m3-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Meeting 3<span class="icon-chevron" aria-hidden="true"></span></button></div></div>
+                    </details>
+                </div>
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">2</span>Analysis
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"></div>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">BA: specification and gap analysis</span>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">15 functional and 8 non-functional requirements, each traced to the meeting it came from.</p>
+                    <div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('req-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Requirements<span class="icon-chevron" aria-hidden="true"></span></button><button type="button" onclick="openExampleModal('us-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">User stories<span class="icon-chevron" aria-hidden="true"></span></button><a href="../assets/downloads/wildfire-requirements.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download requirements (.xlsx)</a></div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3"><p class="text-slate-400 text-sm leading-relaxed">The gap analysis compares today with what should happen: satellites see fires once they are large, but 62% of the 2025 fires in C&oacute;rdoba were under 10 ha. Those have to be reported from the ground, by whoever sees the smoke first, often without signal.</p><p class="text-[11px] font-mono text-slate-500 pt-1">Supporting documents</p><div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('gap-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Gap analysis<span class="icon-chevron" aria-hidden="true"></span></button></div></div>
+                    </details>
+                </div>
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">3</span>Scope
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">sow-drafting</code> <span class="text-white/80 font-normal">v1.2.2</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">PM: scope definition and negotiation</span>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">The open-data dilemma, negotiated: a public map on a 5 km grid, precise locations only under a data agreement.</p>
+                    <div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('sow-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View SOW<span class="icon-chevron" aria-hidden="true"></span></button><a href="../assets/downloads/wildfire-estimate.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download estimate (.xlsx)</a></div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3"><p class="text-slate-400 text-sm leading-relaxed">The SOW fixes what the pilot delivers by 30 June 2027 and what it does not. Researchers need open data; publishing condor nests helps poachers. The public map and the open repository show sightings on a grid of about 5 km, and precise coordinates go only to accredited researchers under an agreement with the province. The donate button stays out of the grant budget: the treasurer showed the grant does not pay for fundraising.</p><p class="text-[11px] font-mono text-slate-500 pt-1">Supporting documents</p><div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('est-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Tech lead estimate<span class="icon-chevron" aria-hidden="true"></span></button><button type="button" onclick="openExampleModal('tre-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Emails with the treasurer<span class="icon-chevron" aria-hidden="true"></span></button></div></div>
+                    </details>
+                </div>
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">4</span>Initiation
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">project-charter</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">PM: formal project initiation</span>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Four measurable goals, signed by the sponsor.</p>
+                    <div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('charter-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View project charter<span class="icon-chevron" aria-hidden="true"></span></button><a href="../assets/downloads/wildfire-change-control.xlsx" download class="group inline-flex items-center gap-1.5 rounded-full border border-[#f78c61] bg-transparent px-3.5 py-1.5 text-xs font-mono font-semibold text-[#c2410c] hover:bg-[#f78c61] hover:text-[#1a1a1a] transition-colors"><span aria-hidden="true">&darr;</span>Download change control (.xlsx)</a></div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3"><ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed"><li>Cut the time from a fire report to the first responder by 40&ndash;60%, against a baseline still to be measured.</li><li>Deliver every fire report to the emergency central and the rangers at the same time.</li><li>Publish no precise location of a sighting.</li><li>Make a fire report faster than a WhatsApp message, in a field test with the rangers.</li></ul><p class="text-slate-400 text-sm leading-relaxed">Downloads and number of reports are reported, not goals: a quarter with fewer fire reports is good news.</p></div>
+                    </details>
+                </div>
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">5</span>Reveal
+                        </h3>
+                        <div class="flex items-center gap-2 flex-wrap"></div>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">Reflection and learning</span>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">16 of 17 hidden facts found. The one I missed (the rangers&rsquo; low-end phones) is now an assumption in the charter, to check before design. I now ask about devices in every discovery.</p>
+                    <div class="flex flex-wrap gap-2"><button type="button" onclick="openExampleModal('reveal-modal')" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View the reveal<span class="icon-chevron" aria-hidden="true"></span></button></div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3"><p class="text-slate-400 text-sm leading-relaxed">Each stakeholder was played from a secret brief committed before the meetings. The reveal puts every hidden fact next to the meeting or email where it came out.</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-black/10 py-8 text-center text-xs text-[#1a1a1a]">
+        <p>Project Manager Portfolio &bull; Built as a static site, hosted on GitHub Pages</p>
+        <p class="mt-1">&copy; 2026 Gimena Fernandez. All rights reserved.</p>
+    </footer>
+
+    <div id="m1-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="m1-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Meeting 1 &bull; Elicitation</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="m1-modal-title">Foundation (sponsor)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Notes from the first meeting with the sponsor, played from a secret brief.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-20 · Video call · Simulated: Claude plays the stakeholder from a secret brief committed
+before the meeting.</em></p>
+<p><strong>Attendees:</strong> Laura Medina (executive director, Fundación Tabaquillar) · Gimena Fernández (PM,
+Quebrada Labs)</p>
+<p><strong>Trigger:</strong> email from Laura: "modernize how people report fires and care for wildlife in our
+reserves". A fire near one of the reserves last year started the idea.</p>
+<h2>What we learned</h2>
+<p><strong>Context</strong>
+- The foundation runs the Red de Reservas Serranas: 3 reserves in the Córdoba hills, inside
+  provincial protected areas.
+- Problems today: illegal campfires (one got out of hand two years ago), hunting with dogs in the
+  largest reserve last year, poisoned bait on nearby farms that kills condors.
+- Incidents are not recorded in an orderly way: rangers share them in a WhatsApp group; serious
+  ones are reported to the Dirección de Áreas Serranas Protegidas.</p>
+<p><strong>Users mentioned</strong>
+- Visitors (hikers, tourists, school trips) and park rangers. Reporting fire is common to both.
+- Rangers also need to check visitor reports in the field.
+- Neighbors at the foot of the hills ("they see smoke first").
+- Volunteer firefighters must receive fire alerts.
+- University researchers have asked for condor sighting data.</p>
+<p><strong>Features Laura asked for (wish list, not yet prioritized)</strong>
+1. "I see smoke" button with location and photo.
+2. Fire-risk notices for visitors (e.g. "no fires allowed today").
+3. Public sightings map, with photos, on the foundation's WordPress site.
+4. Educational species pages (tabaquillo, condor).
+5. Points or badges for reporting native species.
+6. Litter reports.</p>
+<p><strong>Constraints</strong>
+- <strong>Deadline:</strong> working pilot by <strong>30 June 2027</strong> (about 8 months). Fixed: missing it loses the
+  grant.
+- <strong>Budget:</strong> USD 60,000 total; USD 12,000 already committed to a communications campaign, so
+  <strong>USD 48,000 for the product</strong>, including the website map.
+- <strong>Funding:</strong> international climate fund. Requires <strong>quarterly impact reports</strong>: number of
+  reports made with the app and response time (from report to someone arriving).
+- <strong>Permit:</strong> any operation inside the reserves needs approval from the Dirección de Áreas
+  Serranas Protegidas (provincial).</p>
+<p><strong>Decision-makers and influence</strong>
+- Laura leads the project; major decisions go to the foundation's <strong>board</strong> (5 members, monthly).
+- Board member <strong>Raúl</strong> pushes for a <strong>donate button</strong> next to each sighting. Laura is not
+  convinced but has not said no.</p>
+<p><strong>Success and baseline</strong>
+- Grant metrics: number of reports and response time. Foundation also wants usage and a "full,
+  attractive" map for fundraising.
+- <strong>No baseline exists.</strong> Only anecdote: last year's fire took about 3 hours from a neighbor seeing
+  smoke to firefighters arriving.
+- Visitors: about 18,000 last year at the largest reserve (entrance logbook), peaks in summer and
+  winter holidays. No entry control at the other two reserves; many people enter off-trail.</p>
+<h2>Proposals made by Gimena in the meeting</h2>
+<ul>
+<li>Users must be 18+ and register with ID (DNI), for safety. Laura agreed.</li>
+<li>Record people who break park rules or cause harm; reinforce control at authorized entrances.
+  Legal implications to be checked.</li>
+<li>Researchers get access to the reported data through the app/website. Laura agreed.</li>
+<li><strong>Measure a baseline before the pilot:</strong> average time from report to firefighters acting, and
+  average visitors, to compare against app downloads and reports. Laura agreed.</li>
+</ul>
+<h2>Open items</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Owner</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Meeting with Sofía (lead ranger): how incidents are reported and checked today</td>
+<td>Laura sets it up</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Meeting with Carla (volunteer firefighters): past response-time records for the baseline</td>
+<td>Laura sends contact</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Meeting with the Dirección de Áreas Serranas Protegidas: permit and rules for data inside protected areas</td>
+<td>Gimena</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Meeting with the university researchers: what data they need</td>
+<td>Gimena</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Wish list vs. USD 48,000 and 30 June 2027: prioritize</td>
+<td>Gimena</td>
+<td>After meetings 2–3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Donate button: board position</td>
+<td>Laura</td>
+<td>Before SOW</td>
+</tr>
+<tr>
+<td>7</td>
+<td>18+ and ID registration, recording offenders: legal and privacy check, effect on how many people report</td>
+<td>Gimena</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Public map with sighting locations: what may be shown publicly</td>
+<td>Gimena</td>
+<td>Meeting 2</td>
+</tr>
+</tbody>
+</table>
+<h2>Next steps</h2>
+<ul>
+<li>Gimena sends Laura this summary with next steps.</li>
+<li>Meetings 2 (province + researchers) and 3 (rangers + firefighters).</li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="m2-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="m2-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Meeting 2 &bull; Elicitation</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="m2-modal-title">Province + researchers</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The open-data dilemma comes up here.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-23 · Video call · Simulated: Claude plays both stakeholders from secret briefs committed
+before the meeting.</em></p>
+<p><strong>Attendees:</strong> Marcos Ferreyra (head of area, Dirección de Áreas Serranas Protegidas) · Dr. Tomás
+Quiroga (ecology research group, public university) · Gimena Fernández (PM, Quebrada Labs)</p>
+<p><strong>Goal:</strong> permit conditions, rules for data collected inside protected areas, and what data the
+researchers need (open items 3, 4 and 8 from meeting 1).</p>
+<h2>What we learned</h2>
+<p><strong>Fire reports and the official channel</strong>
+- Today fires are reported by phone to the provincial emergency number; the central dispatches
+  firefighters. Rangers use radio or phone. Nothing is digital.
+- Red line (Marcos): fire reports from the app must reach the official emergency channel. The app
+  adds to that channel; it does not replace calling the emergency number.</p>
+<p><strong>Planned provincial system (not public yet)</strong>
+- The province is preparing its own digital reporting system for fires and incidents in all
+  protected areas, connected to the emergency central. Tender expected in 2027.
+- Marcos fears the app will overlap with it and have to be shut down.
+- He would support the app long term if it <strong>exports its data in an open, documented format</strong> that
+  the future system can ingest without depending on the foundation.
+- No details of the tender can be shared. Who its users will be is <strong>not confirmed</strong>: do not assume
+  it targets specialist staff only.</p>
+<p><strong>Rules on data inside protected areas</strong>
+- An internal provincial resolution makes the <strong>exact locations of condor nests and sensitive
+  tabaquillo patches restricted</strong>. They cannot be published (risk: hunters, photographers reaching
+  the nests).</p>
+<p><strong>Researchers' needs</strong>
+- Tomás's research grant <strong>requires publishing data in a public open repository</strong> (anyone can
+  download, no permission). That is why he pushed for open data.
+- His analysis (fire recurrence by zone, condor population) needs precise data.
+- For a sighting to be usable in a paper it needs: <strong>species, date and time, location precision,
+  and a "verified" flag</strong>. Without these, volume does not help. He will send the full field list.
+- His group offers to help verify wildlife sightings (species identification).</p>
+<p><strong>Recording suspicious people</strong>
+- Marcos: not the province's responsibility; the foundation must check it with its lawyers. The
+  province will not endorse a foundation keeping records of citizens.</p>
+<h2>Decision: how location data is shared</h2>
+<p>Reached in the meeting, agreed by Marcos and Tomás:</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Who sees it</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aggregated, on a coarse grid (cells of about 5 km)</td>
+<td>Anyone (public map, open repository)</td>
+<td>Meets Tomás's grant; does not reveal nests (Marcos)</td>
+</tr>
+<tr>
+<td>Precise coordinates</td>
+<td>Accredited researchers only</td>
+<td>Data agreement signed with the province</td>
+</tr>
+</tbody>
+</table>
+<p>How to hide or degrade precision technically (grid, encryption, access control) to be worked out by
+Gimena with the tech lead.</p>
+<h2>Open items</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Owner</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Technical approach for the two data levels (grid + restricted precise data)</td>
+<td>Gimena + tech lead</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Open, documented export format for the future provincial system</td>
+<td>Gimena + tech lead</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>3</td>
+<td>How app fire reports reach the official emergency channel</td>
+<td>Gimena</td>
+<td>Meeting 3 (firefighters) / analysis</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Full list of fields required for usable sightings</td>
+<td>Tomás sends by email</td>
+<td>Before analysis</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Formal permit request (letter with project description)</td>
+<td>Foundation, with Gimena's proposal</td>
+<td>After SOW</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Data agreement template between province and researchers</td>
+<td>Marcos / Tomás</td>
+<td>Before pilot</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Recording suspicious people: legal check (province will not endorse)</td>
+<td>Gimena → foundation's lawyers</td>
+<td>Analysis</td>
+</tr>
+</tbody>
+</table>
+<h2>Next steps</h2>
+<ul>
+<li>Gimena sends the follow-up email to Marcos and Tomás.</li>
+<li>Meeting 3 (rangers + firefighters).</li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="m3-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="m3-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Meeting 3 &bull; Elicitation</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="m3-modal-title">Rangers + firefighters</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">The field users: no signal, radios, false alarms.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-25 · Video call · Simulated: Claude plays both stakeholders from secret briefs committed
+before the meeting.</em></p>
+<p><strong>Attendees:</strong> Sofía Arce (lead ranger, largest reserve in the Red de Reservas Serranas) · Carla
+Bustos (chief of a volunteer fire station; coordinates a neighbor early-warning network) · Gimena
+Fernández (PM, Quebrada Labs)</p>
+<p><strong>Goal:</strong> how fires are reported and checked today, and how app reports reach the official
+emergency channel (open item 1 from meeting 1, open item 3 from meeting 2).</p>
+<h2>What we learned</h2>
+<p><strong>How fires are reported today</strong>
+- Rangers: VHF radio; if there is signal, also a photo to the rangers' WhatsApp group. The nearest
+  ranger goes to check; if confirmed, they call the emergency number.
+- Six rangers for about 40,000 ha. No ranger on duty at night.
+- Firefighters get alerts two ways: the official one (someone calls the emergency number, the
+  provincial central evaluates and activates them by radio) and the neighbor network (WhatsApp
+  group and some neighbors with radios). The neighbor network often warns them first, so they get
+  people and equipment ready while they wait for activation.
+- When nobody answers, the alert is lost or arrives late. Often the fire is first seen by
+  satellite or from the road, when it is already large.</p>
+<p><strong>Who activates the firefighters</strong>
+- Only the provincial emergency central. Not the app, not a ranger, not a neighbor. A direct call
+  from a ranger lets Carla get people ready, but she cannot send a crew without activation.
+- The central works 24 hours, but often cannot confirm a report and calls the nearest ranger to go
+  and check.</p>
+<p><strong>Volunteers, no one watching screens</strong>
+- Firefighters are volunteers with their own jobs; nobody watches a screen at the station. They
+  hear about fires from the central's radio or WhatsApp.
+- Red line (Carla): the app must not need anyone on her side watching it.</p>
+<p><strong>False reports</strong>
+- Last season a viral photo of "smoke" in the reserve was a barbecue; it took a ranger half a day
+  to find and rule out.
+- Sofía wants visitor reports checked by a ranger before they reach the firefighters.
+- Carla's concern: a report waiting for a ranger (at 3 am, or when the nearest one is two hours
+  away) loses the time the app was meant to save.</p>
+<p><strong>Use what they already have</strong>
+- Both want the app to send alerts into the channels they already use (WhatsApp groups, radio), not
+  replace them. Carla: "if everyone has to move to something new, it falls apart in two weeks."
+- Rangers watch their WhatsApp group all day.</p>
+<p><strong>Field conditions (Sofía)</strong>
+- Must work without signal: reports are stored and sent when signal returns.
+- One hand, gloves on, low battery use. Photo with location plus a voice message is the fastest way.
+- Must be faster than sending a WhatsApp message, or rangers will not use it.
+- No extra paperwork: no form to fill after each report.
+- No new device to carry or charge (in reply to the satellite idea; cost also unclear).</p>
+<p><strong>What a report needs (Carla)</strong>
+- Exact location, a photo, wind direction if possible.
+- Voice must not replace location: "smoke behind the hill" does not say which hill.</p>
+<p><strong>Protocols</strong>
+- The central's protocol decides how reports are classified and who is sent. The fire station has
+  an internal protocol for how they respond; Carla will send it.
+- Rangers have no written protocol; they decide by experience (smoke color, wind, distance to
+  houses). Sofía can explain it.
+- Carla: a low / medium / high level helps her prepare, but no report marked "low" may be held
+  back or hidden.</p>
+<h2>Agreed in the meeting</h2>
+<ul>
+<li>An app report (photo + coordinates + text or voice) reaches the emergency central as one more
+  report, like a phone call. The central decides whether to act.</li>
+<li>The sender gets a confirmation that the report was sent.</li>
+<li>Reports made without signal are stored and sent automatically when signal returns.</li>
+</ul>
+<h2>Not resolved: who sees a visitor report first</h2>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sofía (rangers)</td>
+<td>Visitor reports go to rangers first; they confirm before it reaches the firefighters.</td>
+</tr>
+<tr>
+<td>Carla (firefighters)</td>
+<td>No report may wait for someone to look at it; at night no one does.</td>
+</tr>
+<tr>
+<td>Marcos (province, meeting 2)</td>
+<td>Every fire report from the app must reach the official emergency channel.</td>
+</tr>
+</tbody>
+</table>
+<p>To be worked out in analysis (for example, the report goes to the central and to the rangers'
+group at the same time, and a ranger's confirmation raises its priority). Needs checking with the
+three of them.</p>
+<h2>Open items</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Owner</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Who sees a visitor report first (rangers, central, both)</td>
+<td>Gimena</td>
+<td>Analysis, then check with Sofía, Carla, Marcos</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sending alerts without signal: satellite or other options, cost, no new device for rangers</td>
+<td>Gimena + tech lead</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sending app alerts into existing WhatsApp groups / radio</td>
+<td>Gimena + tech lead</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Night and low-staff hours: where reports go when no ranger is on duty</td>
+<td>Gimena</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fire station internal protocol</td>
+<td>Carla sends</td>
+<td>This week</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Rangers' informal criteria (smoke color, wind, houses)</td>
+<td>Sofía, in a short call</td>
+<td>Before analysis</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Alert levels (low / medium / high) based on the central's protocol; no level holds a report back</td>
+<td>Gimena</td>
+<td>Analysis</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Visit to the fire station to see how an alert comes in</td>
+<td>Gimena + Carla</td>
+<td>To schedule</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Past response-time records for the baseline (meeting 1, item 2): not covered</td>
+<td>Gimena asks Carla</td>
+<td>Follow-up email</td>
+</tr>
+</tbody>
+</table>
+<h2>Next steps</h2>
+<ul>
+<li>Gimena sends the follow-up email to Sofía and Carla.</li>
+<li>Stakeholder map.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="map-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="map-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Elicitation</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="map-modal-title">Stakeholder map</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Built from meetings 1&ndash;3 only, not from the secret briefs.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-26 · Built by Gimena from meetings 1–3 only, not from the secret briefs.</em></p>
+<h2>Power / interest grid</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Low interest</strong></th>
+<th><strong>High interest</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High power</strong></td>
+<td><em>Keep satisfied:</em> Provincial emergency central · Foundation board</td>
+<td><em>Manage closely:</em> Laura (foundation) · Marcos (province) · Sofía (rangers) · Carla (firefighters)</td>
+</tr>
+<tr>
+<td><strong>Low power</strong></td>
+<td><em>Monitor:</em> Neighbors · Visitors</td>
+<td><em>Keep informed:</em> Tomás (researchers)</td>
+</tr>
+</tbody>
+</table>
+<h2>One line per stakeholder</h2>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Power / interest</th>
+<th>Why</th>
+<th>Needs</th>
+<th>Red line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laura Medina, Fundación Tabaquillar (sponsor)</td>
+<td>High / High</td>
+<td>Owns the budget (USD 48,000) and the deadline (30 June 2027)</td>
+<td>Quarterly grant metrics: number of reports and response time; a map that helps fundraising</td>
+<td>Missing the deadline loses the grant</td>
+</tr>
+<tr>
+<td>Marcos Ferreyra, Dirección de Áreas Serranas Protegidas</td>
+<td>High / High</td>
+<td>Grants the permit to operate in the reserves, sets the data rules, and the province's own system could replace the app</td>
+<td>Data exported in an open, documented format</td>
+<td>Fire reports must reach the official emergency channel; nest locations are never public</td>
+</tr>
+<tr>
+<td>Sofía Arce, lead ranger</td>
+<td>High / High</td>
+<td>Rangers are the main users and confirm reports today; if they don't adopt the app, it fails</td>
+<td>Works offline, with one hand, faster than WhatsApp, no paperwork, no new device</td>
+<td>Visitor reports checked by a ranger before reaching firefighters</td>
+</tr>
+<tr>
+<td>Carla Bustos, volunteer firefighters</td>
+<td>High / High</td>
+<td>Runs the neighbor network and holds the response-time records the grant metric depends on</td>
+<td>Alerts in the channels they already use; exact location, photo, wind</td>
+<td>No one on her side watching a screen; no report held back</td>
+</tr>
+<tr>
+<td>Provincial emergency central</td>
+<td>High / Low</td>
+<td>The only one that can activate firefighters; every app fire report ends there</td>
+<td>Not consulted yet</td>
+<td>Not known yet</td>
+</tr>
+<tr>
+<td>Foundation board (5 members)</td>
+<td>High / Low</td>
+<td>Approves major decisions monthly</td>
+<td>Not consulted yet; Raúl pushes a donate button</td>
+<td>Not known yet</td>
+</tr>
+<tr>
+<td>Dr. Tomás Quiroga, researchers</td>
+<td>Low / High</td>
+<td>Does not block the project, but needs the data for his grant and offered to verify sightings</td>
+<td>Open data in a public repository; species, date, location precision, "verified" flag</td>
+<td>Grant requires public open data</td>
+</tr>
+<tr>
+<td>Neighbors at the foot of the hills</td>
+<td>Low / Low</td>
+<td>Report smoke, often first; no say in the project</td>
+<td>Not consulted yet</td>
+<td>Not known yet</td>
+</tr>
+<tr>
+<td>Visitors</td>
+<td>Low / Low</td>
+<td>Report what they see; no say in the project</td>
+<td>Not consulted yet</td>
+<td>Not known yet</td>
+</tr>
+</tbody>
+</table>
+<h2>Conflicts to watch</h2>
+<ul>
+<li><strong>Who sees a visitor report first:</strong> Sofía (rangers confirm first) vs. Carla (no report waits) vs. Marcos (every report reaches the official channel). Open from meeting 3.</li>
+<li><strong>Open vs. restricted data:</strong> Tomás (public repository) vs. Marcos (nests restricted). Resolved in meeting 2 with two data levels.</li>
+</ul>
+<h2>Open items from the map</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Owner</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Meet the emergency central: high power, not consulted, receives every app fire report</td>
+<td>Gimena, through Marcos</td>
+<td>Before analysis closes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Board position on the donate button (meeting 1, item 6): not discussed yet</td>
+<td>Laura</td>
+<td>Before SOW</td>
+</tr>
+</tbody>
+</table>
+            </div>
+        </div>
+    </div>
+    <div id="req-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="req-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Analysis</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="req-modal-title">Requirements</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">15 functional and 8 non-functional requirements, each traced to a meeting.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-26 · Written by Gimena; each requirement traced to a meeting note (M1 foundation, M2
+province + researchers, M3 rangers + firefighters).</em></p>
+<h2>Functional</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>Neighbors, visitors and rangers can report smoke with a photo, coordinates, and a voice message or text. Wind direction is optional. No registration is needed to report fire.</td>
+<td>M1 ("I see smoke" button); M3 (agreed report content; voice must not replace location; wind)</td>
+<td>Firefighters do not report; they receive alerts.</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>The same users can report flora and fauna sightings with a photo, coordinates, species, date and time, and location precision.</td>
+<td>M1 (researchers asked for condor data); M2 (Tomás's minimum fields)</td>
+<td>Date, time and precision captured by the app. Full field list pending from Tomás (M2 item 4).</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Fire reports, and only fire reports, reach the provincial emergency central and are copied to the rangers' WhatsApp group and the neighbor network group, as audio or text. Nothing is transcribed.</td>
+<td>M2 (Marcos's red line: official channel); M3 (agreed: one more report to the central; use existing channels)</td>
+<td>Sending to the central and the groups at the same time is a proposal for the "who sees a report first" conflict; to confirm with Sofía, Carla and Marcos (M3 item 1). <strong>Updated 2026-11-09 (SOW):</strong> in the pilot, rangers get an in-app notification and the sender can share the report on WhatsApp with one button; automatic copies to the groups move to phase 2, pending the tech lead.</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>The sender gets a confirmation that the report was sent.</td>
+<td>M3 (agreed)</td>
+<td></td>
+</tr>
+<tr>
+<td>R5</td>
+<td>The researchers' group verifies sightings and marks them "verified".</td>
+<td>M2 (Tomás's offer; "verified" flag needed for papers)</td>
+<td></td>
+</tr>
+<tr>
+<td>R6</td>
+<td>Public map shows data aggregated on a grid of about 5 km cells.</td>
+<td>M2 (data decision, Marcos + Tomás)</td>
+<td>Also feeds the open repository.</td>
+</tr>
+<tr>
+<td>R7</td>
+<td>Precise coordinates are available only to accredited researchers with a data agreement signed with the province.</td>
+<td>M2 (data decision; restricted nest locations)</td>
+<td>Technical approach pending (M2 item 1).</td>
+</tr>
+<tr>
+<td>R8</td>
+<td>Data is exported in an open, documented format the future provincial system can ingest.</td>
+<td>M2 (Marcos's condition for long-term support)</td>
+<td>Format pending (M2 item 2).</td>
+</tr>
+<tr>
+<td>R9</td>
+<td>Visitors receive fire-risk notices (e.g. "no fires allowed today").</td>
+<td>M1 (Laura's wish list)</td>
+<td></td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Fire reports carry a low / medium / high level. No level holds a report back or hides it.</td>
+<td>M3 (Carla)</td>
+<td><strong>Needs information:</strong> central's protocol, fire station protocol (Carla), rangers' criteria (Sofía). <strong>Under review (Task 4):</strong> if it does not add useful information, it is removed.</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>Users 18+ register with ID (DNI) for everything except fire reports.</td>
+<td>M1 (Gimena's proposal, Laura agreed); fire exception from Carla's point in M3</td>
+<td>Legal and privacy check pending (M1 item 7).</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>Registration asks for an email, to link users to the park website and keep them connected to the project.</td>
+<td>Gimena's proposal, not from a meeting</td>
+<td><strong>Validated by Laura in M4 (2026-11-09).</strong> Fits the USD 12,000 communications campaign.</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>Educational species pages (e.g. tabaquillo, condor).</td>
+<td>M1 (Laura's wish list)</td>
+<td></td>
+</tr>
+<tr>
+<td>R14</td>
+<td>Registered users can report litter with a photo, coordinates, date and time, stored like a fire report. Litter reports go to the rangers only, never to the emergency central.</td>
+<td>M1 (Laura's wish list); M4 (Laura wants it in the pilot); routing decided by Gimena 2026-11-09</td>
+<td>In the pilot if it fits the budget (SOW v1.1, Estimated Hours). How rangers receive them: to confirm with Sofía.</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>The foundation's brand appears in the app, the public map and the notices.</td>
+<td>M4 (Laura: donors must see the foundation made it)</td>
+<td>Brand manual from Laura.</td>
+</tr>
+</tbody>
+</table>
+<h2>To refine</h2>
+<p>Asked for by the foundation; scope and priority to settle against USD 48,000 and 30 June 2027 in
+the SOW (M1 item 5).</p>
+<ul>
+<li>Points or badges for reporting native species (M1).</li>
+<li>Litter reports (M1): moved into the pilot as R14 (SOW v1.1, 2026-11-09).</li>
+<li>Donate button next to each sighting (M1, board member Raúl). Waiting for the board's position
+  (M1 item 6). <strong>Update 2026-11-09:</strong> outside the grant budget (the fund does not pay for
+  fundraising); quoted apart in SOW v1.1 as an optional item paid by the foundation.</li>
+</ul>
+<h2>Out of scope</h2>
+<ul>
+<li><strong>Recording people who break park rules.</strong> Legal implications, and the province will not endorse
+  a foundation keeping records of citizens (M2).</li>
+</ul>
+<h2>Non-functional</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NF1</td>
+<td>Works without signal: reports are stored on the phone and sent automatically when signal returns.</td>
+<td>M3 (Sofía; agreed)</td>
+<td>How to send without signal (satellite or other) pending (M3 item 2).</td>
+</tr>
+<tr>
+<td>NF2</td>
+<td>Usable with one hand: large buttons, few taps.</td>
+<td>M3 (Sofía)</td>
+<td><strong>Technical limitation:</strong> touchscreens do not respond to ordinary gloves; this depends on the phone and the glove, not the app. Use with gloves is tested in the field with the rangers and the tech lead, not promised.</td>
+</tr>
+<tr>
+<td>NF3</td>
+<td>Sending a report is faster than sending a WhatsApp message.</td>
+<td>M3 (Sofía: otherwise rangers will not use it)</td>
+<td>Measured in the field test: time and taps for a report vs. a WhatsApp message.</td>
+</tr>
+<tr>
+<td>NF4</td>
+<td>Low battery use.</td>
+<td>M3 (Sofía)</td>
+<td></td>
+</tr>
+<tr>
+<td>NF5</td>
+<td>No form to fill after each report.</td>
+<td>M3 (Sofía)</td>
+<td></td>
+</tr>
+<tr>
+<td>NF6</td>
+<td>Runs on the phones users already have; no new device to carry or charge.</td>
+<td>M3 (Sofía)</td>
+<td></td>
+</tr>
+<tr>
+<td>NF7</td>
+<td>Nobody at the fire station has to watch a screen; alerts arrive through the channels they already use.</td>
+<td>M3 (Carla's red line)</td>
+<td></td>
+</tr>
+<tr>
+<td>NF8</td>
+<td>Exact locations of condor nests and sensitive tabaquillo patches are never shown publicly.</td>
+<td>M2 (Marcos; provincial resolution)</td>
+<td>Supports R6 and R7.</td>
+</tr>
+</tbody>
+</table>
+            </div>
+        </div>
+    </div>
+    <div id="gap-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="gap-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Analysis</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="gap-modal-title">Gap analysis</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">What happens today vs. what should happen, and which requirement covers it.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-26 · Current state from meetings 1–3 (M1 foundation, M2 province + researchers, M3
+rangers + firefighters) and the verified sources listed at the end.</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Today</th>
+<th>Should be</th>
+<th>Covered by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td>Satellites detect fires once they are large. 62% of 2025 fires in Córdoba were under 10 ha, and most fires are human-caused.</td>
+<td>Small fires are reported from the ground by whoever sees them first.</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>A report is a phone call or a radio message. If nobody answers, the alert is lost (M3).</td>
+<td>The report reaches the central and the existing groups at the same time, and the sender gets a confirmation.</td>
+<td>R3, R4</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>There is no mobile signal in the high hills, so nobody can report (M3).</td>
+<td>The report is stored on the phone and sent automatically when signal returns. No extra device or app can be required: that would mean fewer reports, and the goal is to open reporting to every available user.</td>
+<td>NF1, NF6</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>"Smoke behind the hill" does not say which hill, and a false alarm cost a ranger half a day (M3).</td>
+<td>Every report carries coordinates and a photo, and a level to set priority.</td>
+<td>R1, R10</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>No record and no baseline: everything goes through WhatsApp; the only figure is about 3 hours from smoke seen to firefighters arriving at the last fire (M1).</td>
+<td>Every report is recorded with time and location. That measures the response time the grant requires, and shows time, zone and frequency of fires for prevention campaigns aimed at specific zones. The same records feed the website data and the future provincial system.</td>
+<td>R1, R6, R8; baseline measured before the pilot (M1)</td>
+</tr>
+</tbody>
+</table>
+<h2>Still open (for the SOW)</h2>
+<ul>
+<li>Night hours: no ranger on duty; where reports go (M3 item 4).</li>
+<li>The provincial emergency central has not been consulted, and every fire report ends there
+  (stakeholder map, item 1).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>IDECOR, February 2026: 2025 annual fire report for Córdoba (675 fires, 21,183 ha, 62% under
+  10 ha).</li>
+<li>CONAE, 2020: satellite detection and mapping (MODIS, Sentinel-2); most fires human-caused.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="us-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="us-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Analysis</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="us-modal-title">User stories</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Report smoke without signal, with Given/When/Then acceptance criteria.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-10-26 · Drafted by Claude, corrected by Gimena. Format from the <code>work-item-user-story</code> skill
+(pm-ia-workflow), without Jira. No story points: the case ends at initiation, so there is no
+estimation yet. Priority and labels are proposed.</em></p>
+<hr />
+<h2>US1 [Fire report] As a visitor without signal, I want to report smoke with a photo and location, so the alert goes out as soon as signal returns</h2>
+<p><strong>As</strong> a visitor in an area without mobile signal,
+<strong>I want</strong> to report smoke with a photo and my location,
+<strong>so that</strong> the alert goes out as soon as signal returns.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Stored without signal</td>
+<td>I have no signal</td>
+<td>I send a photo, coordinates and a voice message or text</td>
+<td>The report is stored on the phone and I see "It will be sent when there is signal"</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Automatic send</td>
+<td>A report is stored</td>
+<td>Signal returns</td>
+<td>The report is sent without any action from me</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Confirmation</td>
+<td>The report was sent</td>
+<td>It reaches the system</td>
+<td>I get a confirmation that it was sent</td>
+</tr>
+<tr>
+<td>04</td>
+<td>No registration</td>
+<td>I am not registered</td>
+<td>I report a fire</td>
+<td>I can send it anyway</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Location off (error)</td>
+<td>Location is turned off</td>
+<td>I try to report</td>
+<td>The app asks me to turn it on; voice does not replace location</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assumptions</strong>
+- GPS works without mobile signal on current phones.
+- Fire reports need no registration (R11); other features do.
+- How the stored report is sent (mobile data, satellite or other) is still open (M3 item 2).</p>
+<p><strong>Priority:</strong> Highest <em>(proposed)</em> · <strong>Labels:</strong> fire-report, offline <em>(proposed)</em> ·
+<strong>Traces to:</strong> R1, R4, R11, NF1</p>
+<hr />
+<h2>US2 [Fire report] As a ranger, I want to report with one hand and few taps, so it is faster than sending a WhatsApp message</h2>
+<p><strong>As</strong> a park ranger in the field,
+<strong>I want</strong> to report with one hand and in few taps,
+<strong>so that</strong> it is faster than sending a WhatsApp message.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Few taps</td>
+<td>I am on the home screen</td>
+<td>I take a photo, record a voice message and send</td>
+<td>It takes 3 taps or fewer <em>(proposed)</em></td>
+</tr>
+<tr>
+<td>02</td>
+<td>No paperwork</td>
+<td>I sent a report</td>
+<td>The send is done</td>
+<td>No form appears</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assumptions</strong>
+- Rangers use their own phones; no new device (NF6).
+- Use with gloves is a technical limitation; it is tested in the field, not promised (NF2).
+- "Faster than WhatsApp" is measured in the field test: time and taps (NF3).</p>
+<p><strong>Priority:</strong> High <em>(proposed)</em> · <strong>Labels:</strong> fire-report, field-use <em>(proposed)</em> ·
+<strong>Traces to:</strong> R1, NF2, NF3, NF5, NF6</p>
+<hr />
+<h2>US3 [Alerts] As the emergency central, I want to receive an app report as one more report, so I can decide whether to activate the firefighters</h2>
+<p><strong>As</strong> the provincial emergency central,
+<strong>I want</strong> to receive a report from the app as one more report,
+<strong>so that</strong> I can decide whether to activate the firefighters.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Full report</td>
+<td>A fire report is sent</td>
+<td>It reaches the central</td>
+<td>It includes photo, coordinates, audio or text, and level</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Delay shown</td>
+<td>The report was made without signal</td>
+<td>It reaches the central</td>
+<td>It shows both the time it was made and the time it was sent</td>
+</tr>
+<tr>
+<td>03</td>
+<td>No report held back</td>
+<td>A report has a low level</td>
+<td>It is sent</td>
+<td>It reaches the central the same as a high-level one; the level only shows priority</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assumptions</strong>
+- The central has not been consulted yet (stakeholder map, item 1); how reports enter its system
+  is to be agreed.
+- Only the central activates firefighters (M3).
+- The level (R10) is under review: if it does not add useful information, it is removed.</p>
+<p><strong>Priority:</strong> Highest <em>(proposed)</em> · <strong>Labels:</strong> alerts, emergency-central <em>(proposed)</em> ·
+<strong>Traces to:</strong> R3, R10</p>
+<hr />
+<h2>US4 [Alerts] As a volunteer firefighter, I want to get the alert in the neighbor network's WhatsApp group, so I can get ready without watching a screen</h2>
+<p><strong>As</strong> a volunteer firefighter,
+<strong>I want</strong> to get the alert in the neighbor network's WhatsApp group,
+<strong>so that</strong> I can get ready without watching a screen.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Criterion</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Copy in the group</td>
+<td>A fire report is sent</td>
+<td>It goes out</td>
+<td>A copy reaches the group with photo, map link and audio</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Nothing to install</td>
+<td>I am a firefighter</td>
+<td>I receive alerts</td>
+<td>I do not need to install the app</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assumptions</strong>
+- Firefighters receive alerts; they do not report (R1).
+- Sending into WhatsApp groups is technically possible; to check with the tech lead (M3 item 3).
+- The copy in the group does not activate the firefighters; only the central does (M3).</p>
+<p><strong>Priority:</strong> High <em>(proposed)</em> · <strong>Labels:</strong> alerts, whatsapp <em>(proposed)</em> ·
+<strong>Traces to:</strong> R3, NF7</p>
+<hr />
+<p><strong>Possible next step (not in this case):</strong> export the stories as CSV to import into Jira or Trello
+if planning is added later.</p>
+<hr />
+            </div>
+        </div>
+    </div>
+    <div id="sow-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="sow-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Scope &bull; sow-drafting</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="sow-modal-title">Statement of Work v1.1</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Approved by the sponsor in meeting 5.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-09 · </em><em>v1.1, approved by the sponsor on 2026-11-09</em><em> (meeting 5) · v1 written with the <code>sow-drafting</code> skill (v1.2.2) from
+meetings 1–3, the requirements, the gap analysis, the stakeholder map, and the open-items triage
+agreed by Gimena on 2026-11-09. Source tags: M1 foundation, M2 province + researchers, M3 rangers +
+firefighters, M4 sponsor review, T = triage, E = tech lead estimate (<code>tech-lead-estimate.md</code>),
+S = treasurer's emails (<code>treasurer-emails.md</code>).</em></p>
+<p><strong>Project Lead:</strong> Gimena Fernández, PM, Quebrada Labs <em>(M1)</em>
+<strong>Project Sponsor:</strong> Laura Medina, executive director, Fundación Tabaquillar <em>(M1)</em></p>
+<h2>Stakeholders</h2>
+<p><em>(from the meetings and the stakeholder map)</em></p>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role in the project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laura Medina, Fundación Tabaquillar</td>
+<td>Sponsor. Owns budget and deadline; signs off the SOW and the charter.</td>
+</tr>
+<tr>
+<td>Foundation board (5 members, monthly)</td>
+<td>Approves major decisions. Not consulted yet.</td>
+</tr>
+<tr>
+<td>Marcos Ferreyra, Dirección de Áreas Serranas Protegidas</td>
+<td>Grants the permit to operate in the reserves; sets the rules for data inside protected areas.</td>
+</tr>
+<tr>
+<td>Provincial emergency central</td>
+<td>Receives every fire report and is the only one that can activate firefighters. <strong>Not consulted yet</strong> (T3).</td>
+</tr>
+<tr>
+<td>Sofía Arce, lead ranger</td>
+<td>Main user; confirms reports in the field.</td>
+</tr>
+<tr>
+<td>Carla Bustos, volunteer fire station + neighbor network</td>
+<td>Receives alerts through the central; holds the response-time records.</td>
+</tr>
+<tr>
+<td>Dr. Tomás Quiroga, university research group</td>
+<td>Uses the data; verifies wildlife sightings.</td>
+</tr>
+<tr>
+<td>Silvia Paredes, treasurer, Fundación Tabaquillar</td>
+<td>Receives donations and issues tax receipts by hand <em>(S)</em>.</td>
+</tr>
+<tr>
+<td>Neighbors and visitors</td>
+<td>Report smoke and sightings. Not consulted.</td>
+</tr>
+</tbody>
+</table>
+<h2>Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Revision date</th>
+<th>Revised by</th>
+<th>Approved by</th>
+<th>Description of change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>Gimena Fernández</td>
+<td>Laura Medina, 2026-11-09 (meeting 5)</td>
+<td>v1.1 after the sponsor review (M4), the tech lead estimate (E) and the treasurer's emails (S): brand added; email at registration validated; data decision confirmed by the sponsor; litter reports moved from phase 2 into the pilot; donate button quoted separately, outside the grant budget; milestones in weeks; estimated hours added.</td>
+</tr>
+</tbody>
+</table>
+<h2>Purpose</h2>
+<p>Today a fire is reported by phone or radio, and if nobody answers the alert is lost or arrives
+late; often the fire is first seen by satellite or from the road, when it is already large
+<em>(M3)</em>. In 2025, 62% of fires in Córdoba were under 10 ha, and most fires are human-caused
+<em>(gap analysis, IDECOR and CONAE)</em>. The project builds a pilot app so that whoever sees smoke first
+(neighbors, visitors, rangers) can report it with an exact location and a photo, also without
+signal, and the report reaches the official emergency channel. It also records wildlife
+sightings for research, and measures the number of reports and the response time the grant
+requires <em>(M1, M2, M3; summarized, inferred)</em>.</p>
+<h2>Target Audience</h2>
+<p><em>(M1, M3)</em></p>
+<ul>
+<li><strong>Report:</strong> park rangers of the Red de Reservas Serranas (6 rangers, about 40,000 ha), visitors
+  (about 18,000 a year at the largest reserve), and neighbors at the foot of the hills.</li>
+<li><strong>Receive:</strong> the provincial emergency central and, through it, the volunteer firefighters.</li>
+<li><strong>Use the data:</strong> university researchers, the foundation, and in the future the province.</li>
+</ul>
+<h2>Scope / Major Project Activities</h2>
+<p><em>(inferred: grouped from the requirements; IDs refer to <code>requirements.md</code>)</em></p>
+<p><strong>Before design</strong>
+- Meet the provincial emergency central: how app reports enter its protocol, and confirm the
+  report flow below <em>(T3)</em>.
+- Measure the baseline: current response time (report to firefighters arriving) and visitor
+  numbers <em>(M1; Gimena's proposal, Laura agreed)</em>.
+- Confirm the report flow with Sofía, Carla and Marcos <em>(T1)</em>.</p>
+<p><strong>Build the pilot app</strong>
+- Report smoke with photo, coordinates, and voice or text; optional wind direction; no
+  registration needed to report fire <em>(R1)</em>.
+- Report flora and fauna sightings with photo, coordinates, species, date and time, and location
+  precision <em>(R2)</em>.
+- Fire reports go to the emergency central and, at the same time, to the rangers as an in-app
+  notification. A ranger's confirmation raises the priority; no report waits for it. At night the
+  report still reaches the central, which works 24 hours <em>(T1, T2; proposal pending confirmation,
+  see "Report flow" below)</em>.
+- The sender gets a confirmation that the report was sent <em>(R4)</em>.
+- After sending, a "Share on WhatsApp" button opens WhatsApp with the location, photo and text
+  already filled in; the sender picks the group. Optional, never before the report is sent, so it
+  does not slow it down. Keeps the neighbor network's early warning, which often reaches the
+  firefighters before the central does <em>(R3 as updated, M3; decided by Gimena 2026-11-09)</em>.
+- Reports made without signal are stored on the phone and sent automatically when signal returns
+  <em>(NF1, T5)</em>.
+- Researchers mark sightings as "verified" <em>(R5)</em>.
+- Fire-risk notices for visitors <em>(R9)</em>.
+- Registration with ID (DNI) for users 18+, for everything except fire reports <em>(R11; subject to
+  the legal check, see Assumptions)</em>.
+- Email at registration to keep users connected to the foundation <em>(R12; validated by Laura in
+  M4)</em>.
+- <strong>Litter reports</strong> (registered users): photo, coordinates, date and time, stored like a fire
+  report. They go to the rangers only, never to the central, which handles fire only <em>(R14; M4,
+  decided by Gimena)</em>. In the pilot as long as it fits the budget (see Estimated Hours).
+- <strong>Foundation's brand</strong> in the app, the public map and the notices; brand manual from Laura
+  <em>(R15; M4)</em>.
+- Educational species pages, e.g. tabaquillo and condor <em>(R13)</em>.</p>
+<p><strong>Data and map</strong>
+- Public sightings map on the foundation's WordPress site, aggregated on a grid of about 5 km
+  <em>(R6, T14)</em>.
+- Precise coordinates only for accredited researchers with a data agreement signed with the
+  province <em>(R7, NF8)</em>. Technical approach defined in the design phase <em>(T7)</em>.
+- Data export in an open, documented format the future provincial system can ingest <em>(R8)</em>.
+  Proposed: an open biodiversity standard such as Darwin Core, to confirm with the tech lead and
+  Marcos <em>(T7)</em>.</p>
+<p><strong>Field conditions</strong> <em>(NF2–NF7, M3)</em>
+- One-handed use, faster than a WhatsApp message, low battery use, no form after each report, runs
+  on phones users already have, nobody at the fire station has to watch a screen.
+- Use with gloves is tested in the field with the rangers, not promised (depends on phone and
+  glove) <em>(NF2)</em>.</p>
+<h2>Decision recorded: how location data is shared</h2>
+<p>Agreed in meeting 2 (2026-10-23) by <strong>Marcos Ferreyra</strong> (province) and <strong>Dr. Tomás Quiroga</strong>
+(researchers); accepted by Gimena for the foundation and <strong>confirmed by Laura Medina in the sponsor review
+(2026-11-09, M4)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Who sees it</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aggregated on a grid of about 5 km</td>
+<td>Anyone (public map, open repository)</td>
+<td>Meets the researchers' grant; does not reveal condor nests or sensitive tabaquillo patches (provincial resolution)</td>
+</tr>
+<tr>
+<td>Precise coordinates</td>
+<td>Accredited researchers only</td>
+<td>Data agreement signed with the province</td>
+</tr>
+</tbody>
+</table>
+<h2>Report flow (proposal, pending confirmation)</h2>
+<p>The question "who sees a visitor report first" was not resolved in meeting 3. Positions: Sofía
+(rangers confirm first), Carla (no report may wait), Marcos (every fire report reaches the
+official channel). Proposal from the triage: the report goes to the central and the rangers at
+the same time; a ranger's confirmation raises its priority. To be confirmed with the three of
+them and the central before design <em>(T1)</em>.</p>
+<h2>Out-of-scope Activities</h2>
+<p><em>(M2, T)</em></p>
+<ul>
+<li><strong>Recording people who break park rules:</strong> legal implications; the province will not endorse a
+  foundation keeping records of citizens <em>(M2)</em>.</li>
+<li><strong>Low / medium / high level on fire reports (R10):</strong> removed. The protocols needed to define it
+  never arrived; coordinates and photo already help to set priority. Can be reviewed if the
+  protocols arrive <em>(T4)</em>.</li>
+<li><strong>Satellite sending or any extra device:</strong> users cannot be asked to carry or charge a new device
+  <em>(NF6, T5)</em>.</li>
+<li><strong>Automatic copies to WhatsApp groups or radio:</strong> not in the pilot; the alert reaches the
+  firefighters through the central, and senders can share it by hand (see "Share on WhatsApp")
+  <em>(T6, updated)</em>. <em>Changes R3, which proposed automatic copies to the rangers' and neighbors'
+  groups.</em></li>
+<li><strong>Donate button: not part of this budget.</strong> The climate fund does not pay for fundraising, and a
+  donate button counts as fundraising <em>(S)</em>. It can be added only as a separate, optional item
+  paid with the foundation's own funds and approved by the board (meeting on Thu 19/11). See
+  "Optional item: donate button" below.</li>
+<li><strong>Phase 2, not in the pilot:</strong> points or badges for reporting native species
+  <em>(T14)</em>, and automatic copies to WhatsApp groups if the tech lead confirms it can be done and at
+  what cost <em>(T6, updated)</em>.</li>
+<li><strong>Replacing the emergency number or the future provincial system:</strong> the app adds to the official
+  channel; it does not replace it <em>(M2)</em>.</li>
+</ul>
+<h2>Optional item: donate button (outside the grant budget)</h2>
+<p><em>(E, S; quoted separately, paid by the foundation, needs board approval)</em></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Hours</th>
+<th>Cost</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Link to the existing Mercado Pago page</td>
+<td>The button opens the link the website already uses; Silvia keeps issuing receipts by hand</td>
+<td>12 h</td>
+<td>≈ USD 360</td>
+<td>Pesos only; Mercado Pago sends name and email but not DNI/CUIT, so Silvia asks each donor by email</td>
+</tr>
+<tr>
+<td>B. Payment in the app + automatic tax receipt by email</td>
+<td>Collects DNI/CUIT, generates the receipt, emails it</td>
+<td>100–140 h</td>
+<td>≈ USD 3,000–4,200</td>
+<td>Receipt format to be validated by the treasurer; storing DNI/CUIT joins the pending legal and privacy check</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constraint for option A:</strong> Silvia, a part-time volunteer, can issue about 30 receipts a month by
+hand (about 10 minutes each); today there are about 15 <em>(S)</em>. If the app raises donations above
+that, option A needs either option B or more help for the treasurer. No donation may go without a
+receipt <em>(S)</em>.</p>
+<h2>Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Format</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline report: response time and visitor numbers</td>
+<td>Document</td>
+<td>Gimena, with Carla's records and the entrance logbook</td>
+</tr>
+<tr>
+<td>Confirmed report flow (central, rangers, firefighters)</td>
+<td>Document, signed off by the central, Marcos, Sofía and Carla</td>
+<td>Gimena</td>
+</tr>
+<tr>
+<td>Data design: two data levels and export format</td>
+<td>Technical document</td>
+<td>Gimena + tech lead</td>
+</tr>
+<tr>
+<td>Pilot app (Android and iOS) with the scope above, with the foundation's brand</td>
+<td>App</td>
+<td>Quebrada Labs</td>
+</tr>
+<tr>
+<td>Public map on the foundation's WordPress site</td>
+<td>Website integration</td>
+<td>Quebrada Labs</td>
+</tr>
+<tr>
+<td>Data export for the province and the open repository</td>
+<td>Documented open format</td>
+<td>Quebrada Labs</td>
+</tr>
+<tr>
+<td>Field test with rangers: time and taps vs. a WhatsApp message, glove use</td>
+<td>Test report</td>
+<td>Gimena + tech lead, with Sofía</td>
+</tr>
+<tr>
+<td>Pilot running in the reserves</td>
+<td>Working pilot</td>
+<td>Quebrada Labs</td>
+</tr>
+<tr>
+<td>Data for the quarterly impact reports: number of reports, response time</td>
+<td>Report</td>
+<td>Gimena; the foundation submits it to the fund</td>
+</tr>
+</tbody>
+</table>
+<p><em>(inferred from the scope and requirements; not given as a deliverables table in the source.
+Platforms "Android and iOS" are inferred from "phones users already have" (NF6).)</em></p>
+<h2>Schedule Overview / Major Milestones</h2>
+<p><em>(weeks and approximate dates from the tech lead estimate (E); order and fixed date from M1, M2)</em></p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Dates (approx.)</th>
+<th>Milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>17/11 – 20/11/2026</td>
+<td>SOW v1.1 signed; permit request letter sent to the province <em>(M2 item 5)</em>; board decides on the donate button (19/11)</td>
+</tr>
+<tr>
+<td>1–3</td>
+<td>23/11 – 11/12/2026</td>
+<td>Meeting with the emergency central <em>(T3)</em>; report flow confirmed; data design; baseline measurement starts <em>(M1)</em></td>
+</tr>
+<tr>
+<td>4–7</td>
+<td>14/12/2026 – 22/01/2027</td>
+<td>UX/UI design, with the brand (holidays 21/12 – 4/1)</td>
+</tr>
+<tr>
+<td>8–21</td>
+<td>25/01 – 30/04/2027</td>
+<td>Build</td>
+</tr>
+<tr>
+<td>22–25</td>
+<td>03/05 – 28/05/2027</td>
+<td>Field test with rangers. Before it: permit granted, province–researcher data agreement template ready <em>(M2 item 6)</em></td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>31/05 – 30/06/2027</td>
+<td>Fixes and launch; 2-week buffer. <strong>Working pilot: 30 June 2027</strong>, fixed; missing it loses the grant <em>(M1)</em></td>
+</tr>
+</tbody>
+</table>
+<p>Quarterly impact reports to the climate fund during the pilot <em>(M1)</em>; their dates are not
+specified in the source.</p>
+<h2>Assumptions and dependencies</h2>
+<p><em>(added to the template to carry the triage decisions; risks are developed in the charter)</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Type</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The emergency central accepts app reports as one more report, like a phone call</td>
+<td>Dependency (not consulted yet)</td>
+<td>Gimena, through Marcos</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Full list of sighting fields from Tomás</td>
+<td>Dependency</td>
+<td>Tomás</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Permit granted by the province</td>
+<td>Dependency</td>
+<td>Foundation, with Gimena's proposal</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Data agreement template between province and researchers</td>
+<td>Dependency</td>
+<td>Marcos / Tomás</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Legal check of 18+ ID registration and its effect on how many people report</td>
+<td>Open</td>
+<td>Gimena → foundation's lawyers</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Past response-time records exist and Carla can share them; if not, the baseline is measured during the pilot</td>
+<td>Assumption</td>
+<td>Gimena, with Carla</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sofía and Carla are told that the pilot has no automatic copies to their WhatsApp groups, only the share button; both had asked for the existing channels (M3)</td>
+<td>Dependency (before design)</td>
+<td>Gimena</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Whether automatic posting to WhatsApp groups is possible with the official API, and its cost (for phase 2)</td>
+<td>Open</td>
+<td>Tech lead</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Sofía confirms that litter reports go to the rangers and how they want to receive them</td>
+<td>Dependency (before design)</td>
+<td>Gimena</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Donate button: board approval and the foundation's own funds; option A depends on the treasurer's receipt capacity</td>
+<td>Open (board, 19/11)</td>
+<td>Laura, Silvia</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Visit to the fire station to see how an alert comes in</td>
+<td>Open, not a SOW item</td>
+<td>Gimena + Carla</td>
+</tr>
+</tbody>
+</table>
+<h2>Estimated Hours for Completion</h2>
+<p><em>(E; simulated tech lead estimate at an assumed blended rate of USD 30/h)</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hours</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pilot scope (v1)</td>
+<td>1,500 h (range 1,440–1,560)</td>
+<td>≈ USD 45,000 (43,200–46,800)</td>
+</tr>
+<tr>
+<td>Litter reports</td>
+<td>50 h</td>
+<td>≈ USD 1,500</td>
+</tr>
+<tr>
+<td><strong>Total within the grant budget</strong></td>
+<td><strong>1,550 h (range 1,490–1,610)</strong></td>
+<td><strong>≈ USD 46,500 (44,700–48,300)</strong></td>
+</tr>
+<tr>
+<td>Contingency left (midpoint)</td>
+<td></td>
+<td>≈ USD 1,500 (3%)</td>
+</tr>
+</tbody>
+</table>
+<p>The range depends on the integration with the emergency central (80–200 h), not consulted yet.
+<strong>Rule:</strong> if that integration is estimated above 190 h after the meeting with the central, the
+pilot no longer fits USD 48,000 with litter reports, and litter moves to phase 2.</p>
+<p>The donate button is quoted apart, outside these figures (see "Optional item: donate button").</p>
+<h2>Estimated Date for Completion</h2>
+<p>Working pilot by <strong>30 June 2027</strong> <em>(M1)</em>.</p>
+<h2>Payment Terms</h2>
+<p>Not specified in the source. Budget for the product: <strong>USD 48,000</strong>, including the website map
+(USD 60,000 grant minus USD 12,000 committed to a communications campaign) <em>(M1)</em>. Funded by an
+international climate fund.</p>
+            </div>
+        </div>
+    </div>
+    <div id="est-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="est-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Scope</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="est-modal-title">Tech lead estimate</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Hours and costs behind the SOW budget.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-09 · Internal, Quebrada Labs · Simulated: Claude plays the tech lead (Martín Ríos, an
+invented person). All figures are the simulated tech lead's estimates, not real quotes. Input for
+SOW v1.1 (due to Laura on Tue 17/11).</em></p>
+<h2>Assumptions</h2>
+<ul>
+<li>Blended team rate: <strong>USD 30/h</strong> (assumption for the case; not stated by the client).</li>
+<li>One cross-platform app (Android and iOS from one codebase), so NF6 ("phones users already
+  have") does not double the work.</li>
+<li>Work starts when the SOW is signed (week of 23/11). Low activity from 21/12 to 4/1 (holidays).</li>
+<li>Gimena's PM time is part of the budget.</li>
+</ul>
+<h2>Pilot scope (SOW v1)</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Hours</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Report flow with the central, data design (two levels, export format)</td>
+<td>80</td>
+<td>Before design</td>
+</tr>
+<tr>
+<td>UX/UI design, including the foundation's brand</td>
+<td>120</td>
+<td>Brand manual from Laura</td>
+</tr>
+<tr>
+<td>Fire report: offline storage, photo, voice/text, coordinates, confirmation, share button</td>
+<td>260</td>
+<td>Core of the app; the share button uses the phone's share menu (no WhatsApp API)</td>
+</tr>
+<tr>
+<td>Sightings + "verified" flag for researchers</td>
+<td>120</td>
+<td></td>
+</tr>
+<tr>
+<td>Registration (DNI, email), fire-risk notices, species pages</td>
+<td>120</td>
+<td>DNI registration subject to the legal check</td>
+</tr>
+<tr>
+<td><strong>Integration with the emergency central</strong></td>
+<td><strong>140</strong> (range 80–200)</td>
+<td><strong>Biggest unknown.</strong> Depends on how the central can receive reports (email, SMS, a phone line, a system). Not consulted yet.</td>
+</tr>
+<tr>
+<td>In-app notifications for rangers</td>
+<td>60</td>
+<td></td>
+</tr>
+<tr>
+<td>Backend, two data levels, open export</td>
+<td>180</td>
+<td></td>
+</tr>
+<tr>
+<td>Public map on WordPress (5 km grid)</td>
+<td>80</td>
+<td></td>
+</tr>
+<tr>
+<td>QA and field test with rangers</td>
+<td>140</td>
+<td></td>
+</tr>
+<tr>
+<td>Project management</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>1,500 h ≈ USD 45,000</strong></td>
+<td>Range USD 43,200–48,600 depending on the central</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contingency left: about USD 3,000 (6%).</strong> Thin: if the central integration lands at the top of
+its range, the contingency is gone.</p>
+<h2>Litter reports</h2>
+<ul>
+<li><strong>50 h ≈ USD 1,500.</strong> Reuses the report flow (photo + coordinates), plus a new category, a list
+  for rangers and a layer on the map.</li>
+<li><strong>Open question the estimate exposed:</strong> who receives a litter report? Not the central (fire
+  only, R3). It needs a destination, most likely the rangers. Not discussed in any meeting.</li>
+<li>Fits the budget, but takes half the contingency.</li>
+</ul>
+<h2>Donate button</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Hours</th>
+<th>Cost</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Link to the donation page the foundation already has (Mercado Pago button on the website)</td>
+<td>12</td>
+<td>≈ USD 360</td>
+<td>Only works if that page exists and works (Silvia to confirm).</td>
+</tr>
+<tr>
+<td>B. Payments inside the app</td>
+<td>100+</td>
+<td>≈ USD 3,000+</td>
+<td>Does not fit the contingency. App store rules on donations to check.</td>
+</tr>
+</tbody>
+</table>
+<h2>Schedule in weeks (working pilot by 30 June 2027)</h2>
+<table>
+<thead>
+<tr>
+<th>Weeks</th>
+<th>Dates (approx.)</th>
+<th>Milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>17/11 – 20/11</td>
+<td>SOW v1.1 signed; permit request letter sent to the province</td>
+</tr>
+<tr>
+<td>1–3</td>
+<td>23/11 – 11/12</td>
+<td>Meeting with the central, report flow confirmed, data design; baseline measurement starts</td>
+</tr>
+<tr>
+<td>4–7</td>
+<td>14/12 – 22/01</td>
+<td>UX/UI design (holidays 21/12 – 4/1)</td>
+</tr>
+<tr>
+<td>8–21</td>
+<td>25/01 – 30/04</td>
+<td>Build</td>
+</tr>
+<tr>
+<td>22–25</td>
+<td>03/05 – 28/05</td>
+<td>Field test with rangers; permit must be granted before entering the reserves</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>31/05 – 30/06</td>
+<td>Fixes, pilot launch; 2-week buffer</td>
+</tr>
+</tbody>
+</table>
+<p>The data agreement template (province + researchers) is needed before week 22.</p>
+<h2>Tech lead's recommendation</h2>
+<ul>
+<li>Pilot as in SOW v1: fits, with little margin.</li>
+<li>Donate button: option A if Silvia confirms the website page works and the board approves it.</li>
+<li>Litter: I would move it to phase 2 until we know what the central integration costs. If the
+  central lands at the low end, it can come back into the pilot.</li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div id="tre-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="tre-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Scope</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="tre-modal-title">Emails with the treasurer</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Where the donate button turned out to be fundraising the grant does not pay for. Emails in Spanish, as sent; the decision at the end is in English.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>2026-11-09 · Translated from the original Spanish (below) · Simulated: Claude plays the treasurer
+from a secret brief committed before her first reply. Gimena's question email was
+drafted by Claude at Gimena's request and approved by her.</em></p>
+<h2>1. Silvia → Gimena (asked by Laura after meeting 4)</h2>
+<p><strong>From:</strong> Silvia Paredes · <strong>To:</strong> Gimena Fernández · <strong>CC:</strong> Laura Medina
+<strong>Subject:</strong> RE: Foundation donations, information for the app</p>
+<p>Hi Gimena,</p>
+<p>Laura asked me to write to you. This is how we receive donations today:</p>
+<ul>
+<li><strong>Bank account</strong> in pesos in the foundation's name. Donors abroad give by bank transfer.</li>
+<li><strong>Mercado Pago payment link</strong> on the website. A volunteer set it up about three years ago and it works, but only in pesos and for people with an Argentine card or a Mercado Pago account. About 15 donations a month come in through the website.</li>
+<li><strong>Requirement:</strong> every donor gets a receipt so they can deduct the donation from their taxes. For that I need full name, national ID or tax ID, and email. No donation is accepted without a receipt.</li>
+</ul>
+<p>Let me know if you need anything else.</p>
+<p>Best,
+Silvia Paredes
+Treasurer, Fundación Tabaquillar</p>
+<h2>2. Gimena → Silvia</h2>
+<p><strong>To:</strong> Silvia Paredes · <strong>CC:</strong> Laura Medina
+<strong>Subject:</strong> RE: Foundation donations, information for the app</p>
+<p>Hi Silvia,</p>
+<p>Thank you, this is very useful for the estimate. Before deciding whether the donate button goes into the pilot, I need to confirm a few points:</p>
+<ol>
+<li><strong>Budget:</strong> the app is paid for with the USD 48,000 from the climate fund. Does the fund allow that money to be used for a donations feature, or does it have rules on what it can be spent on? If it does not allow it, which budget would it come from?</li>
+<li><strong>Receipts:</strong> today you issue them by hand for about 15 donations a month. If the app increases donations, how many could you handle with the current process? How long does each one take?</li>
+<li><strong>Donor data:</strong> when someone donates through the Mercado Pago link, do you receive their name, ID or tax ID and email to issue the receipt, or do you have to ask for them separately?</li>
+</ol>
+<p>With these answers, Laura and I will confirm whether the button goes into the pilot or a second phase. To make the SOW version on Tuesday 17/11, could you reply before Friday 13/11?</p>
+<p>Best,
+Gimena Fernández
+Project Manager, Quebrada Labs</p>
+<h2>3. Silvia → Gimena</h2>
+<p><strong>From:</strong> Silvia Paredes · <strong>To:</strong> Gimena Fernández · <strong>CC:</strong> Laura Medina
+<strong>Subject:</strong> RE: Foundation donations, information for the app</p>
+<p>Hi Gimena,</p>
+<p>Point by point:</p>
+<ol>
+<li><strong>Budget:</strong> no, the fund does not allow it. Fundraising is not among the expenses the grant covers, and a donate button counts as fundraising. I keep the grant's accounts, so I am sure about this. If it is built, it has to be paid with the foundation's own funds, not the USD 48,000. Laura, I don't think we had discussed this.</li>
+<li><strong>Receipts:</strong> each one takes me about 10 minutes, between matching the payment, asking for missing data and sending it. I am a volunteer and give it a few hours a week. With the current process I can handle up to about 30 donations a month. No more than that.</li>
+<li><strong>Donor data:</strong> Mercado Pago gives me the name and email, but not the ID or tax ID. I ask each donor by email, and some never reply. Those donations stay without a receipt until they do.</li>
+</ol>
+<p>Best,
+Silvia Paredes
+Treasurer, Fundación Tabaquillar</p>
+<h2>Decision (Gimena, 2026-11-09)</h2>
+<p>The donate button does not come out of the grant budget. It is quoted separately in SOW v1.1 and
+paid by the foundation if the board approves it.</p>
+            </div>
+        </div>
+    </div>
+    <div id="charter-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="charter-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Initiation &bull; project-charter</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="charter-modal-title">Project charter v1.2</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Signed by the sponsor with no changes to v1.1.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p>DATE: 2026-11-18</p>
+<p><em>v1.2, signed by the sponsor on 18/11/2026 with no changes to v1.1 (sponsor review, meeting 6,
+2026-11-13; reply in <code>charter-signature-email.md</code>). v1 written with the <code>project-charter</code> skill (v1.0.0) from SOW v1.1 (approved
+2026-11-09), meetings 1–5, the stakeholder map, the tech lead estimate and the treasurer's emails.
+Source tags as in the SOW: M1–M6 meetings, T triage, E tech lead estimate, S treasurer's emails.</em></p>
+<h2>Project Summary</h2>
+<p>We plan to build and launch, by 30 June 2027, a pilot app for the three reserves of the Red de
+Reservas Serranas, so that whoever sees smoke first (neighbors, visitors, park rangers) can report
+it with an exact location and a photo, also without signal, and the report reaches the provincial
+emergency central. This will shorten the time from the first sighting to the response, which today
+depends on a phone call or a radio message getting through (last year's fire took about 3 hours
+from a neighbor seeing smoke to firefighters arriving, M1). Additionally, it will give researchers
+and the province wildlife sighting data without exposing condor nests or sensitive tabaquillo
+patches, and give the foundation the figures the climate fund requires in its quarterly impact
+reports.</p>
+<h2>Project Goals</h2>
+<p><em>SMART: Specific, Measurable, Attainable, Relevant, and Time-bound</em></p>
+<ul>
+<li><strong>O1. Reduce the time from a fire report to the first responder arriving by 40–60%</strong> against
+  the baseline, for fires reported through the app in the three reserves, during the first quarter
+  of the pilot (1 July – 30 September 2027). Measured by: report time logged by the app; arrival
+  time from the volunteer fire station's records (Carla). Evidence for the target:
+  <strong>provisional</strong> (M6). There is no baseline yet: the "about 3 hours" of last year's fire is one
+  neighbor's account, not a measurement (M1, M6). The baseline comes from Carla's past records or,
+  if there are none, is measured from December 2026. See A-06.</li>
+<li><strong>O2. Deliver 100% of the fire reports sent through the app to the emergency central and to the
+  rangers at the same time</strong>, from launch and through the first quarter of the pilot (30 June –
+  30 September 2027). Measured by: the app's delivery log, checked each month against the reports
+  the central received. Evidence: decided by the sponsor (M6); the report flow it relies on is
+  confirmed with the central, Marcos, Sofía and Carla in weeks 1–3 (A-01, A-07).</li>
+<li><strong>O3. Publish no precise location of a sighting.</strong> Before launch, and in every export during the
+  pilot, the public map and the open repository show sightings only on the ~5 km grid; precise
+  coordinates reach only accredited researchers with a data agreement signed with the province.
+  Measured by: a check of the public map and of each export against the data design, signed off by
+  Marcos before launch. Evidence: decision of meeting 2, confirmed by the sponsor (M4); set in SOW
+  v1.1, "Decision recorded".</li>
+<li><strong>O4. Make a fire report faster than a WhatsApp message</strong>, for the rangers in the field test
+  (weeks 22–25, May 2027). Measured by: field test with the 6 rangers, time and taps from opening
+  the app to "sent", compared with sending the same report by WhatsApp; glove use is observed, not
+  required. Evidence: requirement NF3 from the rangers (M3); set in SOW v1.1, "Field conditions".</li>
+</ul>
+<p>App downloads, registered users, the total number of reports (fire, sightings, litter) and how
+"full" the public map looks matter to the foundation and the fund (M1), but they are reported, not
+goals: they do not show whether fires are reported earlier, and a quarter with fewer fire reports
+is good news. The number of reports goes in each impact report, as the fund asks. Whether downloads
+should be a goal is reviewed with the sponsor after the first month of the pilot (end of July
+2027), with real data (M6).</p>
+<h2>Deliverables</h2>
+<ul>
+<li>Baseline report: response time and visitor numbers</li>
+<li>Confirmed report flow, signed off by the emergency central, Marcos, Sofía and Carla</li>
+<li>Data design: the two data levels and the export format</li>
+<li>Pilot app for Android and iOS, with the foundation's brand</li>
+<li>Public sightings map on the foundation's WordPress site</li>
+<li>Data export for the province and the open repository</li>
+<li>Field test report with the rangers</li>
+<li>Pilot running in the three reserves</li>
+<li>Data for the quarterly impact reports (number of reports, response time), with a handover
+  guide and spreadsheet so the foundation can build each report from the data export and the fire
+  station's records, explained in a handover meeting before closing. Written for someone with no
+  technical background; part of the existing SOW deliverable, not new scope (M6)</li>
+</ul>
+<p>The detailed list is in SOW v1.1, "Deliverables".</p>
+<h2>Scope and Exclusion</h2>
+<p><strong>In-Scope:</strong> baseline measurement, meeting with the emergency central and report flow, data
+design, UX/UI design with the foundation's brand, build of the pilot app (fire, sightings and
+litter reports, offline sending, notices, species pages, registration), public map, open data
+export, field test with rangers, launch, data for the impact reports.</p>
+<p><strong>Out-of-Scope:</strong> recording people who break park rules, a low/medium/high level on fire reports,
+satellite sending or any extra device, automatic copies to WhatsApp groups or radio, points or
+badges (phase 2), a dashboard with the impact report figures (phase 2, M6), replacing the emergency number or the future provincial system, the donate
+button within the grant budget.</p>
+<p>Litter reports stay in the pilot only while the integration with the central is estimated at
+190 h or less (SOW v1.1, "Estimated Hours"). The donate button, if the board approves it on
+19/11, is a separate item paid with the foundation's own funds.</p>
+<h2>Benefits &amp; Costs</h2>
+<p><strong>Benefits</strong>
+1. Fires are reported from the ground, with location and photo, while they are still small: in
+   2025, 62% of fires in Córdoba were under 10 ha (IDECOR) (O1, O2).
+2. Reports made without signal are not lost: they are sent when signal returns (O2).
+3. The foundation can report the number of reports and the response time the climate fund
+   requires, and keep the grant (O1, O2; M1).
+4. Researchers get sighting data, and the province keeps sensitive locations protected (O3; M2).
+5. The foundation gains a public map and a list of registered users for its communications and
+   fundraising (M1, M4).</p>
+<p><strong>Costs</strong>
+- Approved money budget: USD 48,000 for the product, including the website map (USD 60,000 grant
+  minus USD 12,000 committed to communications, M1).
+- Cost estimate: pilot scope 1,500 h ≈ USD 45,000, plus litter reports 50 h ≈ USD 1,500, at an
+  assumed blended rate of USD 30/h (E). Range USD 44,700–48,300, depending on the integration with
+  the central (80–200 h).
+- Contingency left: ≈ USD 1,500 (3%) at the midpoint, for unforeseen costs only, not new scope
+  (M5).
+- Outside the budget: donate button, option A ≈ USD 360 or option B ≈ USD 3,000–4,200, foundation's
+  own funds, board decision on 19/11 (S).</p>
+<p><strong>Budget needed:</strong>
+- USD 46,500 (range 44,700–48,300) within the USD 48,000 approved.
+- 1,550 h of effort (range 1,490–1,610).</p>
+<h2>Assumptions and Constraints</h2>
+<p><strong>Assumptions</strong></p>
+<p><em>This section starts the assumption log. A-01 to A-05 come from SOW v1.1, "Assumptions and
+dependencies"; the SOW number is in brackets.</em></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>How it will be checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-01</td>
+<td>The emergency central accepts app reports as one more report, like a phone call [1]</td>
+<td>Meeting with the central, weeks 1–3, set up through Marcos</td>
+</tr>
+<tr>
+<td>A-02</td>
+<td>The province grants the permit before the field test [3]</td>
+<td>Permit letter sent in week 0; status checked at each monthly report to the sponsor; due before week 22 (03/05/2027)</td>
+</tr>
+<tr>
+<td>A-03</td>
+<td>The province–researcher data agreement template is ready before the field test [4]</td>
+<td>Marcos and Tomás, before week 22</td>
+</tr>
+<tr>
+<td>A-04</td>
+<td>ID (DNI) registration for 18+ users is legal and does not reduce reporting, since fire reports need no registration [5]</td>
+<td>Legal check by the foundation's lawyers, requested 13/11/2026; answer expected before design starts (14/12/2026); accepted as open (M6)</td>
+</tr>
+<tr>
+<td>A-05</td>
+<td>Carla has past response-time records and can share them; if not, the baseline is measured from December 2026 [6]</td>
+<td>Gimena asks Carla the week of 16/11/2026 (M6)</td>
+</tr>
+<tr>
+<td>A-06</td>
+<td>The O1 target (40–60% less than the baseline) is attainable with app reports</td>
+<td>Review point: when the baseline is ready (shown to the fund in the March 2027 report); confirmed or adjusted with real data after the first month of the pilot (end of July 2027)</td>
+</tr>
+<tr>
+<td>A-07</td>
+<td>The central's system can confirm each report it receives from the app, so O2 can be checked</td>
+<td>Meeting with the central, weeks 1–3</td>
+</tr>
+<tr>
+<td>A-08</td>
+<td>Response time also depends on the central and the volunteer firefighters, which the project does not control (O1)</td>
+<td>Report flow signed off by the central and Carla (weeks 1–3); response times reviewed with Carla each quarter</td>
+</tr>
+<tr>
+<td>A-09</td>
+<td>The rangers' phones can run the app and store reports with photos while offline (NF6); device models and storage were never asked</td>
+<td>Tech lead asks Sofía for the rangers' phone models and free storage, weeks 1–3, before design; added to the log after the signature (<code>reveal.md</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constraints</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Constraint</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CN-01</td>
+<td>Working pilot by 30 June 2027; missing it loses the grant (M1)</td>
+<td>Time</td>
+</tr>
+<tr>
+<td>CN-02</td>
+<td>USD 48,000 for the product, including the website map (M1)</td>
+<td>Cost</td>
+</tr>
+<tr>
+<td>CN-03</td>
+<td>The climate fund does not pay for fundraising; the donate button cannot be paid from the grant (S)</td>
+<td>Policy</td>
+</tr>
+<tr>
+<td>CN-04</td>
+<td>Precise coordinates only for accredited researchers with a data agreement signed with the province; public data on a ~5 km grid (M2)</td>
+<td>Policy</td>
+</tr>
+<tr>
+<td>CN-05</td>
+<td>Every fire report reaches the official emergency channel; the app adds to it and does not replace it (M2)</td>
+<td>Policy</td>
+</tr>
+<tr>
+<td>CN-06</td>
+<td>No operation inside the reserves without the province's permit (M1)</td>
+<td>Policy</td>
+</tr>
+<tr>
+<td>CN-07</td>
+<td>No extra device for users: the app runs on phones they already have (M3)</td>
+<td>Scope</td>
+</tr>
+<tr>
+<td>CN-08</td>
+<td>If the integration with the central is estimated above 190 h, litter reports move to phase 2 (SOW v1.1)</td>
+<td>Scope</td>
+</tr>
+<tr>
+<td>CN-09</td>
+<td>Quarterly impact reports to the climate fund during the pilot: number of reports and response time (M1); the sponsor sends one in March 2027, before the pilot (M6)</td>
+<td>Quality</td>
+</tr>
+</tbody>
+</table>
+<h2>Summary milestones</h2>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charter approved</td>
+<td>By 20/11/2026 (week 0)</td>
+</tr>
+<tr>
+<td>Central consulted, report flow confirmed, data design done, baseline started (planning done)</td>
+<td>11/12/2026 (end of week 3), provisional</td>
+</tr>
+<tr>
+<td>UX/UI design done</td>
+<td>22/01/2027, provisional</td>
+</tr>
+<tr>
+<td>Permit check: if not granted, the sponsor escalates</td>
+<td>01/03/2027</td>
+</tr>
+<tr>
+<td>Build done</td>
+<td>30/04/2027, provisional</td>
+</tr>
+<tr>
+<td>Field test with rangers done</td>
+<td>28/05/2027, provisional</td>
+</tr>
+<tr>
+<td><strong>Working pilot launched</strong></td>
+<td><strong>30/06/2027, fixed</strong></td>
+</tr>
+<tr>
+<td>Handover meeting and closing</td>
+<td>30/06/2027</td>
+</tr>
+</tbody>
+</table>
+<h2>Key risks</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Impact</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The emergency central, not consulted yet, does not accept app reports or asks for a costly integration</td>
+<td>High: without it the fire reports do not reach the official channel (CN-05); above 190 h, litter leaves the pilot; above ~200 h, the budget is exceeded</td>
+<td>Meet the central in weeks 1–3, before design, through Marcos; apply the 190 h rule; if the cost goes past the budget, back to the sponsor (see Exit criteria)</td>
+</tr>
+<tr>
+<td>The province's permit arrives late (a signage permit took four months last year, M6)</td>
+<td>High: no field test in the reserves, and no launch inside them without it</td>
+<td>Send the letter in week 0; if it has not arrived by 01/03/2027, the sponsor escalates with Marcos, with a summary from Gimena; field test on trails outside the protected area if needed (see Exit criteria)</td>
+</tr>
+<tr>
+<td>No baseline can be built (no past records, few fires in the first months)</td>
+<td>Medium: O1 cannot be shown in the impact reports</td>
+<td>Ask Carla in week 1; if there are no records, measure from early pilot use; review O1 at the A-06 review point</td>
+</tr>
+<tr>
+<td>The rangers, the firefighters and the province do not agree on the report flow</td>
+<td>Medium: design is delayed, or one of them stops supporting the app</td>
+<td>Proposal from the triage (central and rangers at the same time) taken to the three and the central in weeks 1–3; the sponsor decides if they do not agree</td>
+</tr>
+<tr>
+<td>The board takes up the donate button or new features during the project</td>
+<td>Medium: pressure on the contingency and on the date</td>
+<td>Donate button outside the grant budget (CN-03); points in phase 2; new scope goes through the sponsor</td>
+</tr>
+</tbody>
+</table>
+<p>Full list: SOW v1.1, "Assumptions and dependencies", and the stakeholder map. A full risk register
+is built in planning.</p>
+<h2>Stakeholders</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Held by</th>
+<th>Decision authority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sponsor</td>
+<td>Laura Medina, executive director, Fundación Tabaquillar</td>
+<td>Approves the charter and changes to scope, budget and date; decides the report flow if the parties do not agree</td>
+</tr>
+<tr>
+<td>Foundation board</td>
+<td>5 members, monthly</td>
+<td>Approves major decisions; decides the donate button and its funding (19/11)</td>
+</tr>
+<tr>
+<td>Project manager</td>
+<td>Gimena Fernández, Quebrada Labs</td>
+<td>See "Project manager authority"</td>
+</tr>
+<tr>
+<td>Tech lead</td>
+<td>Quebrada Labs</td>
+<td>Technical design and estimates</td>
+</tr>
+<tr>
+<td>Province</td>
+<td>Marcos Ferreyra, Dirección de Áreas Serranas Protegidas</td>
+<td>Grants the permit; sets the rules for data inside protected areas; signs off the data design and the report flow</td>
+</tr>
+<tr>
+<td>Emergency central</td>
+<td>Provincial</td>
+<td>Decides how app reports enter its protocol; signs off the report flow. Not consulted yet</td>
+</tr>
+<tr>
+<td>Rangers</td>
+<td>Sofía Arce, lead ranger</td>
+<td>Main users; sign off the report flow and take part in the field test</td>
+</tr>
+<tr>
+<td>Volunteer firefighters</td>
+<td>Carla Bustos, fire station and neighbor network</td>
+<td>Sign off the report flow; hold the response-time records</td>
+</tr>
+<tr>
+<td>Researchers</td>
+<td>Dr. Tomás Quiroga, university research group</td>
+<td>Verify sightings; give the full list of sighting fields</td>
+</tr>
+<tr>
+<td>Treasurer</td>
+<td>Silvia Paredes, Fundación Tabaquillar</td>
+<td>Receives donations and issues receipts; consulted on the donate button only</td>
+</tr>
+<tr>
+<td>Neighbors and visitors</td>
+<td>—</td>
+<td>Report fires and sightings. Not consulted</td>
+</tr>
+</tbody>
+</table>
+<h2>Project manager authority</h2>
+<p><strong>The project manager can decide alone:</strong>
+- The order of work and the team's day-to-day priorities within the milestones.
+- Moving litter reports to phase 2 if the integration with the central is estimated above 190 h
+  (CN-08, already agreed in SOW v1.1), informing the sponsor.
+- Changes to the provisional dates that do not move the launch on 30/06/2027, informing the sponsor
+  in the monthly report (M6).
+- Using the contingency (≈ USD 1,500) without asking first, for unforeseen costs within the
+  approved scope only; each use goes in a monthly expense log to the sponsor (M5, M6).</p>
+<p><strong>The sponsor must decide:</strong>
+- Any change to scope or to the acceptance criteria in the SOW.
+- Any cost above USD 48,000, and any use of the contingency for new scope.
+- Any change to the launch date of 30/06/2027.
+- The report flow, if the central, the province, the rangers and the firefighters do not agree.
+- Changes to the data decision, together with Marcos (CN-04).</p>
+<h2>Exit criteria</h2>
+<ul>
+<li><strong>Close:</strong> on 30/06/2027, when the working pilot is running in the three reserves; the field
+  test report is done; the public map and the data export are live and checked against O3; and
+  the handover guide and spreadsheet for the impact reports have been explained to the foundation
+  in the handover meeting. The foundation keeps measuring O1 and O2 after closing (M6).</li>
+<li><strong>Pause:</strong> the permit is not granted by the start of the field test (03/05/2027). The field test
+  moves to trails outside the protected area, with the rangers; Gimena and Laura settle the details
+  within a week, without moving the launch. Launching inside the reserves still needs the permit
+  (CN-06); the escalation on 01/03/2027 is there to avoid reaching this point (M6).</li>
+<li><strong>Stop:</strong> the central does not accept app reports, so fire reports cannot reach the official
+  channel (CN-05); or the estimate after the meeting with the central exceeds USD 48,000 even
+  without litter reports. Work stops when the design phase ends; the sponsor decides with the
+  board whether to negotiate again with the central through Marcos, change the scope (through
+  change control) or end the project (M6).</li>
+</ul>
+<h2>Approval</h2>
+<p><strong>Approval requirements:</strong> the sponsor signs off the closing when the "Close" criterion is met.
+The sponsor, Laura Medina, signs; the board is informed at its next monthly meeting.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Decision</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sponsor</td>
+<td>Laura Medina</td>
+<td>Approved, no changes (every critical item decided in meeting 6)</td>
+<td>18/11/2026</td>
+</tr>
+<tr>
+<td>Project manager</td>
+<td>Gimena Fernández</td>
+<td>Approved</td>
+<td>18/11/2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Open items accepted:</strong>
+- Legal check of ID registration (A-04): requested 13/11/2026; answer expected before 14/12/2026.
+  If it is late, design starts anyway and the registration screens are adjusted when it arrives
+  (stated in the follow-up email, 13/11/2026); fire reports need no registration, so they are not
+  affected. Owner: Gimena, with the foundation's lawyers.
+- Baseline for O1 (A-05): Carla's records, or measured from December 2026. Owner: Gimena.
+- Review of downloads as an indicator, with real data. Owner: Laura and Gimena, end of July 2027.</p>
+<h2>Appendix</h2>
+<p><strong>Misalignments and Decisions:</strong>
+- Misalignment: the researchers wanted all sighting data in a public repository (Tomás); the
+  province will not allow publishing the location of condor nests or sensitive tabaquillo patches
+  (Marcos).
+    - Decision (M2, confirmed by the sponsor in M4): two data levels. Public data on a ~5 km grid;
+      precise coordinates only for accredited researchers with a data agreement signed with the
+      province.
+- Misalignment: the rangers and the neighbor network asked for fire alerts in their WhatsApp
+  groups (Sofía, Carla, M3); automatic copies did not fit the pilot.
+    - Decision (T6, 2026-11-09): no automatic copies in the pilot; a "Share on WhatsApp" button
+      after sending; automatic copies go to phase 2 if the tech lead confirms they can be done.
+      Sofía and Carla still have to be told (SOW assumption 7).
+- Misalignment: the sponsor wanted litter reports in the pilot (M4); the tech lead recommended
+  phase 2 until the cost of the central is known (E).
+    - Decision (SOW v1.1, approved in M5): litter reports in the pilot, under the 190 h rule
+      (CN-08).
+- Misalignment: the sponsor asked to use the ~USD 1,500 contingency for points or badges (M5).
+    - Decision (M5): points stay in phase 2; the contingency is for unforeseen costs only.
+- Misalignment: the sponsor wanted app downloads as a goal ("10,000 downloads"), because donors
+  ask how many people use the app (M6).
+    - Decision (M6): downloads are measured and reported to donors, not used as a success
+      criterion; reviewed after the first month of the pilot with real data.
+- Misalignment: the sponsor proposed 50 reports a quarter, counting sightings, as the report goal
+  (M6).
+    - Decision (M6): the goal covers fire reports only and is about delivery (O2: 100% reach the
+      central and the rangers); the number of reports is sent to the fund but is not a target.
+- Misalignment: the sponsor proposed sending fire reports straight to the volunteer firefighters if
+  the central does not accept them (M6).
+    - Decision (M6): not possible; every fire report reaches the official channel (CN-05, Marcos's
+      red line, M2). If the central does not accept, the Stop criterion applies.
+- Misalignment: board member Raúl wants a donate button next to each sighting (M1, M4); the
+  climate fund does not pay for fundraising (S).
+    - Decision (SOW v1.1, S): the donate button is outside the grant budget. Whether it is built,
+      and with which option, is the board's decision on 19/11 (still open).</p>
+            </div>
+        </div>
+    </div>
+    <div id="reveal-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="reveal-modal-title">
+        <div class="absolute inset-0 bg-slate-100/70 backdrop-blur-sm" onclick="closeExampleModals()"></div>
+        <div class="relative flex max-h-[88vh] w-full max-w-3xl flex-col rounded-2xl border border-black/10 bg-white shadow-xl">
+            <div class="flex items-start justify-between gap-4 border-b border-black/10 p-6 pb-4">
+                <div class="space-y-1">
+                    <p class="text-[10px] font-mono text-teal-800">Reflection</p>
+                    <h3 class="text-base font-semibold text-slate-200" id="reveal-modal-title">Reveal: secret briefs vs. what was found</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Every hidden fact, whether it came out, and where.</p>
+                </div>
+                <button type="button" onclick="closeExampleModals()" aria-label="Close" class="text-slate-500 hover:text-slate-200 transition-colors text-xl leading-none">&times;</button>
+            </div>
+            <div class="sow-doc overflow-y-auto p-6">
+<p><em>Session 5 of the case, 2026-11-14. Each stakeholder was played by Claude from a secret brief
+committed before the meetings (<code>briefs/</code>). Gimena did not read the briefs until this session. This
+file compares what each brief hid with what came out in the meetings and emails.</em></p>
+<h2>Result</h2>
+<p>16 of 17 hidden facts came out. The one that was missed is now assumption A-09 in the charter.</p>
+<table>
+<thead>
+<tr>
+<th>Brief</th>
+<th>Hidden fact</th>
+<th>Found?</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laura (sponsor)</td>
+<td>Grant with a hard date (30/06/2027) and USD 48,000 left for the product</td>
+<td>Yes</td>
+<td>Meeting 1</td>
+</tr>
+<tr>
+<td>Laura (sponsor)</td>
+<td>Board member Raúl wants a donate button</td>
+<td>Yes</td>
+<td>Meeting 1</td>
+</tr>
+<tr>
+<td>Marcos (province)</td>
+<td>The province plans its own reporting system (tender in 2027)</td>
+<td>Yes</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>Marcos (province)</td>
+<td>A resolution forbids publishing exact nest locations</td>
+<td>Yes</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>Sofía (rangers)</td>
+<td>They use WhatsApp and VHF radio today; 6 rangers for 40,000 ha</td>
+<td>Yes</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>Sofía (rangers)</td>
+<td><strong>Old low-end Android phones with little storage</strong></td>
+<td><strong>No</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Sofía (rangers)</td>
+<td>Fear of false alarms (the barbecue reported as smoke)</td>
+<td>Yes</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>Tomás (researchers)</td>
+<td>His grant requires publishing in an open repository</td>
+<td>Yes</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>Tomás (researchers)</td>
+<td>He accepts a ~5 km public grid and precise data only under an agreement</td>
+<td>Yes</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>Tomás (researchers)</td>
+<td>Data quality (a "verified" flag) matters more than volume</td>
+<td>Yes</td>
+<td>Meeting 2</td>
+</tr>
+<tr>
+<td>Carla (firefighters)</td>
+<td>No dispatch without the emergency central</td>
+<td>Yes</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>Carla (firefighters)</td>
+<td>Volunteers: nobody watches a screen</td>
+<td>Yes</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>Carla (firefighters)</td>
+<td>The neighbor network already uses radio and WhatsApp</td>
+<td>Yes</td>
+<td>Meeting 3</td>
+</tr>
+<tr>
+<td>Silvia (treasurer)</td>
+<td>The grant does not pay for fundraising, and a donate button counts as fundraising</td>
+<td>Yes</td>
+<td>Treasurer's emails</td>
+</tr>
+<tr>
+<td>Silvia (treasurer)</td>
+<td>She issues receipts by hand; about 30 a month at most</td>
+<td>Yes</td>
+<td>Treasurer's emails</td>
+</tr>
+</tbody>
+</table>
+<p>Two more points from the briefs were not hidden facts but were handled as the brief expected:
+- <strong>Laura says yes to almost every feature.</strong> Pushed back twice: points stay in phase 2, and the
+  contingency is for unforeseen costs only (meeting 5).
+- <strong>Laura accepts a less precise public map</strong> once the risk is explained with condor nests
+  (meeting 4).</p>
+<h2>What was missed and why it matters</h2>
+<p>No question was ever asked about the devices. Requirement NF6 says "runs on the phones users
+already have", but nobody knew those phones are low-end. That affects app size, battery use and how
+many photos can be stored while offline. In a real project it would have shown up late, in the
+field test (May 2027).</p>
+<p><strong>Fix:</strong> assumption A-09 added to the charter's assumption log. The tech lead asks Sofía for the
+rangers' phone models and free storage in weeks 1–3, before design.</p>
+<p><strong>Lesson for the next discovery:</strong> ask every field user about their devices and technical
+conditions, not only about how they work.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExampleModal(id) {
+            var m = document.getElementById(id);
+            m.classList.remove('hidden'); m.classList.add('flex');
+            m.querySelector('.sow-doc').scrollTop = 0;
+        }
+        function closeExampleModals() {
+            document.querySelectorAll('[role="dialog"][id$="-modal"]').forEach(function (m) {
+                m.classList.add('hidden'); m.classList.remove('flex');
+            });
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeExampleModals(); });
+    </script>
+
+</body>
+</html>
