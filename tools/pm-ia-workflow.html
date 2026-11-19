@@ -461,6 +461,33 @@
                         <div class="mt-auto flex flex-col gap-1.5"><a href="../case-studies/wildfire-prevention.html" class="group flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800 hover:text-teal-200 transition-colors"><span class="inline-block group-hover:translate-x-1 transition-transform">See it applied in Early Wildfire Reporting</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
                 </div>
+                <div class="relative flex flex-col text-left rounded-2xl bg-[#f7f7f7] border border-teal-800/60 overflow-hidden shadow-sm">
+                    <div class="flex flex-1 flex-col gap-3 px-4 py-4 text-left">
+                        <div class="flex items-center justify-between">
+                            <div class="shrink-0 w-9 h-9 bg-teal-800/55 group-hover:bg-teal-800 transition-colors"
+                             style="-webkit-mask-image:url('../assets/images/icon-group-03.png'); mask-image:url('../assets/images/icon-group-03.png');
+                                    -webkit-mask-size:contain; mask-size:contain;
+                                    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+                                    -webkit-mask-position:center; mask-position:center;"></div>
+                            <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        </div>
+                        <span class="text-[#444] text-[1.2rem] leading-[1.5rem] font-bold font-serif inline-block">Planning: backlog, risks and RACI</span>
+                        <p class="text-sm text-slate-200 leading-relaxed">Four skills that turn an authorized phase into a plan: the backlog and build order, the risk register, the risk management plan and who does what.</p>
+                        <details class="read-more">
+                            <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                            <p class="text-sm text-slate-400 leading-relaxed pt-3">
+                            The backlog skill traces every item to an acceptance criterion and writes the cut rule before the build starts; during the build it records what really happened and which documents each decision must reach. The risk register judges probability from facts, never from invented numbers, gives each risk one owner and a response with its warning sign, and tracks the risks that fire. The risk management plan follows the course template and adds what PMBOK asks for: tolerance, roles, funding, scales written for this project, and who is told what. The RACI gives each activity one decider and at least one doer, and shows joint and outside sign-offs. All four come from the Treasure Time plan, written by hand first, and each was run blind on the wildfire case before release: a project with a funder, a contractor team and months of work, which found the rules that only fit a one-person build.
+                            </p>
+                        </details>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>backlog-roadmap</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>risk-register</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>risk-management-plan</code><span class="font-semibold">v1.0.0</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>raci-matrix</code><span class="font-semibold">v1.0.0</span></span>
+                        </div>
+                        <div class="mt-auto flex flex-col gap-1.5"><a href="../case-studies/treasure-time.html#step-2" class="group flex items-center justify-between gap-1.5 text-xs font-mono text-teal-800 hover:text-teal-200 transition-colors"><span class="inline-block group-hover:translate-x-1 transition-transform">See it applied in Treasure Time</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -630,6 +657,50 @@
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-18</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
                                 <li><strong>Added:</strong> first version. Today, should be and covered by, checked in both directions, then still open and sources.</li><li><strong>Design decisions:</strong> today only from a cited source; should be is a state, not a feature; a missing requirement is proposed to the PM, never added.</li><li><strong>Why:</strong> the wildfire gap analysis was drafted and corrected in one round; the PM&rsquo;s corrections were mostly the why behind each should-be.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">backlog-roadmap</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-18</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Items traced to the acceptance criteria in both directions, releases named by the question they answer, a build order against the capacity, dependencies and gates, and a cut rule the sponsor approves before the build.</li><li><strong>Why:</strong> the Treasure Time backlog was written by hand. During the build, a founder decision reached the backlog but not the SOW, so each decision now lists the documents it must reach.</li><li><strong>Tested before release:</strong> run blind on the wildfire case, which showed the rules assumed a few-day solo build: it now handles sprints, hour estimates and outside dependencies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">risk-register</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-18</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Each risk cites its origin, has one owner, a probability and impact judged from facts, a response with its PMBOK strategy and warning sign, and a status; tracking records what happens.</li><li><strong>Why:</strong> the Treasure Time register was written by hand; one risk fired during the build and became a lesson, and another was left describing a rule the founder had changed.</li><li><strong>Tested before release:</strong> run blind on the wildfire case, with a simulated event; it added how outside parties are owned, what escalation means, and a status column.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">risk-management-plan</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-18</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version, in the Google course template order with the PMBOK sections: approach, tolerance, roles, funding, this project&rsquo;s scales, risks by type with today&rsquo;s status, tracking and reporting.</li><li><strong>Why:</strong> the Treasure Time plan was drafted after the build started, so it needed today&rsquo;s status and the rule that a decision changing a risk reaches every document.</li><li><strong>Tested before release:</strong> run blind on the wildfire case, which has a budget and a funder; it added funding and the contingency, money thresholds from the charter and reporting to outside parties.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">raci-matrix</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-18</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Activities and decisions as rows, one A and at least one R per row, qualifiers for helpers, and checks for gaps and overloads.</li><li><strong>Why:</strong> the Treasure Time RACI was written by hand; qualifiers such as &ldquo;R (proposes)&rdquo; were what made Claude&rsquo;s part clear.</li><li><strong>Tested before release:</strong> run blind on the wildfire case, which has decisions shared with the province; joint and outside sign-offs are now shown without a second A.</li>
                             </ul>
                         </div>
                     </div>
