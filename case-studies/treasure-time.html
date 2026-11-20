@@ -430,7 +430,7 @@
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">2.2</span>Backlog &amp; roadmap
                         </h3>
-                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">backlog-roadmap</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
                     <p class="text-slate-200 text-[0.95rem] leading-relaxed">Twelve items, each tied to an acceptance criterion and built day by day. Phase 1a closed on its date.</p>
                     <div class="flex flex-wrap gap-2">
@@ -455,7 +455,7 @@
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">2.3</span>Risk register
                         </h3>
-                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">risk-register</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
                     <p class="text-slate-200 text-[0.95rem] leading-relaxed">Every risk has an owner and a response. R-01 fired and was recovered with no cut.</p>
                     <div class="flex flex-wrap gap-2">
@@ -480,7 +480,7 @@
                         <h3 class="text-base font-semibold text-slate-200">
                             <span class="font-mono text-teal-400 text-xs mr-2">2.4</span>RACI
                         </h3>
-                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                        <div class="flex items-center gap-2 flex-wrap"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span><a href="../tools/pm-ia-workflow.html#components" class="inline-flex items-center gap-1.5 rounded-full bg-teal-300 px-3.5 py-1.5 text-xs font-mono text-white shadow-sm hover:bg-teal-200 transition-colors"><span class="text-white/80">Built with</span> <code class="font-semibold">raci-matrix</code> <span class="text-white/80 font-normal">v1.0.0</span><span class="icon-chevron" aria-hidden="true"></span></a></div>
                     </div>
                     <p class="text-slate-200 text-[0.95rem] leading-relaxed">Two people, ten activities: the founder is accountable on every row.</p>
                     <div class="flex flex-wrap gap-2">
@@ -504,21 +504,35 @@
             <div class="flex flex-wrap items-baseline gap-x-3">
                 <span class="font-mono text-teal-400 text-sm font-semibold">03 /</span>
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
-                    <span data-en="Watch it sprout" data-es="Ver el brote">Watch it sprout</span>
+                    <span>Watch it sprout</span>
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
-                    <span class="text-teal-300" data-en="Kickoff" data-es="Arranque">Kickoff</span>
+                    <span class="text-teal-300">Kickoff</span>
                 </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span></span>
             </div>
-            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
-                    <h3 class="text-base font-semibold text-slate-200">
-                        <span data-en="Kickoff &amp; Sprint 0" data-es="Kickoff y Sprint 0">Kickoff &amp; Sprint 0</span>
-                    </h3>
-                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 3.1 Build kickoff -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">3.1</span>Build kickoff
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">The build started on Nov 16, two days late, and Phase 1a still closed that same day.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The kickoff was short, because there is no team to align. It covered three decisions: the founder confirmed the catalog of 10 tasks; the old app repo was reused (the Expo plan was archived); and the stack was set to a web app with React + Vite + Tailwind, with the data on the device and no server.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Publishing on day 1 did not happen: the founder found the visual style &ldquo;too common&rdquo; and asked for a new one first (R-11).
+                    </p>
+                        </div>
+                    </details>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="The delivery kickoff and Sprint 0: the first real push, when the work actually begins." data-es="El kickoff de delivery y el Sprint 0: el primer empuj&oacute;n real, cuando el trabajo arranca de verdad.">
-                    The delivery kickoff and Sprint 0: the first real push, when the work actually begins.
-                </p>
             </div>
         </section>
 
@@ -527,21 +541,76 @@
             <div class="flex flex-wrap items-baseline gap-x-3">
                 <span class="font-mono text-teal-400 text-sm font-semibold">04 /</span>
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
-                    <span data-en="Tend the crop" data-es="Cuidar el cultivo">Tend the crop</span>
+                    <span>Tend the crop</span>
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
-                    <span class="text-teal-300" data-en="Execution" data-es="Ejecuci&oacute;n">Execution</span>
+                    <span class="text-teal-300">Execution</span>
                 </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span></span>
             </div>
-            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
-                    <h3 class="text-base font-semibold text-slate-200">
-                        <span data-en="Web app, Phase 1" data-es="Web app, Fase 1">Web app, Phase 1</span>
-                    </h3>
-                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 4.1 Phase 1a -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">4.1</span>Phase 1a: earn
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Eight items in one day, each tested by the founder on the computer and the phone.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        B-01 to B-08: first visit and catalog, daily list, mark and undo with the day bonus, difficult task, &ldquo;Your treasure&rdquo;, export / restore / delete. Each rule lives in plain functions with automated tests.
+                    </p>
+                        </div>
+                    </details>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="The Treasure Time web app will live here, built from scratch. Phase 1 covers the core loop: categories to time bank." data-es="La web app de Treasure Time va a vivir ac&aacute;, construida desde cero. La Fase 1 cubre el loop central: categor&iacute;as y banco de tiempo.">
-                    The Treasure Time web app will live here, built from scratch. Phase 1 covers the core loop: categories to time bank.
-                </p>
+                <!-- 4.2 Phase 1b -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">4.2</span>Phase 1b: use and register
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Phase 1b and both stretch items done by Nov 19, a day ahead of plan.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        B-09 to B-12 plus the wildcard (S-01) and the camera photo (S-02). 46 automated tests, and the full cycle (task &rarr; minutes &rarr; time &rarr; register &rarr; moments) tested on the phone.
+                    </p>
+                        </div>
+                    </details>
+                </div>
+                <!-- 4.3 Changes during the build -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">4.3</span>Changes during the build
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Six founder decisions came in while building. Each was written down before it was coded.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><strong class="text-slate-200">11-17:</strong> taking time capped at the balance (was &ldquo;more is allowed&rdquo;).</li>
+                        <li><strong class="text-slate-200">11-17:</strong> camera photo pulled in from stretch.</li>
+                        <li><strong class="text-slate-200">11-18:</strong> moments moved to their own screen, with delete.</li>
+                        <li><strong class="text-slate-200">11-19:</strong> the photo comes only from the camera and from the moment&rsquo;s day.</li>
+                        <li><strong class="text-slate-200">11-19:</strong> the wildcard rules spelled out (starts with 1, unused minutes are lost).</li>
+                        <li><strong class="text-slate-200">11-19:</strong> every minute value lowered (scale 2): earning was too easy with simple tasks, so a full day drops from about 45 to about 25 minutes.</li>
+                    </ul>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Found by a skill test: the SOW still had the old rule on taking time, so it moved to v3.4 with all three of the Nov 19 decisions.
+                    </p>
+                        </div>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -550,21 +619,73 @@
             <div class="flex flex-wrap items-baseline gap-x-3">
                 <span class="font-mono text-teal-400 text-sm font-semibold">05 /</span>
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
-                    <span data-en="Weather the storm" data-es="Resistir la tormenta">Weather the storm</span>
+                    <span>Weather the storm</span>
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
-                    <span class="text-teal-300" data-en="Risk mgmt" data-es="Gesti&oacute;n de riesgo">Risk mgmt</span>
+                    <span class="text-teal-300">Risk mgmt</span>
                 </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span></span>
             </div>
-            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
-                    <h3 class="text-base font-semibold text-slate-200">
-                        <span data-en="Risk Register &amp; Decision Case" data-es="Risk Register y Decision Case">Risk Register &amp; Decision Case</span>
-                    </h3>
-                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 5.1 Risks that fired -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">5.1</span>Risks that fired
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Two risks fired during the build. Both were recovered without moving a date.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><strong class="text-slate-200">R-01 (scope vs. dates):</strong> Nov 14 and 15 were not worked. Recovered on Nov 16: Phase 1a closed on its date with no cut.</li>
+                        <li><strong class="text-slate-200">R-11 (no publish on day 1):</strong> the founder found the style &ldquo;too common&rdquo;. A first new style (night blue and gold) was built on Nov 18 and dropped the same day, because it felt like dark mode. The hand-written diary style stayed. The repo was made public and the app was published on Nov 19, three days before the freeze.</li>
+                    </ul>
+                        </div>
+                    </details>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="Risk Register and Decision Case for a fixed campaign launch date, a wearable-partner integration and a mid-project budget cut." data-es="Risk Register y Decision Case para una fecha de lanzamiento fija, una integraci&oacute;n con un partner de wearables y un recorte de presupuesto a mitad de proyecto.">
-                    Risk Register and Decision Case for a fixed campaign launch date, a wearable-partner integration and a mid-project budget cut.
-                </p>
+                <!-- 5.2 Risks answered in the code -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">5.2</span>Risks answered in the code
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-done.png" alt="Done" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">The technical risks were solved in the code, not only written down.</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><strong class="text-slate-200">R-04 (photo space):</strong> each photo is shrunk before saving, and a banner warns if the browser runs out of space.</li>
+                        <li><strong class="text-slate-200">R-05 (the web cannot block the gallery):</strong> first accepted. On Nov 19 it was reduced: the gallery button is gone, and a photo is accepted only if it is from the moment&rsquo;s day.</li>
+                        <li><strong class="text-slate-200">R-03 (data loss):</strong> export, delete and restore were tested on the published app.</li>
+                    </ul>
+                        </div>
+                    </details>
+                </div>
+                <!-- 5.3 Still open -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">5.3</span>Still open
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">The key question for the 2 weeks of use: does earning minutes feel like relief, or like pressure? (R-09)</p>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400 text-sm leading-relaxed">
+                        <li><strong class="text-slate-200">R-02:</strong> bugs after Nov 22, when build support drops. Answer: freeze on Nov 22.</li>
+                        <li><strong class="text-slate-200">R-08:</strong> the only user is the founder, who also designed the app. This is stated in the report.</li>
+                        <li><strong class="text-slate-200">Scale 2:</strong> the lowered values are a first answer to &ldquo;too easy&rdquo;. They are watched during use.</li>
+                    </ul>
+                        </div>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -573,21 +694,36 @@
             <div class="flex flex-wrap items-baseline gap-x-3">
                 <span class="font-mono text-teal-400 text-sm font-semibold">06 /</span>
                 <h2 class="text-2xl font-bold text-[#1a1a1a] font-serif">
-                    <span data-en="Reap the harvest" data-es="Cosechar los frutos">Reap the harvest</span>
+                    <span>Reap the harvest</span>
                     <span class="mx-1 font-normal text-slate-600" aria-hidden="true">|</span>
-                    <span class="text-teal-300" data-en="Launch" data-es="Lanzamiento">Launch</span>
+                    <span class="text-teal-300">Launch</span>
                 </h2>
+                <span class="self-center"><span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span></span>
             </div>
-            <div class="p-6 rounded-2xl bg-[#f7f7f7] border border-dashed border-black/20 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
-                    <h3 class="text-base font-semibold text-slate-200">
-                        <span data-en="Release to users" data-es="Salida a usuarios">Release to users</span>
-                    </h3>
-                    <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
+
+            <div class="rounded-2xl overflow-hidden border border-black/10 divide-y divide-black/10">
+                <!-- 6.1 Release -->
+                <div class="p-6 space-y-3 bg-white">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h3 class="text-base font-semibold text-slate-200">
+                            <span class="font-mono text-teal-400 text-xs mr-2">6.1</span>Release
+                        </h3>
+                        <span class="status-tag"><img src="../assets/images/status/status-in-progress.png" alt="In progress" class="h-[9px] w-14"></span>
+                    </div>
+                    <p class="text-slate-200 text-[0.95rem] leading-relaxed">Live since Nov 19 as a web app anyone can open on a phone.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://gimenab.github.io/treasure-of-time-app/" target="_blank" rel="noopener" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">Open the app<span class="icon-chevron" aria-hidden="true"></span></a>
+                        <a href="https://github.com/gimenab/treasure-of-time-app" target="_blank" rel="noopener" class="group inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-3.5 py-1.5 text-xs font-mono text-teal-800 hover:bg-teal-950 transition-colors">View code<span class="icon-chevron" aria-hidden="true"></span></a>
+                    </div>
+                    <details class="read-more">
+                        <summary class="text-xs font-mono text-teal-800">Read more</summary>
+                        <div class="space-y-3 pt-3">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Published with GitHub Pages from a public repo. The founder&rsquo;s data moved from the test version to the published one with export and restore. The app is frozen on Nov 22; from Nov 23 to Dec 4 only the founder uses it.
+                    </p>
+                        </div>
+                    </details>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="What was built finally reaches the people who will use it." data-es="Lo que se construy&oacute; por fin llega a quienes lo van a usar.">
-                    What was built finally reaches the people who will use it.
-                </p>
             </div>
         </section>
 
@@ -610,8 +746,8 @@
                     </h3>
                     <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="It is not done when it ships, it is done when someone uses it. The KPIs are set once the product is defined, and this is where the real numbers against them will show." data-es="No termina cuando se entrega, termina cuando alguien lo usa. Los KPIs se definen cuando el producto est&aacute; definido, y ac&aacute; van a verse los n&uacute;meros reales contra ellos.">
-                    It is not done when it ships, it is done when someone uses it. The KPIs are set once the product is defined, and this is where the real numbers against them will show.
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Measured during the 2 weeks of use (Nov 23 &ndash; Dec 4). Results in the report on Dec 11.
                 </p>
             </div>
         </section>
@@ -633,8 +769,8 @@
                     </h3>
                     <span class="status-tag"><img src="../assets/images/status/status-not-started.png" alt="Not started" class="h-[9px] w-14"></span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed" data-en="What worked, what did not and what we learned feed the roadmap for the next release." data-es="Lo que funcion&oacute;, lo que no y lo aprendido alimentan el roadmap de la pr&oacute;xima versi&oacute;n.">
-                    What worked, what did not and what we learned feed the roadmap for the next release.
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Written after the report on Dec 11.
                 </p>
             </div>
         </section>
