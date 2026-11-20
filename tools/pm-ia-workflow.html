@@ -421,13 +421,14 @@
                         <details class="read-more">
                             <summary class="text-xs font-mono text-teal-800">Read more</summary>
                             <p class="text-sm text-slate-400 leading-relaxed pt-3">
-                            Six skills that take a Statement of Work from the client brief through Discovery to the project charter: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash; and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. During Discovery, a fourth skill walks the core loop with the client and turns each &ldquo;what happens if...?&rdquo; into a decision with an owner, before any user story is written. A fifth brings the findings and decisions together into a traceable list of changes for the next SOW, asking the client only what is still open. A sixth writes the project charter that authorizes the build, with SMART goals written as outcomes and how each is measured; before release it was reviewed by ChatGPT and Gemini and run blind against a charter written by hand. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
+                            Seven skills that take a Statement of Work from the client brief through Discovery to the project charter: one drafts a formal SOW from an unstructured brief, one critically reads it and flags every gap &mdash; timeline, budget, stakeholders, acceptance criteria &mdash;, one turns those gaps into the kickoff decision log, where &ldquo;we will estimate it&rdquo; is never a yes, and one turns the SOW agreed at the alignment meeting into a Discovery plan: a persona framed as a hypothesis, the MVP feature matrix and an agenda built from the open questions. During Discovery, a fourth skill walks the core loop with the client and turns each &ldquo;what happens if...?&rdquo; into a decision with an owner, before any user story is written. A fifth brings the findings and decisions together into a traceable list of changes for the next SOW, asking the client only what is still open. A sixth writes the project charter that authorizes the build, with SMART goals written as outcomes and how each is measured; before release it was reviewed by ChatGPT and Gemini and run blind against a charter written by hand. The reading prompt was validated across three different LLMs for consistency, not just tuned for one.
                         </p>
                         </details>
                         <!-- Versions come from metadata.version in each SKILL.md (pm-ia-workflow repo). Update them with the skill. -->
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-drafting</code><span class="font-semibold">v1.3.1</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-intake-analysis</code><span class="font-semibold">v2.0.1</span></span>
+                            <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-kickoff-decisions</code><span class="font-semibold">v1.0.0</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>sow-discovery-prep</code><span class="font-semibold">v1.0.1</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-user-flow</code><span class="font-semibold">v1.1.1</span></span>
                             <span class="inline-flex items-center gap-1.5 rounded-full border border-teal-800/60 bg-white px-2.5 py-0.5 text-[11px] font-mono text-teal-800"><code>discovery-synthesis</code><span class="font-semibold">v1.0.0</span></span>
@@ -567,6 +568,17 @@
                             <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-09-22</p>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
                                 <li><strong>Added:</strong> first version, as a prompt. It worked well overall but had the one failure described above.</li><li><strong>Why:</strong> the Treasure Time PM-process backlog needed a critical reading of the SOW before discovery. This version was never committed to the skill's repo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details class="rounded-2xl bg-[#f7f7f7] border border-teal-800/60 px-4 py-3">
+                    <summary class="cursor-pointer text-sm font-mono text-teal-800"><code class="font-semibold">sow-kickoff-decisions</code> <span>v1.0.0</span></summary>
+                    <div class="mt-3 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs font-mono text-teal-800"><span class="font-semibold">v1.0.0</span> &middot; 2026-11-20</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 leading-relaxed">
+                                <li><strong>Added:</strong> first version. Before the kickoff, it picks the questions worth a meeting from the SOW&rsquo;s gaps, by scope-creep risk; after it, the decision log (decided, open with owner and date, carried forward, not discussed) and the changes for the next SOW version.</li><li><strong>Design decisions:</strong> a soft yes (&ldquo;we will estimate it&rdquo;) is open, never decided; information from the person who owns it is not a decision; change control is always asked; a contradiction with what was already sent is listed as a correction to send.</li><li><strong>Why:</strong> built from the Treasure Time kickoff (31 gaps, 9 questions) and the wildfire sponsor review, both done by hand. Run blind on the wildfire review before release, it matched the real SOW v1.1 and caught a follow-up email that had told the sponsor the opposite of the treasurer.</li>
                             </ul>
                         </div>
                     </div>
